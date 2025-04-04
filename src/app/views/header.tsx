@@ -1,12 +1,12 @@
 import { useAtom, useSetAtom } from "jotai";
-import { version } from "../data/Layout_v4.0";
-import { Bg, Border, FontSize } from "./common/classNames";
 import {
     cheatSheetDataAtom,
     isJapaneseAtom,
     translatorEN,
     translatorJA,
 } from "../appStates";
+import { version } from "../data/Layout_v4.1";
+import { Bg, Border, FontSize } from "./common/classNames";
 
 const Header = () => {
     return (
@@ -36,7 +36,7 @@ const DocumentationVersion = () => {
             <p
                 className={`-ml-4 px-4 ${FontSize.textSm} ${Bg.purpleToTransparentGradation}`}
             >
-                {`Documentation ${version}`}
+                {`Documentation ${version}`}（一部未翻訳）
             </p>
             <a
                 className="underline"

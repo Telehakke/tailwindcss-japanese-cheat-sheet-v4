@@ -1,3 +1,33 @@
+import { documentations as accessibility } from "../data/Accessibility_v4.1";
+import { documentations as backgrounds } from "../data/Backgrounds_v4.1";
+import { documentations as borders } from "../data/Borders_v4.1";
+import { documentations as effects } from "../data/Effects_v4.1";
+import { documentations as filters } from "../data/Filters_v4.1";
+import { documentations as flexboxAndGrid } from "../data/Flexbox & Grid_v4.1";
+import { documentations as interactivity } from "../data/Interactivity_v4.1";
+import { documentations as layout } from "../data/Layout_v4.1";
+import { documentations as sizing } from "../data/Sizing_v4.1";
+import { documentations as spacing } from "../data/Spacing_v4.1";
+import { documentations as svg } from "../data/SVG_v4.1";
+import { documentations as tables } from "../data/Tables_v4.1";
+import { documentations as transforms } from "../data/Transforms_v4.1";
+import { documentations as transitionsAndAnimation } from "../data/Transitions & Animation_v4.1";
+import { documentations as typography } from "../data/Typography_v4.1";
+import accessibilityJA from "../translations/accessibilityJA";
+import backgroundsJA from "../translations/backgroundsJA";
+import bordersJA from "../translations/bordersJA";
+import effectsJA from "../translations/effectsJA";
+import filtersJA from "../translations/filtersJA";
+import flexboxAndGridJA from "../translations/flexboxAndGridJA";
+import interactivityJA from "../translations/interactivityJA";
+import layoutJA from "../translations/layoutJA";
+import sizingJA from "../translations/sizingJA";
+import spacingJA from "../translations/spacingJA";
+import svgJA from "../translations/svgJA";
+import tableJA from "../translations/tableJA";
+import transformsJA from "../translations/transformsJA";
+import transitionsAndAnimationJA from "../translations/transitionsAndAnimationJA";
+import typographyJA from "../translations/typographyJA";
 import { CategoryEnum } from "./category";
 import {
     CheatSheetData,
@@ -5,36 +35,6 @@ import {
     Documentation,
     Translation,
 } from "./types";
-import { documentations as layout } from "../data/Layout_v4.0";
-import { documentations as flexboxAndGrid } from "../data/Flexbox & Grid_v4.0";
-import { documentations as spacing } from "../data/Spacing_v4.0";
-import { documentations as sizing } from "../data/Sizing_v4.0";
-import { documentations as typography } from "../data/Typography_v4.0";
-import { documentations as backgrounds } from "../data/Backgrounds_v4.0";
-import { documentations as borders } from "../data/Borders_v4.0";
-import { documentations as effects } from "../data/Effects_v4.0";
-import { documentations as filters } from "../data/Filters_v4.0";
-import { documentations as tables } from "../data/Tables_v4.0";
-import { documentations as transitionsAndAnimation } from "../data/Transitions & Animation_v4.0";
-import { documentations as transforms } from "../data/Transforms_v4.0";
-import { documentations as interactivity } from "../data/Interactivity_v4.0";
-import { documentations as svg } from "../data/SVG_v4.0";
-import { documentations as accessibility } from "../data/Accessibility_v4.0";
-import layoutJA from "../translations/layoutJA";
-import flexboxAndGridJA from "../translations/flexboxAndGridJA";
-import spacingJA from "../translations/spacingJA";
-import sizingJA from "../translations/sizingJA";
-import typographyJA from "../translations/typographyJA";
-import backgroundsJA from "../translations/backgroundsJA";
-import bordersJA from "../translations/bordersJA";
-import effectsJA from "../translations/effectsJA";
-import filtersJA from "../translations/filtersJA";
-import tableJA from "../translations/tableJA";
-import transitionsAndAnimationJA from "../translations/transitionsAndAnimationJA";
-import transformsJA from "../translations/transformsJA";
-import interactivityJA from "../translations/interactivityJA";
-import svgJA from "../translations/svgJA";
-import accessibilityJA from "../translations/accessibilityJA";
 
 abstract class Translator {
     protected cache: CheatSheetData[] | null = null;

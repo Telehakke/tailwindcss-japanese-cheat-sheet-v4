@@ -1,9 +1,9 @@
-import { setTimeout } from "timers/promises";
 import fs from "fs";
+import { setTimeout } from "timers/promises";
+import { navigations, version } from "../app/data/navigations_v4.1";
 import { Documentation } from "../app/models/types";
-import DocumentationExtractor from "./models/documentationExtractor";
 import createDom from "./models/createDom";
-import { version, navigations } from "../app/data/navigations_v4.0";
+import DocumentationExtractor from "./models/documentationExtractor";
 
 /* 【注意】このスクリプトを一度実行すると、完了までに約27分かかる */
 
