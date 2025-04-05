@@ -1,13 +1,8 @@
+import { atom, PrimitiveAtom, useAtom, useAtomValue, useSetAtom } from "jotai";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { DetailedDocumentation } from "../../../../models/types";
-import { atom, useAtom, useAtomValue, useSetAtom } from "jotai";
 import { shouldExpandAllAtom } from "../../../../appStates";
-import {
-    KeyboardArrowDown,
-    KeyboardArrowUp,
-    Link,
-} from "../../../common/icons";
-import RoundedButton from "../../../common/roundedButton";
+import { addedVersions } from "../../../../data/addedVersions";
+import { DetailedDocumentation } from "../../../../models/types";
 import {
     Bg,
     Border,
@@ -16,7 +11,12 @@ import {
     Outline,
     TextColor,
 } from "../../../common/classNames";
-import { PrimitiveAtom } from "jotai";
+import {
+    KeyboardArrowDown,
+    KeyboardArrowUp,
+    Link,
+} from "../../../common/icons";
+import RoundedButton from "../../../common/roundedButton";
 
 type WithInitialValue<Value> = {
     init: Value;
@@ -85,22 +85,43 @@ const EntryAndLink = ({
 }: {
     detailedDocumentation: DetailedDocumentation;
 }) => {
+    const addedVersion = (): string => {
+        let result = "";
+        outer: for (const item of addedVersions) {
+            for (const entry of item.entries) {
+                if (entry[0] === detailedDocumentation.entry.split("\n")[0]) {
+                    result = entry[1];
+                    break outer;
+                }
+            }
+        }
+        return result;
+    };
+    const version = addedVersion();
+
     return (
         <>
             <h3>{detailedDocumentation.entry}</h3>
-            <a
-                className={`my-auto w-10 content-center rounded-full ${Fill.neutral500_hoverSky500} ${Bg.hoverNeutral50}`}
-                href={detailedDocumentation.url}
-                target="_blank"
-                aria-label="公式ドキュメントに移動して詳細を確認する"
-                onClick={(event) => {
-                    // handleEntryClick()が呼び出されないよう、
-                    // クリックイベントの伝播を止める
-                    event.stopPropagation();
-                }}
-            >
-                <Link className="mx-auto" />
-            </a>
+            <div className="flex gap-2">
+                <p
+                    className={`m-auto rounded-md px-1 text-xs font-bold text-neutral-100 ${version === "v3" ? "bg-neutral-500" : "bg-green-600"}`}
+                >
+                    {version}
+                </p>
+                <a
+                    className={`my-auto w-10 content-center rounded-full ${Fill.neutral500_hoverSky500} ${Bg.hoverNeutral50}`}
+                    href={detailedDocumentation.url}
+                    target="_blank"
+                    aria-label="公式ドキュメントに移動して詳細を確認する"
+                    onClick={(event) => {
+                        // handleEntryClick()が呼び出されないよう、
+                        // クリックイベントの伝播を止める
+                        event.stopPropagation();
+                    }}
+                >
+                    <Link className="mx-auto" />
+                </a>
+            </div>
         </>
     );
 };
