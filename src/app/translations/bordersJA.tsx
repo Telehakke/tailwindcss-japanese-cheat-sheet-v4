@@ -19,7 +19,7 @@ const bordersJA = new Map<string, Translation>([
             detail: (
                 <DetailTable
                     value={[
-                        ["（xs–3xl）", "プリセット値を使用"],
+                        ["（xs–4xl）", "プリセット値を使用"],
                         ["none", "角丸なし"],
                         ["full", "円、またはカプセル型"],
                         ["s-*", "テキストの開始側を丸める"],

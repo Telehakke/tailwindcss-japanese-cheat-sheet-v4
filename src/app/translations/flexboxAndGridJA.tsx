@@ -174,6 +174,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                         ["span-（数値）", "指定した数だけセルを連結"],
                         ["start-（数値）", "連結の開始位置を指定"],
                         ["end-（数値）", "連結の終端位置を指定"],
+                        ["(数値)/（数値）", "startとendをまとめて指定"],
                     ]}
                 />
             ),
@@ -209,6 +210,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                         ["span-（数値）", "指定した数だけセルを連結"],
                         ["start-（数値）", "連結の開始位置を指定"],
                         ["end-（数値）", "連結の終端位置を指定"],
+                        ["(数値)/（数値）", "startとendをまとめて指定"],
                     ]}
                 />
             ),
@@ -309,7 +311,15 @@ const flexboxAndGridJA = new Map<string, Translation>([
                     value={[
                         ["start", "水平方向の開始側に子要素を寄せる"],
                         ["end", "水平方向の終端側に子要素を寄せる"],
+                        [
+                            "end-safe",
+                            "endで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         ["center", "中央に子要素を集める"],
+                        [
+                            "center-safe",
+                            "centerで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         [
                             "between",
                             "行の最初と最後の子要素を両端に配置し、残りの子要素を均等に配置する",
@@ -344,7 +354,15 @@ const flexboxAndGridJA = new Map<string, Translation>([
                     value={[
                         ["start", "セルの水平方向の開始側に揃える"],
                         ["end", "セルの水平方向の終端側に揃える"],
+                        [
+                            "end-safe",
+                            "endで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         ["center", "セルの中央に揃える"],
+                        [
+                            "center-safe",
+                            "centerで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         [
                             "stretch",
                             "セルの隙間を埋めるように子要素を引き延ばす",
@@ -366,8 +384,16 @@ const flexboxAndGridJA = new Map<string, Translation>([
                     value={[
                         ["auto", "justify-itemsの効果を受け入れる"],
                         ["start", "セルの水平方向の開始側に揃える"],
-                        ["end", "セルの水平方向の終端側に揃える"],
                         ["center", "セルの中央に揃える"],
+                        [
+                            "center-safe",
+                            "centerで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
+                        ["end", "セルの水平方向の終端側に揃える"],
+                        [
+                            "end-safe",
+                            "endで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         [
                             "stretch",
                             "セルの隙間を埋めるように子要素を引き延ばす",
@@ -422,10 +448,22 @@ const flexboxAndGridJA = new Map<string, Translation>([
                     value={[
                         ["start", "セルの垂直方向の開始側に揃える"],
                         ["end", "セルの垂直方向の終端側に揃える"],
+                        [
+                            "end-safe",
+                            "endで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         ["center", "セルの中央に揃える"],
+                        [
+                            "center-safe",
+                            "centerで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         [
                             "baseline",
                             "コンテンツのベースラインが横に揃うように配置する",
+                        ],
+                        [
+                            "baseline-last",
+                            "最終行のベースラインに揃えて配置する",
                         ],
                         [
                             "stretch",
@@ -448,12 +486,24 @@ const flexboxAndGridJA = new Map<string, Translation>([
                         ["auto", "align-itemsの効果を受け入れる"],
                         ["start", "セルの垂直方向の開始側に揃える"],
                         ["end", "セルの垂直方向の終端側に揃える"],
+                        [
+                            "end-safe",
+                            "endで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         ["center", "セルの中央に揃える"],
+                        [
+                            "center-safe",
+                            "centerで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         [
                             "stretch",
                             "セルの隙間を埋めるように子要素を引き延ばす",
                         ],
                         ["baseline", "startと同じ動作"],
+                        [
+                            "baseline-last",
+                            "最終行のベースラインに揃えて配置する",
+                        ],
                     ]}
                 />
             ),
@@ -469,10 +519,18 @@ const flexboxAndGridJA = new Map<string, Translation>([
                     value={[
                         ["center", "子要素を中央に引き寄せるように配置する"],
                         [
+                            "center-safe",
+                            "centerで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
+                        [
                             "start",
                             "子要素を開始側の角に引き寄せるように配置する",
                         ],
                         ["end", "子要素を終端側の角に引き寄せるように配置する"],
+                        [
+                            "end-safe",
+                            "endで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         ["between", "子要素を中心から離れるように配置する"],
                         [
                             "around",
@@ -502,7 +560,15 @@ const flexboxAndGridJA = new Map<string, Translation>([
                     value={[
                         ["start", "セルの開始側の角に配置する"],
                         ["end", "セルの終端側の角に配置する"],
+                        [
+                            "end-safe",
+                            "endで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         ["center", "セルの中央に配置する"],
+                        [
+                            "center-safe",
+                            "centerで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         [
                             "baseline",
                             "セルの水平方向の開始側に寄せつつ、コンテンツのベースラインが横に揃うように配置する",
@@ -527,7 +593,15 @@ const flexboxAndGridJA = new Map<string, Translation>([
                         ["auto", "place-itemsの効果を受け入れる"],
                         ["start", "セルの開始側の角に配置する"],
                         ["end", "セルの終端側の角に配置する"],
+                        [
+                            "end-safe",
+                            "endで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         ["center", "セルの中央に配置する"],
+                        [
+                            "center-safe",
+                            "centerで配置する。子要素があふれる場合、startとして振る舞う",
+                        ],
                         [
                             "stretch",
                             "セルの隙間を埋めるように子要素を引き延ばす（gridで有効）",

@@ -291,15 +291,15 @@ const layoutJA = new Map<string, Translation>([
             detail: (
                 <DetailTable
                     value={[
-                        ["bottom", "下"],
-                        ["center", "中央"],
-                        ["left", "左"],
-                        ["left-bottom", "左下"],
-                        ["left-top", "左上"],
-                        ["right", "右"],
-                        ["right-bottom", "右下"],
-                        ["right-top", "右上"],
+                        ["top-left", "左上"],
                         ["top", "上"],
+                        ["top-right", "右上"],
+                        ["left", "左"],
+                        ["center", "中央"],
+                        ["right", "右"],
+                        ["bottom-left", "左下"],
+                        ["bottom", "下"],
+                        ["bottom-right", "右下"],
                     ]}
                 />
             ),

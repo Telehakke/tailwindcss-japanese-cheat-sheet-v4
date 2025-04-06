@@ -985,12 +985,31 @@ const typographyJA = new Map<string, Translation>([
                 <DetailTable
                     value={[
                         ["normal", "単語の途中で折り返さない"],
-                        ["words", "必要に応じて単語の途中で折り返す"],
                         ["all", "単語を考慮せずに折り返す"],
                         [
                             "keep",
                             "CJK（中国語、日本語、韓国語）において、文章の中では折り返さずに記号などの箇所で折り返す",
                         ],
+                    ]}
+                />
+            ),
+        },
+    ],
+    [
+        "overflow-wrap",
+        {
+            entry: "オーバーフローの折り返し",
+            description:
+                "単語が要素からはみ出す場合に、単語の折り返す動作を指定する",
+            detail: (
+                <DetailTable
+                    value={[
+                        ["break-word", "必要に応じて単語の途中で折り返す"],
+                        [
+                            "anywhere",
+                            "break-wordと同じだが、要素の幅としてw-minが指定されている場合に動作が異なる",
+                        ],
+                        ["normal", "折り返さない"],
                     ]}
                 />
             ),
