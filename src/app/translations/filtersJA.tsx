@@ -61,7 +61,7 @@ const filtersJA = new Map<string, Translation>([
                 <DetailTable
                     value={[
                         [
-                            "drop-shadow-xs",
+                            "xs",
                             "",
                             <td className="bg-white">
                                 <p className="text-2xl text-white drop-shadow-xs">
@@ -70,7 +70,7 @@ const filtersJA = new Map<string, Translation>([
                             </td>,
                         ],
                         [
-                            "drop-shadow-sm",
+                            "sm",
                             "",
                             <td className="bg-white">
                                 <p className="text-2xl text-white drop-shadow-sm">
@@ -79,7 +79,7 @@ const filtersJA = new Map<string, Translation>([
                             </td>,
                         ],
                         [
-                            "drop-shadow-md",
+                            "md",
                             "",
                             <td className="bg-white">
                                 <p className="text-2xl text-white drop-shadow-md">
@@ -88,7 +88,7 @@ const filtersJA = new Map<string, Translation>([
                             </td>,
                         ],
                         [
-                            "drop-shadow-lg",
+                            "lg",
                             "",
                             <td className="bg-white">
                                 <p className="text-2xl text-white drop-shadow-lg">
@@ -97,7 +97,7 @@ const filtersJA = new Map<string, Translation>([
                             </td>,
                         ],
                         [
-                            "drop-shadow-xl",
+                            "xl",
                             "",
                             <td className="bg-white">
                                 <p className="text-2xl text-white drop-shadow-xl">
@@ -106,7 +106,7 @@ const filtersJA = new Map<string, Translation>([
                             </td>,
                         ],
                         [
-                            "drop-shadow-2xl",
+                            "2xl",
                             "",
                             <td className="bg-white">
                                 <p className="text-2xl text-white drop-shadow-2xl">
@@ -114,7 +114,235 @@ const filtersJA = new Map<string, Translation>([
                                 </p>
                             </td>,
                         ],
-                        ["drop-shadow-none", "影を描画しない", <td></td>],
+                        ["none", "影を描画しない", <td></td>],
+                        ["inherit", "親要素からスタイルを引き継ぐ", <td></td>],
+                        ["current", "テキスト色", <td></td>],
+                        ["transparent", "透明", <td></td>],
+                        [
+                            "black",
+                            "黒",
+                            <td className="bg-white">
+                                <p className="drop-shadow-black text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "white",
+                            "白",
+                            <td className="bg-black">
+                                <p className="drop-shadow-white text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "red-500",
+                            "赤",
+                            <td className="bg-white">
+                                <p className="drop-shadow-red-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "orange-500",
+                            "オレンジ",
+                            <td className="bg-white">
+                                <p className="drop-shadow-orange-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "amber-500",
+                            "琥珀",
+                            <td className="bg-white">
+                                <p className="drop-shadow-amber-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "yellow-500",
+                            "黄色",
+                            <td className="bg-white">
+                                <p className="drop-shadow-yellow-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "lime-500",
+                            "ライム",
+                            <td className="bg-white">
+                                <p className="drop-shadow-lime-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "green-500",
+                            "緑",
+                            <td className="bg-white">
+                                <p className="drop-shadow-green-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "emerald-500",
+                            "エメラルド",
+                            <td className="bg-white">
+                                <p className="drop-shadow-emerald-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "teal-500",
+                            "コガモ",
+                            <td className="bg-white">
+                                <p className="drop-shadow-teal-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "cyan-500",
+                            "シアン",
+                            <td className="bg-white">
+                                <p className="drop-shadow-cyan-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "sky-500",
+                            "スカイ",
+                            <td className="bg-white">
+                                <p className="drop-shadow-sky-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "blue-500",
+                            "青",
+                            <td className="bg-white">
+                                <p className="drop-shadow-blue-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "indigo-500",
+                            "藍色",
+                            <td className="bg-white">
+                                <p className="drop-shadow-indigo-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "violet-500",
+                            "スミレ",
+                            <td className="bg-white">
+                                <p className="drop-shadow-violet-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "purple-500",
+                            "紫",
+                            <td className="bg-white">
+                                <p className="drop-shadow-purple-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "fuchsia-500",
+                            "フクシア",
+                            <td className="bg-white">
+                                <p className="drop-shadow-fuchsia-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "pink-500",
+                            "ピンク",
+                            <td className="bg-white">
+                                <p className="drop-shadow-pink-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "rose-500",
+                            "バラ",
+                            <td className="bg-white">
+                                <p className="drop-shadow-rose-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "slate-500",
+                            "粘板岩",
+                            <td className="bg-white">
+                                <p className="drop-shadow-slate-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "gray-500",
+                            "グレー",
+                            <td className="bg-white">
+                                <p className="drop-shadow-gray-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "zinc-500",
+                            "亜鉛",
+                            <td className="bg-white">
+                                <p className="drop-shadow-zinc-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "neutral-500",
+                            "ニュートラル",
+                            <td className="bg-white">
+                                <p className="drop-shadow-neutral-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "stone-500",
+                            "石",
+                            <td className="bg-white">
+                                <p className="drop-shadow-stone-500 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
+                        [
+                            "red-500/25",
+                            "不透明度25％で指定する例",
+                            <td className="bg-white">
+                                <p className="drop-shadow-red-500/25 text-2xl text-white drop-shadow-md">
+                                    Aa
+                                </p>
+                            </td>,
+                        ],
                     ]}
                 />
             ),

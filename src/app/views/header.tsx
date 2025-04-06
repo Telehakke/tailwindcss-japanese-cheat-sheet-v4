@@ -36,7 +36,7 @@ const DocumentationVersion = () => {
             <p
                 className={`-ml-4 px-4 ${FontSize.textSm} ${Bg.purpleToTransparentGradation}`}
             >
-                {`Documentation ${version}`}（一部未翻訳）
+                {`Documentation ${version}`}
             </p>
             <a
                 className="underline"
