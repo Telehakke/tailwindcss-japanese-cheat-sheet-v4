@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const typographyJA = new Map<string, Translation>([
     [
@@ -18,7 +18,7 @@ const typographyJA = new Map<string, Translation>([
             description: "フォントファミリーを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["sans", "ゴシック体"],
                         ["serif", "明朝体"],
                         ["mono", "等幅フォント"],
@@ -42,7 +42,7 @@ const typographyJA = new Map<string, Translation>([
             description: "アンチエイリアスの方式を指定する（macOSで有効）",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "antialiased",
                             "グレースケール方式（線がわずかに細く見える）",
@@ -80,7 +80,7 @@ const typographyJA = new Map<string, Translation>([
                 "フォントの幅を指定する。幅の変更に対応するフォントでのみ有効",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（...condensed–...expanded）", "プリセット値を使用"],
                         ["（数値）%", "任意のパーセンテージを指定"],
                     ]}
@@ -96,7 +96,7 @@ const typographyJA = new Map<string, Translation>([
                 "数字の表記形式を指定する。フォント側がそれぞれの形式に対応する場合のみ有効",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["normal-nums", "標準"],
                         [
                             "ordinal",
@@ -138,7 +138,7 @@ const typographyJA = new Map<string, Translation>([
             description: "固定する行数を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "固定する行数"],
                         ["none", "固定しない"],
                     ]}
@@ -153,7 +153,7 @@ const typographyJA = new Map<string, Translation>([
             description: "行の高さを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "text-（xs–9lx）/（数値）",
                             "任意のフォントサイズと行の高さを指定する",
@@ -172,7 +172,7 @@ const typographyJA = new Map<string, Translation>([
             description: "リスト項目のマーカーとして使用する画像を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "list-image-[url(***.png)]",
                             "特定の画像をマーカーとして使用する例",
@@ -190,7 +190,7 @@ const typographyJA = new Map<string, Translation>([
             description: "リスト項目のマーカー位置を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["inside", "マーカーを要素の内側に収める"],
                         ["outside", "マーカーを要素の外側に置く"],
                     ]}
@@ -205,7 +205,7 @@ const typographyJA = new Map<string, Translation>([
             description: "リスト項目のマーカー種類を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["disc", "箇条書き（「・」で表す）"],
                         ["decimal", "数値リスト（「1.」「2.」のように表す）"],
                         ["none", "マーカーなし"],
@@ -221,7 +221,7 @@ const typographyJA = new Map<string, Translation>([
             description: "テキストの行揃えを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["left", "左揃え"],
                         ["center", "中央揃え"],
                         ["right", "右揃え"],
@@ -240,7 +240,7 @@ const typographyJA = new Map<string, Translation>([
             description: "テキストの色を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "inherit",
                             "親要素からスタイルを引き継ぐ",
@@ -467,7 +467,7 @@ const typographyJA = new Map<string, Translation>([
             description: "テキストの装飾を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "underline",
                             "下線を引く",
@@ -508,7 +508,7 @@ const typographyJA = new Map<string, Translation>([
             description: "テキスト装飾の色を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["inherit", "親要素からスタイルを引き継ぐ", <td></td>],
                         ["current", "テキスト色", <td></td>],
                         ["transparent", "透明", <td></td>],
@@ -749,7 +749,7 @@ const typographyJA = new Map<string, Translation>([
             description: "テキスト装飾のスタイルを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "solid",
                             "一本のつながった線",
@@ -807,7 +807,7 @@ const typographyJA = new Map<string, Translation>([
             description: "テキスト装飾の太さを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "ピクセル値で指定"],
                         [
                             "from-font",
@@ -826,7 +826,7 @@ const typographyJA = new Map<string, Translation>([
             description: "指定した距離だけアンダーラインを下にずらす",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "ピクセル値で指定"],
                         ["auto", "自動"],
                     ]}
@@ -841,7 +841,7 @@ const typographyJA = new Map<string, Translation>([
             description: "アルファベットを変換するルールを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["uppercase", "大文字に変換"],
                         ["lowercase", "小文字に変換"],
                         [
@@ -861,7 +861,7 @@ const typographyJA = new Map<string, Translation>([
             description: "テキストが要素からはみ出す場合の動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "truncate",
                             "折り返さない。あふれた部分は「…」で省略される",
@@ -886,7 +886,7 @@ const typographyJA = new Map<string, Translation>([
             description: "テキストを折り返す動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["wrap", "バランス調整せずに折り返す"],
                         ["nowrap", "折り返さない"],
                         ["balance", "各行にテキストを均等に配分する"],
@@ -906,7 +906,7 @@ const typographyJA = new Map<string, Translation>([
             description: "テキストの先頭に挿入する空白の長さを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意の長さを指定"],
                         ["px", "1pxで指定"],
                     ]}
@@ -921,7 +921,7 @@ const typographyJA = new Map<string, Translation>([
             description: "垂直方向にテキストを揃える際の基準を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["baseline", "親要素のベースラインに揃える"],
                         ["top", "行の上端に揃える"],
                         [
@@ -946,7 +946,7 @@ const typographyJA = new Map<string, Translation>([
                 "ホワイトスペース（タブ、改行、スペースなど）の扱い方を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "normal",
                             "連続するホワイトスペースをひとつのスペースにまとめる。折り返す",
@@ -983,7 +983,7 @@ const typographyJA = new Map<string, Translation>([
             description: "単語の折り返す動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["normal", "単語の途中で折り返さない"],
                         ["all", "単語を考慮せずに折り返す"],
                         [
@@ -1003,7 +1003,7 @@ const typographyJA = new Map<string, Translation>([
                 "単語が要素からはみ出す場合に、単語の折り返す動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["break-word", "必要に応じて単語の途中で折り返す"],
                         [
                             "anywhere",
@@ -1022,7 +1022,7 @@ const typographyJA = new Map<string, Translation>([
             description: "「&shy;」（ソフトハイフン）の扱い方を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "none",
                             "ハイフネーション（単語内にハイフンを挿入して改行すること）をしない",
@@ -1041,7 +1041,7 @@ const typographyJA = new Map<string, Translation>([
             description: "before、またはafter修飾子を用いた疑似要素を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             `before:content-["✅"]`,
                             "要素の前側に絵文字の疑似要素を挿入する例",

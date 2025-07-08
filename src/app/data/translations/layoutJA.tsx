@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const layoutJA = new Map<string, Translation>([
     [
@@ -18,7 +18,7 @@ const layoutJA = new Map<string, Translation>([
             description: "要素のアスペクト比を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "（分数）",
                             "任意の比率で固定（4:3で固定する例: aspect-4/3）",
@@ -38,7 +38,7 @@ const layoutJA = new Map<string, Translation>([
             description: "要素のコンテンツ領域を縦に分割する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意の分割数を指定"],
                         ["（3xs–7xl）", "プリセット値を使用"],
                         ["auto", "自動"],
@@ -55,7 +55,7 @@ const layoutJA = new Map<string, Translation>([
                 "要素の後における、印刷時の改ページや段区切りの動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "自動"],
                         ["avoid", "改ページや段区切りを禁止する"],
                         ["all", "強制的に改ページする"],
@@ -77,7 +77,7 @@ const layoutJA = new Map<string, Translation>([
                 "要素の前における、印刷時の改ページや段区切りの動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "自動"],
                         ["avoid", "改ページや段区切りを禁止する"],
                         ["all", "強制的に改ページする"],
@@ -99,7 +99,7 @@ const layoutJA = new Map<string, Translation>([
                 "要素の中における、印刷時の改ページや段区切りの動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "自動"],
                         ["avoid", "改ページや段区切りを禁止する"],
                         ["avoid-page", "改ページを禁止する"],
@@ -117,7 +117,7 @@ const layoutJA = new Map<string, Translation>([
                 "要素が複数の行、段、ページに区切られる場合の装飾方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["clone", "それぞれの断片ごとに装飾する"],
                         [
                             "slice",
@@ -135,7 +135,7 @@ const layoutJA = new Map<string, Translation>([
             description: "要素の幅と高さを求めるための領域を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["border", "境界や余白を含めて要素の寸法とする"],
                         ["content", "コンテンツ領域を要素の寸法とする"],
                     ]}
@@ -150,7 +150,7 @@ const layoutJA = new Map<string, Translation>([
             description: "要素の表示方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "inline",
                             "前後に改行を生成しない。垂直方向の境界や余白を無視する",
@@ -205,7 +205,7 @@ const layoutJA = new Map<string, Translation>([
                 "要素を左右どちらかに配置し、その横に余白があれば続く要素を回り込ませる",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["right", "右端に配置"],
                         ["left", "左端に配置"],
                         ["start", "テキストの開始側に配置"],
@@ -224,7 +224,7 @@ const layoutJA = new Map<string, Translation>([
                 "floatの効果を打ち消し、自身の要素が回り込もうとするのを防ぐ",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["left", "左端にある要素のfloatを打ち消す"],
                         ["right", "右端にある要素のfloatを打ち消す"],
                         ["both", "左右どちらでもfloatを打ち消す"],
@@ -247,7 +247,7 @@ const layoutJA = new Map<string, Translation>([
                 "子要素の存在を内に留め、外部の要素と相互に作用させない",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["isolate", "子要素を隔離する"],
                         ["isolation-auto", "自動"],
                     ]}
@@ -262,7 +262,7 @@ const layoutJA = new Map<string, Translation>([
             description: "コンテンツの表示方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "contain",
                             "コンテンツ全体が要素に収まるように拡大縮小する",
@@ -290,7 +290,7 @@ const layoutJA = new Map<string, Translation>([
                 "コンテンツが要素からはみ出す場合に、メインで見せたい位置を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["top-left", "左上"],
                         ["top", "上"],
                         ["top-right", "右上"],
@@ -312,7 +312,7 @@ const layoutJA = new Map<string, Translation>([
             description: "コンテンツが要素からはみ出す場合の動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "自動"],
                         [
                             "hidden",
@@ -335,7 +335,7 @@ const layoutJA = new Map<string, Translation>([
             description: "スクロール領域の限界に達したときの動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "auto",
                             "バウンスする。限界に達した状態でさらにスクロールすると、親要素へ伝播する",
@@ -362,7 +362,7 @@ const layoutJA = new Map<string, Translation>([
             description: "要素の配置方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "static",
                             "デフォルトの動作。オフセット操作（top、right、bottom、left、z-index）を受け付けない",
@@ -395,7 +395,7 @@ const layoutJA = new Map<string, Translation>([
             description: "指定した位置に要素を配置する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "基準点から任意の距離だけ離す"],
                         [
                             "（分数）",
@@ -428,7 +428,7 @@ const layoutJA = new Map<string, Translation>([
             description: "要素の可視状態を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["visible", "表示"],
                         [
                             "invisible",
@@ -450,7 +450,7 @@ const layoutJA = new Map<string, Translation>([
             description: "要素の重なり順を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "値が大きいほど上に表示される"],
                         ["auto", "自動"],
                     ]}

@@ -18,8 +18,7 @@ export const CategoryEnum = {
 
 export type Category = (typeof CategoryEnum)[keyof typeof CategoryEnum];
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const isCategory = (value: any): value is Category => {
+export const isCategory = (value: unknown): value is Category => {
     if (value === CategoryEnum.Layout) return true;
     if (value === CategoryEnum.FlexboxAndGrid) return true;
     if (value === CategoryEnum.Spacing) return true;

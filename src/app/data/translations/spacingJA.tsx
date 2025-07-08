@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const spacingJA = new Map<string, Translation>([
     [
@@ -18,7 +18,7 @@ const spacingJA = new Map<string, Translation>([
             description: "要素の内側に指定した長さの余白を与える",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["p-（数値）", "上下左右に余白を与える"],
                         ["px-（数値）", "水平方向に余白を与える"],
                         ["py-（数値）", "垂直方向に余白を与える"],
@@ -40,7 +40,7 @@ const spacingJA = new Map<string, Translation>([
             description: "要素の外側に指定した長さの余白を与える",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["m-（数値）", "上下左右に余白を与える"],
                         ["mx-（数値）", "水平方向に余白を与える"],
                         ["my-（数値）", "垂直方向に余白を与える"],

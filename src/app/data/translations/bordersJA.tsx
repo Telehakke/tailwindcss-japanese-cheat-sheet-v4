@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const bordersJA = new Map<string, Translation>([
     [
@@ -18,7 +18,7 @@ const bordersJA = new Map<string, Translation>([
             description: "角の丸みを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（xs–4xl）", "プリセット値を使用"],
                         ["none", "角丸なし"],
                         ["full", "円、またはカプセル型"],
@@ -48,7 +48,7 @@ const bordersJA = new Map<string, Translation>([
             description: "境界線の太さを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["border", "1pxの太さの枠で囲む"],
                         ["border-（数値）", "任意の太さの枠で囲む"],
                         ["border-x", "左右の側面に1pxの太さの線を引く"],
@@ -115,7 +115,7 @@ const bordersJA = new Map<string, Translation>([
             description: "境界線の色を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "border-inherit",
                             "親要素からスタイルを引き継ぐ",
@@ -523,7 +523,7 @@ const bordersJA = new Map<string, Translation>([
             description: "境界線のスタイルを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["border-solid", "一本のつながった境界線"],
                         ["border-dashed", "破線"],
                         ["border-dotted", "点線"],
@@ -550,7 +550,7 @@ const bordersJA = new Map<string, Translation>([
                 "輪郭線の太さを指定する。輪郭線はborderよりも外側に引かれる",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["outline", "1pxの太さの輪郭線を描く"],
                         ["outline-（数値）", "任意の太さの輪郭線を描く"],
                     ]}
@@ -565,7 +565,7 @@ const bordersJA = new Map<string, Translation>([
             description: "輪郭線の色を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "inherit",
                             "親要素からスタイルを引き継ぐ",
@@ -760,7 +760,7 @@ const bordersJA = new Map<string, Translation>([
             description: "輪郭線のスタイルを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["outline-solid", "一本のつながった輪郭線"],
                         ["outline-dashed", "破線"],
                         ["outline-dotted", "点線"],

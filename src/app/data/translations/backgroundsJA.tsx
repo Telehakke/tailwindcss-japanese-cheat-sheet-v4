@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const backgroundsJA = new Map<string, Translation>([
     [
@@ -19,7 +19,7 @@ const backgroundsJA = new Map<string, Translation>([
                 "スクロールした際の、Background Imageに指定した背景画像の動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "fixed",
                             "ディスプレイに貼り付けたように背景画像を固定する",
@@ -42,7 +42,7 @@ const backgroundsJA = new Map<string, Translation>([
                 "Background Image、またはBackground Colorに指定した背景の切り取り方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["border", "境界領域から外側を切り取る"],
                         ["padding", "余白領域から外側を切り取る"],
                         ["content", "コンテンツ領域から外側を切り取る"],
@@ -62,7 +62,7 @@ const backgroundsJA = new Map<string, Translation>([
             description: "要素の背景色を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "inherit",
                             "親要素からスタイルを引き継ぐ",
@@ -199,7 +199,7 @@ const backgroundsJA = new Map<string, Translation>([
             description: "背景画像やグラデーションを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "bg-[url(***.jpg)]",
                             "特定の画像を背景画像に指定する例",
@@ -297,7 +297,7 @@ const backgroundsJA = new Map<string, Translation>([
                 "Background Imageに指定した背景画像を貼り付ける原点を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["border", "境界領域の側面を原点に貼り付ける"],
                         ["padding", "余白領域の側面を原点に貼り付ける"],
                         ["content", "コンテンツ領域の側面を原点に貼り付ける"],
@@ -314,7 +314,7 @@ const backgroundsJA = new Map<string, Translation>([
                 "Background Imageに指定した背景画像が要素からはみ出す場合に、メインに見せたい位置を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["top-left", "左上"],
                         ["top", "上"],
                         ["top-right", "右上"],
@@ -336,7 +336,7 @@ const backgroundsJA = new Map<string, Translation>([
             description: "Background Imageに指定した背景画像の並べ方を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["repeat", "全方向に繰り返す"],
                         ["repeat-x", "水平方向に繰り返す"],
                         ["repeat-y", "垂直方向に繰り返す"],
@@ -361,7 +361,7 @@ const backgroundsJA = new Map<string, Translation>([
             description: "Background Imageに指定した背景画像のサイズを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "等倍で表示"],
                         ["cover", "要素全体を覆うように拡大縮小"],
                         ["contain", "背景画像全体が収まるように拡大縮小"],

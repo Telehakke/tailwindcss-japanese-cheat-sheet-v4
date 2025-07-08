@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const effectsJA = new Map<string, Translation>([
     [
@@ -18,7 +18,7 @@ const effectsJA = new Map<string, Translation>([
             description: "要素の影、または輪郭線を描画する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "shadow-2xs",
                             "要素の背後に影を描画する",
@@ -891,12 +891,12 @@ const effectsJA = new Map<string, Translation>([
             description: "テキストに対して影を描画する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "2xs",
                             "",
                             <td className="bg-white">
-                                <p className="text-2xl text-shadow-2xs text-white">
+                                <p className="text-2xl text-white text-shadow-2xs">
                                     Aa
                                 </p>
                             </td>,
@@ -905,7 +905,7 @@ const effectsJA = new Map<string, Translation>([
                             "xs",
                             "",
                             <td className="bg-white">
-                                <p className="text-2xl text-shadow-xs text-white">
+                                <p className="text-2xl text-white text-shadow-xs">
                                     Aa
                                 </p>
                             </td>,
@@ -914,7 +914,7 @@ const effectsJA = new Map<string, Translation>([
                             "sm",
                             "",
                             <td className="bg-white">
-                                <p className="text-2xl text-shadow-sm text-white">
+                                <p className="text-2xl text-white text-shadow-sm">
                                     Aa
                                 </p>
                             </td>,
@@ -923,7 +923,7 @@ const effectsJA = new Map<string, Translation>([
                             "md",
                             "",
                             <td className="bg-white">
-                                <p className="text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -932,7 +932,7 @@ const effectsJA = new Map<string, Translation>([
                             "lg",
                             "",
                             <td className="bg-white">
-                                <p className="text-2xl text-shadow-lg text-white">
+                                <p className="text-2xl text-white text-shadow-lg">
                                     Aa
                                 </p>
                             </td>,
@@ -945,7 +945,7 @@ const effectsJA = new Map<string, Translation>([
                             "black",
                             "黒",
                             <td className="bg-white">
-                                <p className="text-shadow-black text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-black text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -954,7 +954,7 @@ const effectsJA = new Map<string, Translation>([
                             "white",
                             "白",
                             <td className="bg-black">
-                                <p className="text-shadow-white text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-white">
                                     Aa
                                 </p>
                             </td>,
@@ -963,7 +963,7 @@ const effectsJA = new Map<string, Translation>([
                             "red-500",
                             "赤",
                             <td className="bg-white">
-                                <p className="text-shadow-red-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-red-500">
                                     Aa
                                 </p>
                             </td>,
@@ -972,7 +972,7 @@ const effectsJA = new Map<string, Translation>([
                             "orange-500",
                             "オレンジ",
                             <td className="bg-white">
-                                <p className="text-shadow-orange-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-orange-500">
                                     Aa
                                 </p>
                             </td>,
@@ -981,7 +981,7 @@ const effectsJA = new Map<string, Translation>([
                             "amber-500",
                             "琥珀",
                             <td className="bg-white">
-                                <p className="text-shadow-amber-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-amber-500 text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -990,7 +990,7 @@ const effectsJA = new Map<string, Translation>([
                             "yellow-500",
                             "黄色",
                             <td className="bg-white">
-                                <p className="text-shadow-yellow-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-yellow-500">
                                     Aa
                                 </p>
                             </td>,
@@ -999,7 +999,7 @@ const effectsJA = new Map<string, Translation>([
                             "lime-500",
                             "ライム",
                             <td className="bg-white">
-                                <p className="text-shadow-lime-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-lime-500 text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -1008,7 +1008,7 @@ const effectsJA = new Map<string, Translation>([
                             "green-500",
                             "緑",
                             <td className="bg-white">
-                                <p className="text-shadow-green-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-green-500 text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -1017,7 +1017,7 @@ const effectsJA = new Map<string, Translation>([
                             "emerald-500",
                             "エメラルド",
                             <td className="bg-white">
-                                <p className="text-shadow-emerald-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-emerald-500 text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -1026,7 +1026,7 @@ const effectsJA = new Map<string, Translation>([
                             "teal-500",
                             "コガモ",
                             <td className="bg-white">
-                                <p className="text-shadow-teal-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-teal-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1035,7 +1035,7 @@ const effectsJA = new Map<string, Translation>([
                             "cyan-500",
                             "シアン",
                             <td className="bg-white">
-                                <p className="text-shadow-cyan-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-cyan-500 text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -1044,7 +1044,7 @@ const effectsJA = new Map<string, Translation>([
                             "sky-500",
                             "スカイ",
                             <td className="bg-white">
-                                <p className="text-shadow-sky-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-sky-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1053,7 +1053,7 @@ const effectsJA = new Map<string, Translation>([
                             "blue-500",
                             "青",
                             <td className="bg-white">
-                                <p className="text-shadow-blue-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-blue-500 text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -1062,7 +1062,7 @@ const effectsJA = new Map<string, Translation>([
                             "indigo-500",
                             "藍色",
                             <td className="bg-white">
-                                <p className="text-shadow-indigo-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-indigo-500 text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -1071,7 +1071,7 @@ const effectsJA = new Map<string, Translation>([
                             "violet-500",
                             "スミレ",
                             <td className="bg-white">
-                                <p className="text-shadow-violet-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-violet-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1080,7 +1080,7 @@ const effectsJA = new Map<string, Translation>([
                             "purple-500",
                             "紫",
                             <td className="bg-white">
-                                <p className="text-shadow-purple-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-purple-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1089,7 +1089,7 @@ const effectsJA = new Map<string, Translation>([
                             "fuchsia-500",
                             "フクシア",
                             <td className="bg-white">
-                                <p className="text-shadow-fuchsia-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-fuchsia-500 text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -1098,7 +1098,7 @@ const effectsJA = new Map<string, Translation>([
                             "pink-500",
                             "ピンク",
                             <td className="bg-white">
-                                <p className="text-shadow-pink-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-pink-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1107,7 +1107,7 @@ const effectsJA = new Map<string, Translation>([
                             "rose-500",
                             "バラ",
                             <td className="bg-white">
-                                <p className="text-shadow-rose-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-rose-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1116,7 +1116,7 @@ const effectsJA = new Map<string, Translation>([
                             "slate-500",
                             "粘板岩",
                             <td className="bg-white">
-                                <p className="text-shadow-slate-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-slate-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1125,7 +1125,7 @@ const effectsJA = new Map<string, Translation>([
                             "gray-500",
                             "グレー",
                             <td className="bg-white">
-                                <p className="text-shadow-gray-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-gray-500 text-shadow-md">
                                     Aa
                                 </p>
                             </td>,
@@ -1134,7 +1134,7 @@ const effectsJA = new Map<string, Translation>([
                             "zinc-500",
                             "亜鉛",
                             <td className="bg-white">
-                                <p className="text-shadow-zinc-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-zinc-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1143,7 +1143,7 @@ const effectsJA = new Map<string, Translation>([
                             "neutral-500",
                             "ニュートラル",
                             <td className="bg-white">
-                                <p className="text-shadow-neutral-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-neutral-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1152,7 +1152,7 @@ const effectsJA = new Map<string, Translation>([
                             "stone-500",
                             "石",
                             <td className="bg-white">
-                                <p className="text-shadow-stone-500 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-stone-500">
                                     Aa
                                 </p>
                             </td>,
@@ -1161,7 +1161,7 @@ const effectsJA = new Map<string, Translation>([
                             "red-500/25",
                             "不透明度25％で指定する例",
                             <td className="bg-white">
-                                <p className="text-shadow-red-500/25 text-2xl text-shadow-md text-white">
+                                <p className="text-2xl text-white text-shadow-md text-shadow-red-500/25">
                                     Aa
                                 </p>
                             </td>,
@@ -1186,7 +1186,7 @@ const effectsJA = new Map<string, Translation>([
             description: "自身の要素と背後にある要素との合成方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["normal", "通常"],
                         ["multiply", "乗算"],
                         ["screen", "スクリーン"],
@@ -1218,7 +1218,7 @@ const effectsJA = new Map<string, Translation>([
                 "background-imageとbackground-colorとの合成方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["normal", "通常"],
                         ["multiply", "乗算"],
                         ["screen", "スクリーン"],
@@ -1247,7 +1247,7 @@ const effectsJA = new Map<string, Translation>([
             description: "マスクが影響する領域を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["clip-border", "境界領域まで影響する"],
                         ["clip-padding", "余白領域まで影響する"],
                         ["clip-content", "コンテンツ領域まで影響する"],
@@ -1267,7 +1267,7 @@ const effectsJA = new Map<string, Translation>([
             description: "複数のマスクの合成方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["add", "それぞれのマスク領域を足し合わせる"],
                         [
                             "subtract",
@@ -1293,7 +1293,7 @@ const effectsJA = new Map<string, Translation>([
             description: "マスクとして使用する画像を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["mask-[url(***.png)]", "マスク画像を指定する例"],
                         ["none", "マスク画像なし"],
                         ["linear-（数値）", "線形グラデーションマスクの角度"],
@@ -1433,7 +1433,7 @@ const effectsJA = new Map<string, Translation>([
             description: "mask-imageのマスクモードを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "alpha",
                             "マスク画像の不透明度をマスクの値として使用する",
@@ -1458,7 +1458,7 @@ const effectsJA = new Map<string, Translation>([
             description: "mask-imageを貼り付ける原点を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["border", "境界領域の側面を原点に貼り付ける"],
                         ["padding", "余白領域の側面を原点に貼り付ける"],
                         ["content", "コンテンツ領域の側面を原点に貼り付ける"],
@@ -1480,7 +1480,7 @@ const effectsJA = new Map<string, Translation>([
             description: "mask-imageの貼り付け位置を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["top-left", "左上"],
                         ["top", "上"],
                         ["top-right", "右上"],
@@ -1502,7 +1502,7 @@ const effectsJA = new Map<string, Translation>([
             description: "mask-imageの並べ方を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["repeat", "全方向に繰り返す"],
                         ["no-repeat", "繰り返さない"],
                         ["repeat-x", "水平方向に繰り返す"],
@@ -1527,7 +1527,7 @@ const effectsJA = new Map<string, Translation>([
             description: "mask-imageを表示するサイズを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "等倍で表示"],
                         ["cover", "要素全体を覆うように拡大縮小"],
                         ["contain", "マスク画像全体が収まるように拡大縮小"],
@@ -1543,7 +1543,7 @@ const effectsJA = new Map<string, Translation>([
             description: "SVGの<mask>要素のマスクモードを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "alpha",
                             "マスク画像の不透明度をマスクの値として使用する",

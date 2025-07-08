@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const sizingJA = new Map<string, Translation>([
     [
@@ -18,7 +18,7 @@ const sizingJA = new Map<string, Translation>([
             description: "要素の幅を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["w-（数値）", "任意の幅で指定"],
                         ["w-（分数）", "親要素に対する任意の割合で指定"],
                         ["w-（3xs–7xl）", "プリセット値を使用"],
@@ -70,7 +70,7 @@ const sizingJA = new Map<string, Translation>([
             description: "要素の最小幅を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意の幅で指定"],
                         ["（分数）", "親要素に対する任意の割合で指定"],
                         ["（3xs–7xl）", "プリセット値を使用"],
@@ -108,7 +108,7 @@ const sizingJA = new Map<string, Translation>([
             description: "要素の最大幅を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["max-w-（数値）", "任意の幅で指定"],
                         ["max-w-（分数）", "親要素に対する任意の割合で指定"],
                         ["max-w-（3xs–7xl）", "プリセット値を使用"],
@@ -116,7 +116,7 @@ const sizingJA = new Map<string, Translation>([
                         ["max-w-px", "1pxで指定"],
                         ["max-w-full", "親要素の幅で指定"],
                         ["max-w-dvw", "ダイナミックビューポートの幅で指定"],
-                        ["max-w-dvw", "ダイナミックビューポートの高さで指定"],
+                        ["max-w-dvh", "ダイナミックビューポートの高さで指定"],
                         ["max-w-lvw", "ラージビューポートの幅で指定"],
                         ["max-w-lvh", "ラージビューポートの高さで指定"],
                         ["max-w-svw", "スモールビューポートの幅で指定"],
@@ -150,7 +150,7 @@ const sizingJA = new Map<string, Translation>([
             description: "要素の高さを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["h-（数値）", "任意の高さで指定"],
                         ["h-（分数）", "親要素に対する任意の割合で指定"],
                         ["h-auto", "自動"],
@@ -201,7 +201,7 @@ const sizingJA = new Map<string, Translation>([
             description: "要素の最小高さを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意の高さで指定"],
                         ["（分数）", "親要素に対する任意の割合で指定"],
                         ["px", "1pxで指定"],
@@ -238,7 +238,7 @@ const sizingJA = new Map<string, Translation>([
             description: "要素の最大高さを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意の高さで指定"],
                         ["（分数）", "親要素に対する任意の割合で指定"],
                         ["none", "最大高さを指定しない"],

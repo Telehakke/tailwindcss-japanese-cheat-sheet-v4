@@ -1,17 +1,17 @@
 import { CheatSheetData } from "../../../../models/types";
 import { FontSize, TextColor } from "../../../common/classNames";
 
-/**
- * 中央揃えでカテゴリー名を表示する
- */
 const CategoryBar = ({
     cheatSheetData,
 }: {
     cheatSheetData: CheatSheetData;
 }) => {
+    const textStyle = `text-center font-bold break-keep  ${FontSize.xl} ${TextColor.orange500}`;
+    const scrollMargin = "scroll-mt-[126px] sm:scroll-mt-[80px]";
+
     return (
         <h2
-            className={`scroll-mt-[126px] p-2 pb-2 text-center font-bold break-keep whitespace-pre-line sm:scroll-mt-[80px] ${FontSize.textXl} ${TextColor.orange500}`}
+            className={`py-2 ${textStyle} ${scrollMargin}`}
             id={cheatSheetData.categoryEN}
         >
             {cheatSheetData.category}

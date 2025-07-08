@@ -3,9 +3,12 @@ import ExpandAndCollapseAndMenuButtons from "./sub/buttons";
 import SearchTextBox from "./sub/searchTextBox";
 
 const CheatSheetController = () => {
+    const sticky = "sticky top-0";
+    const flex = "flex flex-col sm:flex-row gap-4 justify-center";
+
     return (
         <div
-            className={`sticky top-0 -mx-4 flex flex-col justify-center gap-4 py-4 shadow-md sm:flex-row ${Bg.slate100_dark900}`}
+            className={`z-10 -mx-4 py-4 shadow-md ${Bg.slate100_dark900} ${sticky} ${flex}`}
         >
             <SearchTextBox />
             <ExpandAndCollapseAndMenuButtons />

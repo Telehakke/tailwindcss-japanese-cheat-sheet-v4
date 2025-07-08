@@ -1,83 +1,71 @@
 import { BreakpointPrefix, BreakpointPrefixEnum } from "./breakpointPrefix";
 import { CheatSheetData } from "./types";
 
+export default class CheatSheetDataSlicerFactory {
+    static createInstance = (
+        prefix: BreakpointPrefix,
+    ): CheatSheetDataSlicer => {
+        if (prefix === BreakpointPrefixEnum.xl)
+            return new CheatSheetDataSlicerXL();
+        if (prefix === BreakpointPrefixEnum.lg)
+            return new CheatSheetDataSlicerLG();
+        if (prefix === BreakpointPrefixEnum.md)
+            return new CheatSheetDataSlicerMD();
+        return new CheatSheetDataSlicerSM();
+    };
+}
+
 type CheatSheetGridRow = {
-    readonly firstRow: CheatSheetData[];
-    readonly secondRow: CheatSheetData[];
-    readonly thirdRow: CheatSheetData[];
-    readonly fourthRow: CheatSheetData[];
+    readonly firstColumn: readonly CheatSheetData[];
+    readonly secondColumn: readonly CheatSheetData[];
+    readonly thirdColumn: readonly CheatSheetData[];
+    readonly fourthColumn: readonly CheatSheetData[];
 };
 
-interface ICheatSheetDataSlicer {
-    sliced(cheatSheetData: CheatSheetData[]): CheatSheetGridRow;
+interface CheatSheetDataSlicer {
+    slice(dataList: readonly CheatSheetData[]): CheatSheetGridRow;
 }
 
-/**
- * チートシートを1列で表示する場合のデータの分割
- */
-class CheatSheetDataSlicerSM implements ICheatSheetDataSlicer {
-    sliced(cheatSheetData: CheatSheetData[]): CheatSheetGridRow {
+class CheatSheetDataSlicerSM implements CheatSheetDataSlicer {
+    slice = (dataList: readonly CheatSheetData[]): CheatSheetGridRow => {
         return {
-            firstRow: [...cheatSheetData],
-            secondRow: [],
-            thirdRow: [],
-            fourthRow: [],
+            firstColumn: [...dataList],
+            secondColumn: [],
+            thirdColumn: [],
+            fourthColumn: [],
         };
-    }
+    };
 }
 
-/**
- * チートシートを2列で表示する場合のデータの分割
- */
-class CheatSheetDataSlicerMD implements ICheatSheetDataSlicer {
-    sliced(cheatSheetData: CheatSheetData[]): CheatSheetGridRow {
+class CheatSheetDataSlicerMD implements CheatSheetDataSlicer {
+    slice = (dataList: readonly CheatSheetData[]): CheatSheetGridRow => {
         return {
-            firstRow: cheatSheetData.slice(0, 5),
-            secondRow: cheatSheetData.slice(5),
-            thirdRow: [],
-            fourthRow: [],
+            firstColumn: dataList.slice(0, 5),
+            secondColumn: dataList.slice(5),
+            thirdColumn: [],
+            fourthColumn: [],
         };
-    }
+    };
 }
 
-/**
- * チートシートを3列で表示する場合のデータの分割
- */
-class CheatSheetDataSlicerLG implements ICheatSheetDataSlicer {
-    sliced(cheatSheetData: CheatSheetData[]): CheatSheetGridRow {
+class CheatSheetDataSlicerLG implements CheatSheetDataSlicer {
+    slice = (dataList: readonly CheatSheetData[]): CheatSheetGridRow => {
         return {
-            firstRow: cheatSheetData.slice(0, 4),
-            secondRow: cheatSheetData.slice(4, 8),
-            thirdRow: cheatSheetData.slice(8),
-            fourthRow: [],
+            firstColumn: dataList.slice(0, 4),
+            secondColumn: dataList.slice(4, 8),
+            thirdColumn: dataList.slice(8),
+            fourthColumn: [],
         };
-    }
+    };
 }
 
-/**
- * チートシートを4列で表示する場合のデータの分割
- */
-class CheatSheetDataSlicerXL implements ICheatSheetDataSlicer {
-    sliced(cheatSheetData: CheatSheetData[]): CheatSheetGridRow {
+class CheatSheetDataSlicerXL implements CheatSheetDataSlicer {
+    slice = (dataList: readonly CheatSheetData[]): CheatSheetGridRow => {
         return {
-            firstRow: cheatSheetData.slice(0, 2),
-            secondRow: cheatSheetData.slice(2, 6),
-            thirdRow: cheatSheetData.slice(6, 10),
-            fourthRow: cheatSheetData.slice(10),
+            firstColumn: dataList.slice(0, 2),
+            secondColumn: dataList.slice(2, 6),
+            thirdColumn: dataList.slice(6, 10),
+            fourthColumn: dataList.slice(10),
         };
-    }
-}
-
-export default class CheatSheetDataSlicer {
-    private static values = new Map<BreakpointPrefix, ICheatSheetDataSlicer>([
-        [BreakpointPrefixEnum.sm, new CheatSheetDataSlicerSM()],
-        [BreakpointPrefixEnum.md, new CheatSheetDataSlicerMD()],
-        [BreakpointPrefixEnum.lg, new CheatSheetDataSlicerLG()],
-        [BreakpointPrefixEnum.xl, new CheatSheetDataSlicerXL()],
-    ]);
-
-    static get = (prefix: BreakpointPrefix): ICheatSheetDataSlicer => {
-        const result = this.values.get(prefix) ?? new CheatSheetDataSlicerSM();
-        return result;
     };
 }

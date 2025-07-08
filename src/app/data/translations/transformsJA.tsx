@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const transformsJA = new Map<string, Translation>([
     [
@@ -19,7 +19,7 @@ const transformsJA = new Map<string, Translation>([
                 "三次元で座標変換した際に、背面を透過するかどうかを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["hidden", "透過しない"],
                         ["visible", "透過する"],
                     ]}
@@ -34,7 +34,7 @@ const transformsJA = new Map<string, Translation>([
             description: "三次元で座標変換した際の、パースの強弱を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["dramatic", "強"],
                         ["near", "↑"],
                         ["normal", "普通"],
@@ -53,7 +53,7 @@ const transformsJA = new Map<string, Translation>([
             description: "遠近法の消失点の位置を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["center", "中央"],
                         ["top", "上"],
                         ["top-right", "右上"],
@@ -75,7 +75,7 @@ const transformsJA = new Map<string, Translation>([
             description: "指定した角度で回転する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["rotate-none", "回転しない"],
                         ["rotate-（数値）", "時計回りで回転"],
                         ["rotate-x-（数値）", "x軸で回転"],
@@ -93,7 +93,7 @@ const transformsJA = new Map<string, Translation>([
             description: "指定したパーセンテージで拡大縮小する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["scale-none", "拡大縮小しない"],
                         ["scale-（数値）", "拡大縮小"],
                         ["scale-x-（数値）", "水平方向に拡大縮小"],
@@ -112,7 +112,7 @@ const transformsJA = new Map<string, Translation>([
             description: "斜め方向に歪める",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "斜め方向に引き延ばしたように傾斜する"],
                         ["x-（数値）", "水平方向に引き延ばしたように傾斜する"],
                         ["y-（数値）", "垂直方向に引き延ばしたように傾斜する"],
@@ -128,7 +128,7 @@ const transformsJA = new Map<string, Translation>([
             description: "変形の描画方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["none", "変形を解除"],
                         ["gpu", "GPUを使用して描画"],
                         ["cpu", "CPUを使用して描画"],
@@ -144,7 +144,7 @@ const transformsJA = new Map<string, Translation>([
             description: "変形の基準となる原点を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["center", "中央"],
                         ["top", "上"],
                         ["top-right", "右上"],
@@ -166,7 +166,7 @@ const transformsJA = new Map<string, Translation>([
             description: "変形を立体的に描画するかどうかを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["3d", "三次元で描画"],
                         ["flat", "二次元で描画"],
                     ]}
@@ -181,7 +181,7 @@ const transformsJA = new Map<string, Translation>([
             description: "指定した距離だけ移動する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "斜め方向に任意の距離だけ移動"],
                         ["（分数）", "斜め方向に任意の割合だけ移動"],
                         ["full", "斜め方向に自身のサイズ分だけ移動"],

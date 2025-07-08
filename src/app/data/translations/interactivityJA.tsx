@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const interactivityJA = new Map<string, Translation>([
     [
@@ -18,7 +18,7 @@ const interactivityJA = new Map<string, Translation>([
             description: "ブラウザーが用意するデフォルトカラーを変更する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "inherit",
                             "親要素からスタイルを引き継ぐ",
@@ -159,7 +159,7 @@ const interactivityJA = new Map<string, Translation>([
                 "ブラウザーが用意するデフォルトスタイルを使用するかどうかを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["none", "使用しない"],
                         ["auto", "使用する"],
                     ]}
@@ -175,7 +175,7 @@ const interactivityJA = new Map<string, Translation>([
             description: "テキストボックス入力時のカーソルの色を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "inherit",
                             "親要素からスタイルを引き継ぐ",
@@ -321,7 +321,7 @@ const interactivityJA = new Map<string, Translation>([
                 "ブラウザがデフォルトで用意するライト配色／ダーク配色の使用を制御する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["normal", "ブラウザにまかせる"],
                         ["dark", "デフォルトのダーク配色を使用する"],
                         ["light", "デフォルトのライト配色を使用する"],
@@ -344,7 +344,7 @@ const interactivityJA = new Map<string, Translation>([
                 "要素の上にマウスカーソルを重ねたときの、カーソル形状を指定する\n↓このエリアにカーソルを重ねることでプレビュー可能",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "auto",
                             "自動",
@@ -538,7 +538,7 @@ const interactivityJA = new Map<string, Translation>([
                 "テキスト入力を受け付ける要素（<input>や<textarea>）のサイズを制御する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["fixed", "サイズを固定"],
                         ["content", "コンテンツに合わせてサイズを可変"],
                     ]}
@@ -554,7 +554,7 @@ const interactivityJA = new Map<string, Translation>([
                 "クリックなどのマウスイベントをキャッチするかどうかを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["none", "キャッチせずに、背後の要素へと渡す"],
                         ["auto", "キャッチする"],
                     ]}
@@ -570,7 +570,7 @@ const interactivityJA = new Map<string, Translation>([
                 "<textarea>要素や、overflow-scrollを付与した要素のサイズ変更を可能にするかどうかを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["resize-none", "サイズ変更不可"],
                         ["resize", "全方向に変更可能"],
                         ["resize-y", "垂直方向にのみ変更可能"],
@@ -587,7 +587,7 @@ const interactivityJA = new Map<string, Translation>([
             description: "<a>要素を用いたページ内リンクの動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "瞬時にスクロールする"],
                         ["smooth", "なめらかにスクロールする"],
                     ]}
@@ -603,7 +603,7 @@ const interactivityJA = new Map<string, Translation>([
                 "スクロールスナップで止まる位置を、余白を与えることで調整する\n余白を子要素側に設定したい場合に使用する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["m-（数値）", "全方向に余白を与える"],
                         ["mx-（数値）", "水平方向に余白を与える"],
                         ["my-（数値）", "垂直方向に余白を与える"],
@@ -626,7 +626,7 @@ const interactivityJA = new Map<string, Translation>([
                 "スクロールスナップで止まる位置を、余白を与えることで調整する\n余白を親要素側に設定したい場合に使用する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["p-（数値）", "全方向に余白を与える"],
                         ["px-（数値）", "水平方向に余白を与える"],
                         ["py-（数値）", "垂直方向に余白を与える"],
@@ -649,7 +649,7 @@ const interactivityJA = new Map<string, Translation>([
                 "親要素と自身との、どの位置を基準にスクロールの動きを止めるのかを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["start", "上、または左側が互いに揃うように止める"],
                         ["end", "下、または右側が互いに揃うように止める"],
                         ["center", "中央が互いに揃うように止める"],
@@ -667,7 +667,7 @@ const interactivityJA = new Map<string, Translation>([
                 "すばやくスクロールした際の、ブレーキのかけ方を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["normal", "要素をスキップ可能にする"],
                         [
                             "always",
@@ -686,7 +686,7 @@ const interactivityJA = new Map<string, Translation>([
                 "スクロールスナップを有効にする方向や、スナップの強制度合いを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["none", "スクロールスナップしない"],
                         ["x", "水平方向にスクロールスナップ"],
                         ["y", "垂直方向にスクロールスナップ"],
@@ -708,7 +708,7 @@ const interactivityJA = new Map<string, Translation>([
             description: "要素が受け入れるタッチ操作のジェスチャーを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "全てのジェスチャーを有効"],
                         ["none", "全てのジェスチャーを無効"],
                         ["pan-x", "水平方向のスクロールのみを許可"],
@@ -731,7 +731,7 @@ const interactivityJA = new Map<string, Translation>([
             description: "テキスト選択の動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["none", "テキスト選択不可"],
                         ["text", "テキスト選択を許可する"],
                         ["all", "テキスト全体をワンクリックで選択状態にする"],
@@ -749,7 +749,7 @@ const interactivityJA = new Map<string, Translation>([
                 "ページに何かしらの変化が発生する可能性を事前にブラウザーへ伝えることで、アニメーションなどの最適化を図る\n使用法を間違えると逆にパフォーマンス悪化につながるので、基本的にはブラウザーに任せたほうが良い",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "ブラウザーに最適化を任せる"],
                         ["scroll", "スクロール位置が変化する可能性を伝える"],
                         ["contents", "コンテンツが変化する可能性を伝える"],

@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const accessibilityJA = new Map<string, Translation>([
     [
@@ -19,7 +19,7 @@ const accessibilityJA = new Map<string, Translation>([
                 "ユーザーが設定している、視覚サポート系アクセシビリティー（ハイコントラストモードなど）の効果の受け方を指定する\nブラウザー任せでは問題がある箇所に限定して、適切に使用すること",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "効果を受け入れる"],
                         ["none", "効果を受け入れない"],
                     ]}

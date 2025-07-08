@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const transitionsAndAnimationJA = new Map<string, Translation>([
     [
@@ -19,7 +19,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
                 "値が変化する際にアニメーションさせたいプロパティーを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "transition",
                             "いくつかのプロパティーを組み合わせた、おすすめの設定",
@@ -46,7 +46,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
                 "従来、transition-durationの効果を受け付けなかった離散プロパティ（displayやvisibilityなど）に対し、効果を受け付けさせる新しいCSSプロパティ",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["normal", "瞬時に遷移する"],
                         [
                             "discrete",
@@ -64,7 +64,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
             description: "遷移が完了するまでの時間を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意の時間（ミリ秒）を指定"],
                         ["initial", "初期値（150ms）を使用"],
                     ]}
@@ -79,7 +79,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
             description: "値が変化する速度を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["linear", "一定の速度"],
                         ["in", "徐々に加速"],
                         ["out", "徐々に減速"],
@@ -106,7 +106,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
             description: "要素に動きを与える",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "spin",
                             "時計回りに回転",

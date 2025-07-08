@@ -1,8 +1,16 @@
-export type AddedVersion = {
+export const getAddedVersion = (entry: string): string => {
+    for (const item of addedVersions) {
+        const result = item.entries.find((v) => v[0] === entry)?.[1];
+        if (result != null) return result;
+    }
+    return "";
+};
+
+type AddedVersion = {
     category: string;
     entries: [string, string][];
 };
-export const addedVersions: AddedVersion[] = [
+const addedVersions: AddedVersion[] = [
     {
         category: "Layout",
         entries: [

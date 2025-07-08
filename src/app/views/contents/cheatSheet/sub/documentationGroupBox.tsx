@@ -1,8 +1,8 @@
-import { atom, PrimitiveAtom, useAtom, useAtomValue, useSetAtom } from "jotai";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { shouldExpandAllAtom } from "../../../../appStates";
-import { addedVersions } from "../../../../data/addedVersions";
-import { DetailedDocumentation } from "../../../../models/types";
+import { useAtomValue, useSetAtom } from "jotai";
+import { useLayoutEffect, useRef, useState } from "react";
+import { isCopiedAtom, shouldExpandAllAtom } from "../../../../appStates";
+import { getAddedVersion } from "../../../../models/addedVersions";
+import { DocumentationDetails } from "../../../../models/types";
 import {
     Bg,
     Border,
@@ -18,30 +18,31 @@ import {
 } from "../../../common/icons";
 import RoundedButton from "../../../common/roundedButton";
 
-type WithInitialValue<Value> = {
-    init: Value;
-};
-
-/**
- * 項目、リンクボタン、説明、詳細、パラメーターを表示する
- */
 const DocumentationGroupBox = ({
-    detailedDocumentation,
+    documentationDetails,
 }: {
-    detailedDocumentation: DetailedDocumentation;
+    documentationDetails: DocumentationDetails;
 }) => {
-    const shouldExpandAtom = useRef(atom(false));
+    const shouldExpandAll = useAtomValue(shouldExpandAllAtom);
+    const [shouldExpand, setShouldExpand] = useState<boolean>(
+        shouldExpandAll ?? false,
+    );
+
+    // 「全て展開・全て折りたたむ」ボタンに連動して詳細エリアを開閉する
+    if (shouldExpandAll !== shouldExpand && shouldExpandAll != null) {
+        setShouldExpand(shouldExpandAll);
+    }
 
     return (
         <div className="space-y-2 px-2 pb-2">
             <EntryAndLinkBar
-                detailedDocumentation={detailedDocumentation}
-                shouldExpandAtom={shouldExpandAtom.current}
+                documentationDetails={documentationDetails}
+                setShouldExpand={setShouldExpand}
             />
-            <DescriptionBar detailedDocumentation={detailedDocumentation} />
+            <DescriptionBar documentationDetails={documentationDetails} />
             <DetailAndParametersBox
-                detailedDocumentation={detailedDocumentation}
-                shouldExpandAtom={shouldExpandAtom.current}
+                documentationDetails={documentationDetails}
+                shouldExpand={shouldExpand}
             />
         </div>
     );
@@ -49,75 +50,55 @@ const DocumentationGroupBox = ({
 
 export default DocumentationGroupBox;
 
-/**
- * 項目とリンクを表示するバー
- */
+/* -------------------------------------------------------------------------- */
+
 const EntryAndLinkBar = ({
-    detailedDocumentation,
-    shouldExpandAtom,
+    documentationDetails,
+    setShouldExpand,
 }: {
-    detailedDocumentation: DetailedDocumentation;
-    shouldExpandAtom: PrimitiveAtom<boolean> & WithInitialValue<boolean>;
+    documentationDetails: DocumentationDetails;
+    setShouldExpand: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-    const setShouldExpand = useSetAtom(shouldExpandAtom);
     const setShouldExpandAll = useSetAtom(shouldExpandAllAtom);
 
-    // 項目エリアをクリックすると詳細エリアを開閉する
-    const handleEntryClick: React.MouseEventHandler<HTMLDivElement> = () => {
+    const handleClick = (): void => {
         setShouldExpand((v) => !v);
         setShouldExpandAll(null);
     };
+
+    const space = "-mx-2 p-2";
+    const flex = "flex justify-between";
+    const border = `border-t-2 ${Border.neutral400_dark700}`;
+    const bg = `${Bg.neutral200_dark900} ${Bg.hoverNeutral300_dark700}`;
+
     return (
         <div
-            className={`-mx-2 flex cursor-pointer justify-between border-t-2 p-2 leading-5 whitespace-pre-line transition ${Border.neutral400_dark700} ${Bg.neutral200_dark900} ${Bg.hoverNeutral300_dark700} `}
-            onClick={handleEntryClick}
+            className={`cursor-pointer transition ${space} ${flex} ${border} ${bg} `}
+            onClick={handleClick}
         >
-            <EntryAndLink detailedDocumentation={detailedDocumentation} />
+            <EntryAndLink documentationDetails={documentationDetails} />
         </div>
     );
 };
 
-/**
- * 項目とリンクを表示する
- */
 const EntryAndLink = ({
-    detailedDocumentation,
+    documentationDetails,
 }: {
-    detailedDocumentation: DetailedDocumentation;
+    documentationDetails: DocumentationDetails;
 }) => {
-    const addedVersion = (): string => {
-        let result = "";
-        outer: for (const item of addedVersions) {
-            for (const entry of item.entries) {
-                if (entry[0] === detailedDocumentation.entry.split("\n")[0]) {
-                    result = entry[1];
-                    break outer;
-                }
-            }
-        }
-        return result;
-    };
-    const version = addedVersion();
-
     return (
         <>
-            <h3>{detailedDocumentation.entry}</h3>
-            <div className="flex gap-2">
-                <p
-                    className={`m-auto rounded-md px-1 text-xs font-bold text-neutral-100 ${version === "v3" ? "bg-neutral-500" : "bg-green-600"}`}
-                >
-                    {version}
-                </p>
+            <h3 className="leading-5 whitespace-pre-line">
+                {documentationDetails.entry}
+            </h3>
+            <div className="flex items-center gap-2">
+                <AddedVersion documentationDetails={documentationDetails} />
                 <a
-                    className={`my-auto w-10 content-center rounded-full ${Fill.neutral500_hoverSky500} ${Bg.hoverNeutral50}`}
-                    href={detailedDocumentation.url}
+                    className={`w-10 rounded-full ${Fill.neutral500_hoverSky500} ${Bg.hoverNeutral50}`}
+                    href={documentationDetails.url}
                     target="_blank"
                     aria-label="公式ドキュメントに移動して詳細を確認する"
-                    onClick={(event) => {
-                        // handleEntryClick()が呼び出されないよう、
-                        // クリックイベントの伝播を止める
-                        event.stopPropagation();
-                    }}
+                    onClick={(e) => e.stopPropagation()}
                 >
                     <Link className="mx-auto" />
                 </a>
@@ -126,54 +107,77 @@ const EntryAndLink = ({
     );
 };
 
-/**
- * 説明を表示する
- */
-const DescriptionBar = ({
-    detailedDocumentation,
+const AddedVersion = ({
+    documentationDetails,
 }: {
-    detailedDocumentation: DetailedDocumentation;
+    documentationDetails: DocumentationDetails;
 }) => {
+    const version = getAddedVersion(documentationDetails.entry.split("\n")[0]);
+    const bg = version === "v3" ? "bg-neutral-500" : "bg-green-600";
+
     return (
         <p
-            className={`whitespace-pre-line ${FontSize.textSm} ${TextColor.neutral600_dark300}`}
+            className={`rounded-md px-1 text-xs font-bold text-neutral-100 ${bg}`}
         >
-            {detailedDocumentation.description}
+            {version}
         </p>
     );
 };
 
-/**
- * 詳細な説明とパラメータを表示する
- */
-const DetailAndParametersBox = ({
-    detailedDocumentation,
-    shouldExpandAtom,
-}: {
-    detailedDocumentation: DetailedDocumentation;
-    shouldExpandAtom: PrimitiveAtom<boolean> & WithInitialValue<boolean>;
-}) => {
-    const [shouldExpand, setShouldExpand] = useAtom(shouldExpandAtom);
-    const shouldExpandAll = useAtomValue(shouldExpandAllAtom);
+/* -------------------------------------------------------------------------- */
 
-    // 「全て展開」「全て折りたたむ」が押された状態に合わせて詳細エリアを開閉する
-    useEffect(() => {
-        if (shouldExpandAll != null) {
-            setShouldExpand(shouldExpandAll);
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [shouldExpandAll]);
+const DescriptionBar = ({
+    documentationDetails,
+}: {
+    documentationDetails: DocumentationDetails;
+}) => {
+    return (
+        <p
+            className={`whitespace-pre-line ${FontSize.sm} ${TextColor.neutral600_dark300}`}
+        >
+            {documentationDetails.description}
+        </p>
+    );
+};
+
+/* -------------------------------------------------------------------------- */
+
+const DetailAndParametersBox = ({
+    documentationDetails,
+    shouldExpand,
+}: {
+    documentationDetails: DocumentationDetails;
+    shouldExpand: boolean;
+}) => {
+    if (!shouldExpand) return <></>;
+    return (
+        <>
+            {documentationDetails.detail}
+            <ParameterView documentationDetails={documentationDetails} />
+        </>
+    );
+};
+
+const ParameterView = ({
+    documentationDetails,
+}: {
+    documentationDetails: DocumentationDetails;
+}) => {
+    const [innerShouldExpand, setInnerShouldExpand] = useState(false);
+    const [shouldShowButton, setShouldShowButton] = useState(false);
 
     return (
         <>
-            {shouldExpand && (
-                <>
-                    {detailedDocumentation.detail}
-                    <ParametersTable
-                        detailedDocumentation={detailedDocumentation}
-                    />
-                </>
-            )}
+            <ParameterTable
+                documentationDetails={documentationDetails}
+                innerShouldExpand={innerShouldExpand}
+                setShouldShowButton={setShouldShowButton}
+            />
+            <ParameterToggleButton
+                innerShouldExpand={innerShouldExpand}
+                setInnerShouldExpand={setInnerShouldExpand}
+                shouldShowButton={shouldShowButton}
+            />
         </>
     );
 };
@@ -182,140 +186,105 @@ const DetailAndParametersBox = ({
  * クラス名とそれに対応するCSSを表示する\
  * 高さが144pxを超える場合、コンパクトに表示する
  */
-const ParametersTable = ({
-    detailedDocumentation,
+const ParameterTable = ({
+    documentationDetails,
+    innerShouldExpand,
+    setShouldShowButton,
 }: {
-    detailedDocumentation: DetailedDocumentation;
+    documentationDetails: DocumentationDetails;
+    innerShouldExpand: boolean;
+    setShouldShowButton: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-    const [innerShouldExpand, innerSetShouldExpand] = useState(false);
-    const [shouldShowButton, setShouldShowButton] = useState(false);
     const tableElement = useRef<HTMLTableElement>(null);
 
-    // レンダリング直後に<table>要素の高さを取得する
+    // useEffectを使用すると描画がチラつくため、useLayoutEffectを使用
     useLayoutEffect(() => {
-        const tableHeight =
-            tableElement.current?.getBoundingClientRect().height;
-        if (tableHeight == null) return;
+        const height = tableElement.current?.getBoundingClientRect().height;
+        if (height == null) return;
+        if (height <= 144) return;
 
-        if (tableHeight > 144) {
-            setShouldShowButton(true);
-        }
-    }, []);
+        setShouldShowButton(true);
+    }, [setShouldShowButton]);
+
+    const maxHeight = innerShouldExpand ? "" : "max-h-[144px]";
+    const tableStyle = `table-fixed border-collapse`;
+    const outline = `rounded-lg outline-2 -outline-offset-2 ${Outline.stone400_dark700}`;
+
+    return (
+        <div className={`overflow-clip ${maxHeight}`}>
+            <table
+                className={`w-full overflow-clip whitespace-pre-line ${tableStyle} ${outline}`}
+                ref={tableElement}
+            >
+                <tbody>
+                    {documentationDetails.parameters
+                        .filter((_, i) => {
+                            // 描画コストを減らすため、折りたたみ時は7行分までを表示する
+                            if (!innerShouldExpand) return i < 7;
+                            return true;
+                        })
+                        .map((parameters, i) => (
+                            <tr
+                                key={i}
+                                className={`${Bg.oddStone50_dark800} ${Bg.evenStone200_dark900}`}
+                            >
+                                <TableData parameters={parameters} />
+                            </tr>
+                        ))}
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
+const TableData = ({ parameters }: { parameters: string[] }) => {
+    const setIsCopied = useSetAtom(isCopiedAtom);
+
+    const handleClick = (text: string): void => {
+        navigator.clipboard.writeText(text).then(() => {
+            setIsCopied(true);
+        });
+    };
+
+    const textColor = `${TextColor.firstBlue700_dark300} ${TextColor.neutral600_dark300} ${TextColor.lastGreen700_dark300}`;
 
     return (
         <>
-            <div
-                className={`overflow-clip ${innerShouldExpand ? "" : "max-h-[144px]"}`}
-            >
-                <table
-                    className={`w-full table-fixed border-collapse overflow-clip rounded-lg whitespace-pre-line outline-2 -outline-offset-2 ${Outline.stone400_dark700}`}
-                    ref={tableElement}
+            {parameters.map((parameter) => (
+                <td
+                    key={parameter}
+                    className={`cursor-copy px-2 py-1 text-xs hover:underline ${textColor}`}
+                    onClick={() => handleClick(parameter)}
                 >
-                    {detailedDocumentation.entry.includes("Container") ? (
-                        // Layout > Containerの項目だけ、専用の<tbody>要素を使用する
-                        <TbodyUsedOnlyForContainer
-                            documentation={detailedDocumentation}
-                        />
-                    ) : (
-                        // それ以外で使用する<tbody>要素
-                        <TbodyOfParameters
-                            documentation={detailedDocumentation}
-                            shouldExpand={innerShouldExpand}
-                        />
-                    )}
-                </table>
-            </div>
-            <RoundedButton
-                className={`w-full border-2 ${Border.neutral400_dark700} ${Bg.hoverNeutral100_dark700} ${shouldShowButton ? "" : "hidden"}`}
-                Icon={
-                    innerShouldExpand ? (
-                        <KeyboardArrowUp className={Fill.neutral500} />
-                    ) : (
-                        <KeyboardArrowDown className={Fill.neutral500} />
-                    )
-                }
-                text=""
-                onClick={() => innerSetShouldExpand(!innerShouldExpand)}
-            />
+                    {parameter}
+                </td>
+            ))}
         </>
     );
 };
 
-/**
- * Parameterの値を表示するための<tbody>要素
- */
-const TbodyOfParameters = ({
-    documentation,
-    shouldExpand,
+const ParameterToggleButton = ({
+    innerShouldExpand,
+    setInnerShouldExpand,
+    shouldShowButton,
 }: {
-    documentation: DetailedDocumentation;
-    shouldExpand: boolean;
+    innerShouldExpand: boolean;
+    setInnerShouldExpand: React.Dispatch<React.SetStateAction<boolean>>;
+    shouldShowButton: boolean;
 }) => {
-    return (
-        <tbody>
-            {documentation.parameters
-                .filter((_, i) => {
-                    // 描画コストを減らすために折りたたみ時は7行分まで表示する
-                    if (!shouldExpand) {
-                        return i < 7;
-                    }
+    if (!shouldShowButton) return <></>;
 
-                    return true;
-                })
-                .map((parameters, i) => {
-                    return (
-                        <tr
-                            key={i}
-                            className={`${Bg.oddStone50_dark800} ${Bg.evenStone200_dark900}`}
-                        >
-                            {parameters.map((parameter) => {
-                                return (
-                                    <td
-                                        key={parameter}
-                                        className={`px-2 py-1 text-xs ${TextColor.firstBlue700_dark300} ${TextColor.neutral600_dark300} ${TextColor.lastGreen700_dark300}`}
-                                    >
-                                        {parameter}
-                                    </td>
-                                );
-                            })}
-                        </tr>
-                    );
-                })}
-        </tbody>
+    const icon = innerShouldExpand ? (
+        <KeyboardArrowUp className={Fill.neutral500} />
+    ) : (
+        <KeyboardArrowDown className={Fill.neutral500} />
     );
-};
 
-/**
- * 「Layout > Container」のみで使用する<tbody>要素
- */
-const TbodyUsedOnlyForContainer = ({
-    documentation,
-}: {
-    documentation: DetailedDocumentation;
-}) => {
     return (
-        <tbody>
-            {documentation.parameters.map((parameters, i) => {
-                return (
-                    <tr
-                        key={i}
-                        className={`${Bg.oddStone50_dark800} ${Bg.evenStone200_dark900}`}
-                    >
-                        {parameters.map((parameter, j) => {
-                            return (
-                                <td
-                                    key={parameter}
-                                    className={`px-2 py-1 text-xs ${TextColor.neutral600_dark300} ${TextColor.lastGreen700_dark300} ${i === 0 ? TextColor.firstBlue700_dark300 : ""}`}
-                                    // 最初のセルだけ縦方向に連結する
-                                    rowSpan={i === 0 && j === 0 ? 6 : undefined}
-                                >
-                                    {parameter}
-                                </td>
-                            );
-                        })}
-                    </tr>
-                );
-            })}
-        </tbody>
+        <RoundedButton
+            className={`w-full border-2 ${Border.neutral400_dark700} ${Bg.hoverNeutral100_dark700}`}
+            Icon={icon}
+            onClick={() => setInnerShouldExpand((v) => !v)}
+        />
     );
 };

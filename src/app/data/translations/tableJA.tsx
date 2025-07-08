@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const tableJA = new Map<string, Translation>([
     [
@@ -18,7 +18,7 @@ const tableJA = new Map<string, Translation>([
             description: "テーブルセルの境界線の種類を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["collapse", "隣接するセルの境界線をひとつに結合する"],
                         ["separate", "セルの境界線を独立する"],
                     ]}
@@ -33,7 +33,7 @@ const tableJA = new Map<string, Translation>([
             description: "セルの周辺に設ける隙間の広さを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "上下左右の隙間の広さ"],
                         ["x-（数値）", "水平方向の隙間の広さ"],
                         ["y-（数値）", "垂直方向の隙間の広さ"],
@@ -49,7 +49,7 @@ const tableJA = new Map<string, Translation>([
             description: "テーブル列の割り当て方を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "auto",
                             "セルの内容に合わせて自動的に列の幅を調整する",
@@ -67,7 +67,7 @@ const tableJA = new Map<string, Translation>([
             description: "テーブルの<caption>要素を表示する位置を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["top", "上側"],
                         ["bottom", "下側"],
                     ]}

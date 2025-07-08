@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const svgJA = new Map<string, Translation>([
     [
@@ -18,7 +18,7 @@ const svgJA = new Map<string, Translation>([
             description: "<svg>要素の塗りつぶし色を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["none", "なし", <td className="w-10"></td>],
                         [
                             "inherit",
@@ -156,7 +156,7 @@ const svgJA = new Map<string, Translation>([
             description: "<svg>要素の線の色を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["none", "なし", <td className="w-10"></td>],
                         [
                             "inherit",

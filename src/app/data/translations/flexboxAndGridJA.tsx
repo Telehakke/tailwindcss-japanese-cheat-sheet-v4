@@ -1,6 +1,6 @@
-import { CategoryEnum } from "../models/category";
-import { Translation } from "../models/types";
-import DetailTable from "../views/common/detailTable";
+import { CategoryEnum } from "../../models/category";
+import { Translation } from "../../models/types";
+import DetailTable from "../../views/common/detailTable";
 
 const flexboxAndGridJA = new Map<string, Translation>([
     [
@@ -19,7 +19,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "親要素にflexが指定されている場合の、自身の初期サイズを指定する\n親要素にflex-rowが指定されている場合はwidth、flex-colが指定されている場合はheightとして動作する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意のサイズで指定"],
                         ["（分数）", "親要素に対する任意の割合で指定"],
                         ["full", "親要素と同じサイズで指定"],
@@ -37,7 +37,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "flexの子要素の並べ方を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["row", "左から右へ並べる"],
                         ["row-reverse", "右から左へ並べる"],
                         ["col", "上から下へ並べる"],
@@ -55,7 +55,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "flexで子要素を配置する際に、親要素からはみ出す場合の折り返し動作を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["nowrap", "折り返さない"],
                         ["wrap", "複数行に折り返す"],
                         [
@@ -75,7 +75,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "flex-basis、flex-grow、flex-shrinkを一度に設定し、親要素のサイズに合わせた自身の伸び縮みを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "1",
                             "自身のwidth、またはheightのサイズを無視して伸び縮みする",
@@ -102,7 +102,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "flexが指定されている親要素に空間があれば、自身を伸ばすかどうかを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["grow", "伸ばす"],
                         ["grow-0", "伸ばさない"],
                     ]}
@@ -118,7 +118,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "flexが指定されている親要素からはみ出す場合に、自身を縮めるかどうかを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["shrink", "縮める"],
                         ["shrink-0", "縮めない"],
                     ]}
@@ -134,7 +134,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "flexやgridの子要素の並びに対する自身の順序を指定する。子要素は値の昇順に配置される",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意の順序を指定"],
                         ["first", "並びの先頭に配置"],
                         ["last", "並びの最後に配置"],
@@ -151,7 +151,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "gridの列を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意の数だけ等間隔の列を作成する"],
                         ["none", "グリッドレイアウトを解除する"],
                         [
@@ -170,7 +170,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "gridの複数のセルを水平方向に連結する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["span-（数値）", "指定した数だけセルを連結"],
                         ["start-（数値）", "連結の開始位置を指定"],
                         ["end-（数値）", "連結の終端位置を指定"],
@@ -187,7 +187,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "gridの行を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["（数値）", "任意の数だけ等間隔の行を作成する"],
                         ["none", "グリッドレイアウトを解除する"],
                         [
@@ -206,7 +206,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "gridの複数のセルを垂直方向に連結する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["span-（数値）", "指定した数だけセルを連結"],
                         ["start-（数値）", "連結の開始位置を指定"],
                         ["end-（数値）", "連結の終端位置を指定"],
@@ -223,7 +223,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "gridの子要素の並べ方を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["row", "右方向へ子要素を並べ、下に向かって折り返す"],
                         ["col", "下方向へ子要素を並べ、右に向かって折り返す"],
                         ["dense", "可能な限りセルを埋めるように子要素を並べる"],
@@ -242,7 +242,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "セルの連結具合を元に、gridの列数を自動的に決定。その際の列の幅の計算方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "自動"],
                         [
                             "min",
@@ -266,7 +266,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "セルの連結具合を元に、gridの行数を自動的に決定。その際の行の高さの計算方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "自動"],
                         [
                             "min",
@@ -289,7 +289,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "flexやgridの子要素同士の隙間の長さを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         [
                             "（数値）",
                             "水平、垂直の両方向に指定した長さの隙間を挟む",
@@ -308,7 +308,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "flexやgridの行揃えを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["start", "水平方向の開始側に子要素を寄せる"],
                         ["end", "水平方向の終端側に子要素を寄せる"],
                         [
@@ -351,7 +351,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "flexやgridのレイアウトに対する子要素の配置方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["start", "セルの水平方向の開始側に揃える"],
                         ["end", "セルの水平方向の終端側に揃える"],
                         [
@@ -381,7 +381,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "justify-itemsの効果を打ち消し、子要素自身に配置方法を決定させる",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "justify-itemsの効果を受け入れる"],
                         ["start", "セルの水平方向の開始側に揃える"],
                         ["center", "セルの中央に揃える"],
@@ -410,7 +410,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "flexやgridの垂直方向の揃えを指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["normal", "flexではstart、gridではstretchの動作"],
                         ["center", "中央に子要素を集める"],
                         ["start", "垂直方向の開始側に子要素を寄せる"],
@@ -445,7 +445,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "flexやgridのレイアウトに対する子要素の配置方法を指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["start", "セルの垂直方向の開始側に揃える"],
                         ["end", "セルの垂直方向の終端側に揃える"],
                         [
@@ -482,7 +482,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
                 "align-itemsの効果を打ち消し、子要素自身に配置方法を決定させる",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "align-itemsの効果を受け入れる"],
                         ["start", "セルの垂直方向の開始側に揃える"],
                         ["end", "セルの垂直方向の終端側に揃える"],
@@ -516,7 +516,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "justify-contentとalign-contentを一度に指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["center", "子要素を中央に引き寄せるように配置する"],
                         [
                             "center-safe",
@@ -557,7 +557,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "justify-itemsとalign-itemsを一度に指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["start", "セルの開始側の角に配置する"],
                         ["end", "セルの終端側の角に配置する"],
                         [
@@ -589,7 +589,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
             description: "justify-selfとalign-selfを一度に指定する",
             detail: (
                 <DetailTable
-                    value={[
+                    list={[
                         ["auto", "place-itemsの効果を受け入れる"],
                         ["start", "セルの開始側の角に配置する"],
                         ["end", "セルの終端側の角に配置する"],
