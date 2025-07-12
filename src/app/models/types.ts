@@ -1,21 +1,21 @@
 export type Navigation = {
     category: string;
-    urls: string[];
+    urls: readonly string[];
 };
 
 export type Documentation = {
     url: string;
     entry: string;
     description: string;
-    parameters: string[][];
+    parameters: readonly string[][];
 };
 
-export type DetailedDocumentation = {
+export type DocumentationDetails = {
     url: string;
     entry: string;
     description: string;
     detail: React.JSX.Element | null | undefined;
-    parameters: string[][];
+    parameters: readonly string[][];
 };
 
 export type Translation = {
@@ -27,5 +27,12 @@ export type Translation = {
 export type CheatSheetData = {
     category: string;
     categoryEN: string;
-    detailedDocumentations: DetailedDocumentation[];
+    documentationDetailsList: readonly DocumentationDetails[];
 };
+
+export const LanguageEnum = {
+    en: "en",
+    ja: "ja",
+} as const;
+
+export type Language = (typeof LanguageEnum)[keyof typeof LanguageEnum];

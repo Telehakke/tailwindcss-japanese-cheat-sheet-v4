@@ -1,6 +1,3 @@
-/**
- * アイコンを付与できるカプセル状のボタン
- */
 const RoundedButton = ({
     className,
     Icon,
@@ -9,7 +6,7 @@ const RoundedButton = ({
 }: {
     className?: string;
     Icon?: React.JSX.Element;
-    text: string;
+    text?: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }) => {
     return (
@@ -18,7 +15,7 @@ const RoundedButton = ({
             onClick={onClick}
         >
             {Icon}
-            <p>{text}</p>
+            {text != null && <p>{text}</p>}
         </button>
     );
 };

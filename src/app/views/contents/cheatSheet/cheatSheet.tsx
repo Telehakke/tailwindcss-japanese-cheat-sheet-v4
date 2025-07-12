@@ -1,11 +1,8 @@
 import { CheatSheetData } from "../../../models/types";
-import FloatingCard from "./sub/floatingCard";
 import CategoryBar from "./sub/categoryBar";
 import DocumentationGroupBox from "./sub/documentationGroupBox";
+import FloatingCard from "./sub/floatingCard";
 
-/**
- * カテゴリー名とその項目の説明を表示する
- */
 export const CheatSheet = ({
     cheatSheetData,
 }: {
@@ -14,14 +11,12 @@ export const CheatSheet = ({
     return (
         <FloatingCard>
             <CategoryBar cheatSheetData={cheatSheetData} />
-            {cheatSheetData.detailedDocumentations.map((doc) => {
-                return (
-                    <DocumentationGroupBox
-                        key={doc.entry}
-                        detailedDocumentation={doc}
-                    />
-                );
-            })}
+            {cheatSheetData.documentationDetailsList.map((doc) => (
+                <DocumentationGroupBox
+                    key={doc.entry}
+                    documentationDetails={doc}
+                />
+            ))}
         </FloatingCard>
     );
 };

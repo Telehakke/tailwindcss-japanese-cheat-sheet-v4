@@ -1,7 +1,7 @@
 export const FontSize = {
-    textSm: "text-sm",
-    textXl: "text-xl",
-    text2xl: "text-2xl",
+    sm: "text-sm",
+    xl: "text-xl",
+    xl2: "text-2xl",
 } as const;
 
 export const TextColor = {
@@ -26,7 +26,7 @@ export const Bg = {
     transparent: "bg-transparent",
     oddStone50_dark800: "odd:bg-stone-50 odd:dark:bg-stone-800",
     evenStone200_dark900: "even:bg-stone-200 even:dark:bg-stone-900",
-    purpleToTransparentGradation:
+    gradientFromPurple:
         "bg-gradient-to-r from-purple-400 dark:from-purple-700 to-transparent",
 } as const;
 
