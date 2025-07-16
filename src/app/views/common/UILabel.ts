@@ -1,13 +1,13 @@
-import { Language, LanguageEnum } from "../../models/types";
+import { LanguageEnum, type Language } from "../../models/language";
 
-export default class UILabelFactory {
+export class UILabelFactory {
     static createInstance = (language: Language): UILabel => {
         if (language === LanguageEnum.ja) return new UILabelJA();
         return new UILabelEN();
     };
 }
 
-interface UILabel {
+export interface UILabel {
     expandAll: string;
     collapseAll: string;
     copied: string;

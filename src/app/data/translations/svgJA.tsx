@@ -1,6 +1,5 @@
 import { CategoryEnum } from "../../models/category";
-import { Translation } from "../../models/types";
-import DetailTable from "../../views/common/detailTable";
+import type { Translation } from "../../models/types";
 
 const svgJA = new Map<string, Translation>([
     [
@@ -8,7 +7,7 @@ const svgJA = new Map<string, Translation>([
         {
             entry: "ベクター画像",
             description: "",
-            detail: null,
+            details: [],
         },
     ],
     [
@@ -16,137 +15,53 @@ const svgJA = new Map<string, Translation>([
         {
             entry: "塗りつぶし",
             description: "<svg>要素の塗りつぶし色を指定する",
-            detail: (
-                <DetailTable
-                    list={[
-                        ["none", "なし", <td className="w-10"></td>],
-                        [
-                            "inherit",
-                            "親要素からスタイルを引き継ぐ",
-                            <td className="w-10"></td>,
-                        ],
-                        ["current", "テキスト色", <td className="w-10"></td>],
-                        ["transparent", "透明", <td className="w-10"></td>],
-                        ["black", "黒", <td className="w-10 bg-black"></td>],
-                        ["white", "白", <td className="w-10 bg-white"></td>],
-                        [
-                            "red-500",
-                            "赤",
-                            <td className="w-10 bg-red-500"></td>,
-                        ],
-                        [
-                            "orange-500",
-                            "オレンジ",
-                            <td className="w-10 bg-orange-500"></td>,
-                        ],
-                        [
-                            "amber-500",
-                            "琥珀",
-                            <td className="w-10 bg-amber-500"></td>,
-                        ],
-                        [
-                            "yellow-500",
-                            "黄色",
-                            <td className="w-10 bg-yellow-500"></td>,
-                        ],
-                        [
-                            "lime-500",
-                            "ライム",
-                            <td className="w-10 bg-lime-500"></td>,
-                        ],
-                        [
-                            "green-500",
-                            "緑",
-                            <td className="w-10 bg-green-500"></td>,
-                        ],
-                        [
-                            "emerald-500",
-                            "エメラルド",
-                            <td className="w-10 bg-emerald-500"></td>,
-                        ],
-                        [
-                            "teal-500",
-                            "コガモ",
-                            <td className="w-10 bg-teal-500"></td>,
-                        ],
-                        [
-                            "cyan-500",
-                            "シアン",
-                            <td className="w-10 bg-cyan-500"></td>,
-                        ],
-                        [
-                            "sky-500",
-                            "スカイ",
-                            <td className="w-10 bg-sky-500"></td>,
-                        ],
-                        [
-                            "blue-500",
-                            "青",
-                            <td className="w-10 bg-blue-500"></td>,
-                        ],
-                        [
-                            "indigo-500",
-                            "藍色",
-                            <td className="w-10 bg-indigo-500"></td>,
-                        ],
-                        [
-                            "violet-500",
-                            "スミレ",
-                            <td className="w-10 bg-violet-500"></td>,
-                        ],
-                        [
-                            "purple-500",
-                            "紫",
-                            <td className="w-10 bg-purple-500"></td>,
-                        ],
-                        [
-                            "fuchsia-500",
-                            "フクシア",
-                            <td className="w-10 bg-fuchsia-500"></td>,
-                        ],
-                        [
-                            "pink-500",
-                            "ピンク",
-                            <td className="w-10 bg-pink-500"></td>,
-                        ],
-                        [
-                            "rose-500",
-                            "バラ",
-                            <td className="w-10 bg-rose-500"></td>,
-                        ],
-                        [
-                            "slate-500",
-                            "粘板岩",
-                            <td className="w-10 bg-slate-500"></td>,
-                        ],
-                        [
-                            "gray-500",
-                            "グレー",
-                            <td className="w-10 bg-gray-500"></td>,
-                        ],
-                        [
-                            "zinc-500",
-                            "亜鉛",
-                            <td className="w-10 bg-zinc-500"></td>,
-                        ],
-                        [
-                            "neutral-500",
-                            "ニュートラル",
-                            <td className="w-10 bg-neutral-500"></td>,
-                        ],
-                        [
-                            "stone-500",
-                            "石",
-                            <td className="w-10 bg-stone-500"></td>,
-                        ],
-                        [
-                            "red-500/25",
-                            "不透明度25％で指定する例",
-                            <td className="w-10 bg-red-500/25"></td>,
-                        ],
-                    ]}
-                />
-            ),
+            details: [
+                ["none", "なし", <td class="w-10" />],
+                [
+                    "inherit",
+                    "親要素からスタイルを引き継ぐ",
+                    <td class="w-10" />,
+                ],
+                ["current", "テキスト色", <td class="w-10" />],
+                ["transparent", "透明", <td class="w-10" />],
+                ["black", "黒", <td class="w-10 bg-black" />],
+                ["white", "白", <td class="w-10 bg-white" />],
+                ["red-500", "赤", <td class="w-10 bg-red-500" />],
+                ["orange-500", "オレンジ", <td class="w-10 bg-orange-500" />],
+                ["amber-500", "琥珀", <td class="w-10 bg-amber-500" />],
+                ["yellow-500", "黄色", <td class="w-10 bg-yellow-500" />],
+                ["lime-500", "ライム", <td class="w-10 bg-lime-500" />],
+                ["green-500", "緑", <td class="w-10 bg-green-500" />],
+                [
+                    "emerald-500",
+                    "エメラルド",
+                    <td class="w-10 bg-emerald-500" />,
+                ],
+                ["teal-500", "コガモ", <td class="w-10 bg-teal-500" />],
+                ["cyan-500", "シアン", <td class="w-10 bg-cyan-500" />],
+                ["sky-500", "スカイ", <td class="w-10 bg-sky-500" />],
+                ["blue-500", "青", <td class="w-10 bg-blue-500" />],
+                ["indigo-500", "藍色", <td class="w-10 bg-indigo-500" />],
+                ["violet-500", "スミレ", <td class="w-10 bg-violet-500" />],
+                ["purple-500", "紫", <td class="w-10 bg-purple-500" />],
+                ["fuchsia-500", "フクシア", <td class="w-10 bg-fuchsia-500" />],
+                ["pink-500", "ピンク", <td class="w-10 bg-pink-500" />],
+                ["rose-500", "バラ", <td class="w-10 bg-rose-500" />],
+                ["slate-500", "粘板岩", <td class="w-10 bg-slate-500" />],
+                ["gray-500", "グレー", <td class="w-10 bg-gray-500" />],
+                ["zinc-500", "亜鉛", <td class="w-10 bg-zinc-500" />],
+                [
+                    "neutral-500",
+                    "ニュートラル",
+                    <td class="w-10 bg-neutral-500" />,
+                ],
+                ["stone-500", "石", <td class="w-10 bg-stone-500" />],
+                [
+                    "red-500/25",
+                    "不透明度25％で指定する例",
+                    <td class="w-10 bg-red-500/25" />,
+                ],
+            ],
         },
     ],
     [
@@ -154,137 +69,53 @@ const svgJA = new Map<string, Translation>([
         {
             entry: "線",
             description: "<svg>要素の線の色を指定する",
-            detail: (
-                <DetailTable
-                    list={[
-                        ["none", "なし", <td className="w-10"></td>],
-                        [
-                            "inherit",
-                            "親要素からスタイルを引き継ぐ",
-                            <td className="w-10"></td>,
-                        ],
-                        ["current", "テキスト色", <td className="w-10"></td>],
-                        ["transparent", "透明", <td className="w-10"></td>],
-                        ["black", "黒", <td className="w-10 bg-black"></td>],
-                        ["white", "白", <td className="w-10 bg-white"></td>],
-                        [
-                            "red-500",
-                            "赤",
-                            <td className="w-10 bg-red-500"></td>,
-                        ],
-                        [
-                            "orange-500",
-                            "オレンジ",
-                            <td className="w-10 bg-orange-500"></td>,
-                        ],
-                        [
-                            "amber-500",
-                            "琥珀",
-                            <td className="w-10 bg-amber-500"></td>,
-                        ],
-                        [
-                            "yellow-500",
-                            "黄色",
-                            <td className="w-10 bg-yellow-500"></td>,
-                        ],
-                        [
-                            "lime-500",
-                            "ライム",
-                            <td className="w-10 bg-lime-500"></td>,
-                        ],
-                        [
-                            "green-500",
-                            "緑",
-                            <td className="w-10 bg-green-500"></td>,
-                        ],
-                        [
-                            "emerald-500",
-                            "エメラルド",
-                            <td className="w-10 bg-emerald-500"></td>,
-                        ],
-                        [
-                            "teal-500",
-                            "コガモ",
-                            <td className="w-10 bg-teal-500"></td>,
-                        ],
-                        [
-                            "cyan-500",
-                            "シアン",
-                            <td className="w-10 bg-cyan-500"></td>,
-                        ],
-                        [
-                            "sky-500",
-                            "スカイ",
-                            <td className="w-10 bg-sky-500"></td>,
-                        ],
-                        [
-                            "blue-500",
-                            "青",
-                            <td className="w-10 bg-blue-500"></td>,
-                        ],
-                        [
-                            "indigo-500",
-                            "藍色",
-                            <td className="w-10 bg-indigo-500"></td>,
-                        ],
-                        [
-                            "violet-500",
-                            "スミレ",
-                            <td className="w-10 bg-violet-500"></td>,
-                        ],
-                        [
-                            "purple-500",
-                            "紫",
-                            <td className="w-10 bg-purple-500"></td>,
-                        ],
-                        [
-                            "fuchsia-500",
-                            "フクシア",
-                            <td className="w-10 bg-fuchsia-500"></td>,
-                        ],
-                        [
-                            "pink-500",
-                            "ピンク",
-                            <td className="w-10 bg-pink-500"></td>,
-                        ],
-                        [
-                            "rose-500",
-                            "バラ",
-                            <td className="w-10 bg-rose-500"></td>,
-                        ],
-                        [
-                            "slate-500",
-                            "粘板岩",
-                            <td className="w-10 bg-slate-500"></td>,
-                        ],
-                        [
-                            "gray-500",
-                            "グレー",
-                            <td className="w-10 bg-gray-500"></td>,
-                        ],
-                        [
-                            "zinc-500",
-                            "亜鉛",
-                            <td className="w-10 bg-zinc-500"></td>,
-                        ],
-                        [
-                            "neutral-500",
-                            "ニュートラル",
-                            <td className="w-10 bg-neutral-500"></td>,
-                        ],
-                        [
-                            "stone-500",
-                            "石",
-                            <td className="w-10 bg-stone-500"></td>,
-                        ],
-                        [
-                            "red-500/25",
-                            "不透明度25％で指定する例",
-                            <td className="w-10 bg-red-500/25"></td>,
-                        ],
-                    ]}
-                />
-            ),
+            details: [
+                ["none", "なし", <td class="w-10" />],
+                [
+                    "inherit",
+                    "親要素からスタイルを引き継ぐ",
+                    <td class="w-10" />,
+                ],
+                ["current", "テキスト色", <td class="w-10" />],
+                ["transparent", "透明", <td class="w-10" />],
+                ["black", "黒", <td class="w-10 bg-black" />],
+                ["white", "白", <td class="w-10 bg-white" />],
+                ["red-500", "赤", <td class="w-10 bg-red-500" />],
+                ["orange-500", "オレンジ", <td class="w-10 bg-orange-500" />],
+                ["amber-500", "琥珀", <td class="w-10 bg-amber-500" />],
+                ["yellow-500", "黄色", <td class="w-10 bg-yellow-500" />],
+                ["lime-500", "ライム", <td class="w-10 bg-lime-500" />],
+                ["green-500", "緑", <td class="w-10 bg-green-500" />],
+                [
+                    "emerald-500",
+                    "エメラルド",
+                    <td class="w-10 bg-emerald-500" />,
+                ],
+                ["teal-500", "コガモ", <td class="w-10 bg-teal-500" />],
+                ["cyan-500", "シアン", <td class="w-10 bg-cyan-500" />],
+                ["sky-500", "スカイ", <td class="w-10 bg-sky-500" />],
+                ["blue-500", "青", <td class="w-10 bg-blue-500" />],
+                ["indigo-500", "藍色", <td class="w-10 bg-indigo-500" />],
+                ["violet-500", "スミレ", <td class="w-10 bg-violet-500" />],
+                ["purple-500", "紫", <td class="w-10 bg-purple-500" />],
+                ["fuchsia-500", "フクシア", <td class="w-10 bg-fuchsia-500" />],
+                ["pink-500", "ピンク", <td class="w-10 bg-pink-500" />],
+                ["rose-500", "バラ", <td class="w-10 bg-rose-500" />],
+                ["slate-500", "粘板岩", <td class="w-10 bg-slate-500" />],
+                ["gray-500", "グレー", <td class="w-10 bg-gray-500" />],
+                ["zinc-500", "亜鉛", <td class="w-10 bg-zinc-500" />],
+                [
+                    "neutral-500",
+                    "ニュートラル",
+                    <td class="w-10 bg-neutral-500" />,
+                ],
+                ["stone-500", "石", <td class="w-10 bg-stone-500" />],
+                [
+                    "red-500/25",
+                    "不透明度25％で指定する例",
+                    <td class="w-10 bg-red-500/25" />,
+                ],
+            ],
         },
     ],
     [
@@ -292,7 +123,7 @@ const svgJA = new Map<string, Translation>([
         {
             entry: "線の太さ",
             description: "<svg>要素の線の太さを指定する",
-            detail: null,
+            details: [],
         },
     ],
 ]);

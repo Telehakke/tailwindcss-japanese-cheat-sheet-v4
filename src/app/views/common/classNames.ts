@@ -23,7 +23,6 @@ export const Bg = {
     hoverNeutral300_dark700: "hover:bg-neutral-300 hover:dark:bg-neutral-700",
     purple300_dark800: "bg-purple-300 dark:bg-purple-800",
     slate100_dark900: "bg-neutral-100 dark:bg-neutral-900",
-    transparent: "bg-transparent",
     oddStone50_dark800: "odd:bg-stone-50 odd:dark:bg-stone-800",
     evenStone200_dark900: "even:bg-stone-200 even:dark:bg-stone-900",
     gradientFromPurple:

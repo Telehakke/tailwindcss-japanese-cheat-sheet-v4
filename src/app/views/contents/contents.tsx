@@ -1,31 +1,36 @@
-import { useAtomValue } from "jotai";
+import { Index, Show } from "solid-js";
 import {
-    breakpointPrefixAtom,
-    cheatSheetAtom,
-    searchStringAtom,
+    BreakpointPrefixState,
+    CheatSheetState,
+    SearchStringState,
 } from "../../appStates";
 import CheatSheetDataSlicerFactory from "../../models/cheatSheetDataSlicer";
 import Split from "../../models/split";
-import { CheatSheetData } from "../../models/types";
-import { CheatSheet } from "./cheatSheet/cheatSheet";
+import type { CheatSheetData } from "../../models/types";
+import CategoryBar from "./sub/categoryBar";
+import DocumentationGroupBox from "./sub/documentationGroupBox";
+import FloatingCard from "./sub/floatingCard";
 
 const Contents = () => {
-    const cheatSheet = useAtomValue(cheatSheetAtom);
-    const searchString = useAtomValue(searchStringAtom);
-    const breakpointPrefix = useAtomValue(breakpointPrefixAtom);
+    const cheatSheet = CheatSheetState.cheatSheet();
+    const searchString = SearchStringState.searchString();
+    const breakpointPrefix = BreakpointPrefixState.breakpointPrefix();
 
-    const slicer = CheatSheetDataSlicerFactory.createInstance(breakpointPrefix);
-    const cheatSheetDataList = cheatSheet.filtering(
-        Split.byWhiteSpace(searchString),
-    );
-    const sliced = slicer.slice(cheatSheetDataList);
+    const sliced = () => {
+        const slicer =
+            CheatSheetDataSlicerFactory.createInstance(breakpointPrefix());
+        const cheatSheetDataList = cheatSheet().filtering(
+            Split.byWhiteSpace(searchString()),
+        );
+        return slicer.slice(cheatSheetDataList);
+    };
 
     return (
-        <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <GridColumn cheatSheetDataList={sliced.firstColumn} />
-            <GridColumn cheatSheetDataList={sliced.secondColumn} />
-            <GridColumn cheatSheetDataList={sliced.thirdColumn} />
-            <GridColumn cheatSheetDataList={sliced.fourthColumn} />
+        <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <GridColumn cheatSheetDataList={sliced().firstColumn} />
+            <GridColumn cheatSheetDataList={sliced().secondColumn} />
+            <GridColumn cheatSheetDataList={sliced().thirdColumn} />
+            <GridColumn cheatSheetDataList={sliced().fourthColumn} />
         </div>
     );
 };
@@ -34,17 +39,29 @@ export default Contents;
 
 /* -------------------------------------------------------------------------- */
 
-const GridColumn = ({
-    cheatSheetDataList,
-}: {
+const GridColumn = (props: {
     cheatSheetDataList: readonly CheatSheetData[];
 }) => {
-    if (cheatSheetDataList.length === 0) return <></>;
     return (
-        <div className="flex flex-col gap-8">
-            {cheatSheetDataList.map((v) => (
-                <CheatSheet key={v.category} cheatSheetData={v} />
-            ))}
-        </div>
+        <Show when={props.cheatSheetDataList.length > 0}>
+            <div class="flex flex-col gap-8">
+                <Index each={props.cheatSheetDataList}>
+                    {(v) => <CheatSheet cheatSheetData={v()} />}
+                </Index>
+            </div>
+        </Show>
+    );
+};
+
+const CheatSheet = (props: { cheatSheetData: CheatSheetData }) => {
+    return (
+        <FloatingCard>
+            <CategoryBar cheatSheetData={props.cheatSheetData} />
+            <Index each={props.cheatSheetData.documentationDetailsList}>
+                {(doc) => (
+                    <DocumentationGroupBox documentationDetails={doc()} />
+                )}
+            </Index>
+        </FloatingCard>
     );
 };

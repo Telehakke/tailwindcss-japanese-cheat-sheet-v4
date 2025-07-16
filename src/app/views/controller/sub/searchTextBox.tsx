@@ -1,18 +1,23 @@
-import { useSetAtom } from "jotai";
-import { useEffect, useRef, useState } from "react";
-import { searchStringAtom } from "../../../appStates";
+import {
+    createEffect,
+    createSignal,
+    Show,
+    type Accessor,
+    type Setter,
+} from "solid-js";
+import { SearchStringState } from "../../../appStates";
 import DelayAction from "../../../models/delayAction";
 import { Bg, Fill, Outline } from "../../common/classNames";
 import { Close, Search } from "../../common/icons";
 
 const SearchTextBox = () => {
-    const [isTextFieldFocused, setIsTextFieldFocused] = useState(false);
-    const [inputString, setInputString] = useState("");
+    const [isTextFieldFocused, setIsTextFieldFocused] = createSignal(false);
+    const [inputString, setInputString] = createSignal("");
 
     return (
-        <div className="flex justify-center">
-            <div className="relative w-screen max-w-64">
-                <div className="flex">
+        <div class="flex justify-center">
+            <div class="relative w-screen max-w-64">
+                <div class="flex">
                     <TextField
                         setIsTextFieldFocused={setIsTextFieldFocused}
                         inputString={inputString}
@@ -37,75 +42,67 @@ export default SearchTextBox;
 
 /* -------------------------------------------------------------------------- */
 
-const TextField = ({
-    setIsTextFieldFocused,
-    inputString,
-    setInputString,
-}: {
-    setIsTextFieldFocused: React.Dispatch<React.SetStateAction<boolean>>;
-    inputString: string;
-    setInputString: React.Dispatch<React.SetStateAction<string>>;
+const TextField = (props: {
+    setIsTextFieldFocused: Setter<boolean>;
+    inputString: Accessor<string>;
+    setInputString: Setter<string>;
 }) => {
-    const setSearchString = useSetAtom(searchStringAtom);
-    const inputElement = useRef<HTMLInputElement>(null);
-    const delayAction = useRef(new DelayAction());
+    let inputElement: HTMLInputElement | undefined;
+    const delayAction = new DelayAction();
 
     // 虫眼鏡アイコンの表示・非表示のためにフォーカスの状態を監視する
-    useEffect(() => {
-        inputElement.current?.addEventListener("focus", () => {
-            setIsTextFieldFocused(true);
+    createEffect(() => {
+        inputElement?.addEventListener("focus", () => {
+            props.setIsTextFieldFocused(true);
         });
-        inputElement.current?.addEventListener("focusout", () => {
-            setIsTextFieldFocused(false);
+        inputElement?.addEventListener("focusout", () => {
+            props.setIsTextFieldFocused(false);
         });
-    }, [setIsTextFieldFocused]);
+    });
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const searchString = event.target.value;
-        setInputString(searchString);
-        delayAction.current.run(() => {
-            setSearchString(searchString);
+    const handleChange = (element: HTMLInputElement) => {
+        const inputString = element.value;
+        props.setInputString(inputString);
+        delayAction.run(() => {
+            SearchStringState.setSearchString(inputString);
         }, 400);
     };
 
     return (
         <>
-            <label className="sr-only" htmlFor="search">
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+            <label class="sr-only" for="search">
                 クラス名の検索
             </label>
             <input
-                className={`h-8 w-full px-2 focus:outline-hidden`}
+                class={`h-8 w-full px-2 focus:outline-hidden`}
                 id="search"
                 type="text"
-                onChange={handleChange}
-                value={inputString}
+                onInput={(e) => handleChange(e.target)}
+                value={props.inputString()}
                 ref={inputElement}
             />
         </>
     );
 };
 
-const ClearButton = ({
-    inputString,
-    setInputString,
-}: {
-    inputString: string;
-    setInputString: React.Dispatch<React.SetStateAction<string>>;
+const ClearButton = (props: {
+    inputString: Accessor<string>;
+    setInputString: Setter<string>;
 }) => {
-    const setSearchString = useSetAtom(searchStringAtom);
-
     const handleClick = () => {
-        setInputString("");
-        setSearchString("");
+        props.setInputString("");
+        SearchStringState.setSearchString("");
     };
 
-    if (inputString.length === 0) return <></>;
     return (
-        <button onClick={handleClick}>
-            <Close
-                className={`inset-y-0 right-2 my-auto transition ${Fill.neutral500_hover400}`}
-            />
-        </button>
+        <Show when={props.inputString().length > 0}>
+            <button onClick={handleClick}>
+                <Close
+                    class={`inset-y-0 right-2 my-auto transition ${Fill.neutral500_hover400}`}
+                />
+            </button>
+        </Show>
     );
 };
 
@@ -114,22 +111,24 @@ const TextFieldDecoration = () => {
 
     return (
         <div
-            className={`absolute inset-0 -z-10 ${Bg.neutral50_dark800} ${outline}`}
+            class={`absolute inset-0 -z-10 ${Bg.neutral50_dark800} ${outline}`}
         />
     );
 };
 
-const SearchIcon = ({
-    isTextFieldFocused,
-    inputString,
-}: {
-    isTextFieldFocused: boolean;
-    inputString: string;
+const SearchIcon = (props: {
+    isTextFieldFocused: Accessor<boolean>;
+    inputString: Accessor<string>;
 }) => {
-    if (isTextFieldFocused || inputString.length > 0) return <></>;
     return (
-        <Search
-            className={`absolute inset-y-0 left-2 my-auto ${Fill.neutral500}`}
-        />
+        <Show
+            when={
+                !props.isTextFieldFocused() && props.inputString().length === 0
+            }
+        >
+            <Search
+                class={`absolute inset-y-0 left-2 my-auto ${Fill.neutral500}`}
+            />
+        </Show>
     );
 };

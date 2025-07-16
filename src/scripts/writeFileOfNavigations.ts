@@ -1,6 +1,6 @@
 import fs from "fs";
-import NavigationExtractor from "./models/navigationExtractor";
 import createDom from "./models/createDom";
+import NavigationExtractor from "./models/navigationExtractor";
 
 // 指定したURLにアクセスしDOMを生成
 const url = "https://tailwindcss.com/docs/installation/using-vite";

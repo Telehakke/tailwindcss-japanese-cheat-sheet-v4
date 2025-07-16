@@ -1,19 +1,16 @@
-import { useSetAtom } from "jotai";
-import { useState } from "react";
-import { cheatSheetAtom, UILabelAtom } from "../appStates";
+import { createSignal, type Accessor, type Setter } from "solid-js";
+import { CheatSheetState, UILabelState } from "../appStates";
 import { version } from "../data/Layout_v4.1";
-import CheatSheetFactory from "../models/cheatSheet";
-import { Language, LanguageEnum } from "../models/types";
+import { LanguageEnum, type Language } from "../models/language";
 import { Bg, Border, FontSize } from "./common/classNames";
-import UILabelFactory from "./common/UILabel";
 
 const Header = () => {
     return (
-        <div className="space-y-4">
-            <h1 className={`text-center font-bold break-keep ${FontSize.xl2}`}>
+        <div class="space-y-4">
+            <h1 class={`text-center font-bold break-keep ${FontSize.xl2}`}>
                 Tailwind CSS 日本語チートシート v4
             </h1>
-            <div className="flex items-center justify-between">
+            <div class="flex items-center justify-between">
                 <VersionGroup />
                 <LanguageSelectionButton />
             </div>
@@ -30,10 +27,10 @@ const VersionGroup = () => {
 
     return (
         <div>
-            <p className={`-ml-4 px-4 ${FontSize.sm} ${Bg.gradientFromPurple}`}>
+            <p class={`-ml-4 px-4 ${FontSize.sm} ${Bg.gradientFromPurple}`}>
                 {`Documentation ${version}`}
             </p>
-            <a className="underline" href={url}>
+            <a class="underline" href={url}>
                 v3
             </a>
         </div>
@@ -43,12 +40,14 @@ const VersionGroup = () => {
 /* -------------------------------------------------------------------------- */
 
 const LanguageSelectionButton = () => {
-    const [selectedLanguage, setSelectedLanguage] = useState<Language>(
+    const [selectedLanguage, setSelectedLanguage] = createSignal<Language>(
         LanguageEnum.ja,
     );
 
     return (
-        <div>
+        <div
+            class={`overflow-clip rounded-full border-2 ${Border.purple300_dark800}`}
+        >
             <JapaneseButton
                 selectedLanguage={selectedLanguage}
                 setSelectedLanguage={setSelectedLanguage}
@@ -61,65 +60,44 @@ const LanguageSelectionButton = () => {
     );
 };
 
-const JapaneseButton = ({
-    selectedLanguage,
-    setSelectedLanguage,
-}: {
-    selectedLanguage: Language;
-    setSelectedLanguage: React.Dispatch<React.SetStateAction<Language>>;
-}) => {
-    const setCheatSheet = useSetAtom(cheatSheetAtom);
-    const setUILabel = useSetAtom(UILabelAtom);
+type SelectedLanguageSignal = {
+    selectedLanguage: Accessor<Language>;
+    setSelectedLanguage: Setter<Language>;
+};
 
-    const backgroundColor =
-        selectedLanguage === LanguageEnum.ja
+const JapaneseButton = (props: SelectedLanguageSignal) => {
+    const bg = () =>
+        props.selectedLanguage() === LanguageEnum.ja
             ? Bg.purple300_dark800
             : Bg.hoverNeutral200_dark800;
-    const border = `rounded-l-full border-y-2 border-l-2 ${Border.purple300_dark800}`;
 
-    const handleClick = (): void => {
-        setSelectedLanguage(LanguageEnum.ja);
-        setCheatSheet(CheatSheetFactory.createInstance(LanguageEnum.ja));
-        setUILabel(UILabelFactory.createInstance(LanguageEnum.ja));
+    const handleClick = () => {
+        props.setSelectedLanguage(LanguageEnum.ja);
+        CheatSheetState.setLanguage(LanguageEnum.ja);
+        UILabelState.setLanguage(LanguageEnum.ja);
     };
 
     return (
-        <button
-            className={`px-2 transition ${backgroundColor} ${border}`}
-            onClick={handleClick}
-        >
+        <button class={`px-2 transition ${bg()}`} onClick={handleClick}>
             日本語
         </button>
     );
 };
 
-const EnglishButton = ({
-    selectedLanguage,
-    setSelectedLanguage,
-}: {
-    selectedLanguage: Language;
-    setSelectedLanguage: React.Dispatch<React.SetStateAction<Language>>;
-}) => {
-    const setCheatSheet = useSetAtom(cheatSheetAtom);
-    const setUILabel = useSetAtom(UILabelAtom);
-
-    const backgroundColor =
-        selectedLanguage === LanguageEnum.en
+const EnglishButton = (props: SelectedLanguageSignal) => {
+    const bg = () =>
+        props.selectedLanguage() === LanguageEnum.en
             ? Bg.purple300_dark800
             : Bg.hoverNeutral200_dark800;
-    const border = `rounded-r-full border-y-2 border-r-2 ${Border.purple300_dark800}`;
 
-    const handleClick = (): void => {
-        setSelectedLanguage(LanguageEnum.en);
-        setCheatSheet(CheatSheetFactory.createInstance(LanguageEnum.en));
-        setUILabel(UILabelFactory.createInstance(LanguageEnum.en));
+    const handleClick = () => {
+        props.setSelectedLanguage(LanguageEnum.en);
+        CheatSheetState.setLanguage(LanguageEnum.en);
+        UILabelState.setLanguage(LanguageEnum.en);
     };
 
     return (
-        <button
-            className={`px-2 transition ${backgroundColor} ${border}`}
-            onClick={handleClick}
-        >
+        <button class={`px-2 transition ${bg()}`} onClick={handleClick}>
             English
         </button>
     );

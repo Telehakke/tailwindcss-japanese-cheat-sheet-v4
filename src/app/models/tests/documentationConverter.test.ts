@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { Category, CategoryEnum } from "../category";
+import { CategoryEnum, type Category } from "../category";
 import DocumentationConverter from "../documentationConverter";
-import { CheatSheetData, Documentation, Translation } from "../types";
+import type { CheatSheetData, Documentation, Translation } from "../types";
 
 describe("convertToCheatSheetData", () => {
     const layoutEN: Documentation[] = [
@@ -19,7 +19,7 @@ describe("convertToCheatSheetData", () => {
             {
                 entry: "レイアウト",
                 description: "",
-                detail: null,
+                details: [],
             },
         ],
         [
@@ -27,7 +27,7 @@ describe("convertToCheatSheetData", () => {
             {
                 entry: "アスペクト比",
                 description: "要素のアスペクト比を指定する",
-                detail: null,
+                details: [],
             },
         ],
     ]);
@@ -38,7 +38,7 @@ describe("convertToCheatSheetData", () => {
             Documentation[],
             Map<string, Translation>,
         ][] = [[CategoryEnum.Layout, layoutEN, layoutJA]];
-        const result = new DocumentationConverter().convertToCheatSheetData(
+        const result = new DocumentationConverter().convertToCheatSheetDataList(
             documentations,
         );
         const expected: CheatSheetData[] = [
@@ -50,7 +50,7 @@ describe("convertToCheatSheetData", () => {
                         url: "https://tailwindcss.com/docs/aspect-ratio",
                         entry: "aspect-ratio\nアスペクト比",
                         description: "要素のアスペクト比を指定する",
-                        detail: null,
+                        details: [],
                         parameters: [
                             ["aspect-<ratio>", "aspect-ratio: <ratio>;"],
                         ],
@@ -67,7 +67,7 @@ describe("convertToCheatSheetData", () => {
             Documentation[],
             Map<string, Translation>,
         ][] = [[CategoryEnum.Layout, layoutEN, new Map()]];
-        const result = new DocumentationConverter().convertToCheatSheetData(
+        const result = new DocumentationConverter().convertToCheatSheetDataList(
             documentations,
         );
         const expected: CheatSheetData[] = [
@@ -80,7 +80,7 @@ describe("convertToCheatSheetData", () => {
                         entry: "aspect-ratio",
                         description:
                             "Utilities for controlling the aspect ratio of an element.",
-                        detail: undefined,
+                        details: [],
                         parameters: [
                             ["aspect-<ratio>", "aspect-ratio: <ratio>;"],
                         ],
