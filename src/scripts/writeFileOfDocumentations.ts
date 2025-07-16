@@ -1,7 +1,7 @@
 import fs from "fs";
 import { setTimeout } from "timers/promises";
 import { navigations, version } from "../app/data/navigations_v4.1";
-import { Documentation } from "../app/models/types";
+import type { Documentation } from "../app/models/types";
 import createDom from "./models/createDom";
 import DocumentationExtractor from "./models/documentationExtractor";
 

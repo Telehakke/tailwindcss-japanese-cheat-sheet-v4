@@ -29,18 +29,17 @@ import transitionsAndAnimationJA from "../data/translations/transitionsAndAnimat
 import typographyJA from "../data/translations/typographyJA";
 import { documentations as typography } from "../data/Typography_v4.1";
 
-import { Category, CategoryEnum } from "./category";
+import { CategoryEnum, type Category } from "./category";
 import DocumentationConverter from "./documentationConverter";
 import DocumentationDetailsFilter from "./documentationDetailsFilter";
+import { LanguageEnum, type Language } from "./language";
 import {
-    CheatSheetData,
-    Documentation,
-    Language,
-    LanguageEnum,
-    Translation,
+    type CheatSheetData,
+    type Documentation,
+    type Translation,
 } from "./types";
 
-export default class CheatSheetFactory {
+export class CheatSheetFactory {
     static createInstance = (language: Language): CheatSheet => {
         if (language === LanguageEnum.ja) {
             return new CheatSheetJA(
@@ -55,8 +54,8 @@ export default class CheatSheetFactory {
     };
 }
 
-interface CheatSheet {
-    cheatSheetData(): readonly CheatSheetData[];
+export interface CheatSheet {
+    cheatSheetDataList(): readonly CheatSheetData[];
     filtering(searchStrings: string[]): readonly CheatSheetData[];
 }
 
@@ -87,25 +86,26 @@ class CheatSheetEN implements CheatSheet {
         [CategoryEnum.SVG, svg, this.empty],
         [CategoryEnum.Accessibility, accessibility, this.empty],
     ];
-    private _cheatSheetData: readonly CheatSheetData[];
+    private _cheatSheetDataList: readonly CheatSheetData[];
     private documentationDetailsFilter: DocumentationDetailsFilter;
 
     constructor(
         documentationConverter: DocumentationConverter,
         documentationDetailsFilter: DocumentationDetailsFilter,
     ) {
-        this._cheatSheetData = documentationConverter.convertToCheatSheetData(
-            this.documentations,
-        );
+        this._cheatSheetDataList =
+            documentationConverter.convertToCheatSheetDataList(
+                this.documentations,
+            );
         this.documentationDetailsFilter = documentationDetailsFilter;
     }
 
-    cheatSheetData = (): readonly CheatSheetData[] => {
-        return this._cheatSheetData;
+    cheatSheetDataList = (): readonly CheatSheetData[] => {
+        return this._cheatSheetDataList;
     };
 
     filtering = (searchStrings: string[]): readonly CheatSheetData[] => {
-        return this._cheatSheetData.map((v) => {
+        return this._cheatSheetDataList.map((v) => {
             const obj: CheatSheetData = {
                 category: v.category,
                 categoryEN: v.categoryEN,
@@ -146,25 +146,26 @@ class CheatSheetJA implements CheatSheet {
         [CategoryEnum.SVG, svg, svgJA],
         [CategoryEnum.Accessibility, accessibility, accessibilityJA],
     ];
-    private _cheatSheetData: readonly CheatSheetData[];
+    private _cheatSheetDataList: readonly CheatSheetData[];
     private documentationDetailsFilter: DocumentationDetailsFilter;
 
     constructor(
         documentationConverter: DocumentationConverter,
         documentationDetailsFilter: DocumentationDetailsFilter,
     ) {
-        this._cheatSheetData = documentationConverter.convertToCheatSheetData(
-            this.documentations,
-        );
+        this._cheatSheetDataList =
+            documentationConverter.convertToCheatSheetDataList(
+                this.documentations,
+            );
         this.documentationDetailsFilter = documentationDetailsFilter;
     }
 
-    cheatSheetData = (): readonly CheatSheetData[] => {
-        return this._cheatSheetData;
+    cheatSheetDataList = (): readonly CheatSheetData[] => {
+        return this._cheatSheetDataList;
     };
 
     filtering = (searchStrings: string[]): readonly CheatSheetData[] => {
-        return this._cheatSheetData.map((v) => {
+        return this._cheatSheetDataList.map((v) => {
             const obj: CheatSheetData = {
                 category: v.category,
                 categoryEN: v.categoryEN,

@@ -1,21 +1,22 @@
-const RoundedButton = ({
-    className,
-    Icon,
-    text,
-    onClick,
-}: {
-    className?: string;
-    Icon?: React.JSX.Element;
+import type { JSX } from "solid-js/jsx-runtime";
+
+const RoundedButton = (props: {
+    ref?: HTMLButtonElement;
+    class?: string;
+    id?: string;
+    Icon?: JSX.Element;
     text?: string;
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    onClick?: (event: MouseEvent) => void;
 }) => {
     return (
         <button
-            className={`flex justify-center rounded-full transition ${className ?? ""}`}
-            onClick={onClick}
+            ref={props.ref}
+            class={`flex justify-center rounded-full transition ${props.class ?? ""}`}
+            id={props.id}
+            onClick={(event) => props.onClick?.(event)}
         >
-            {Icon}
-            {text != null && <p>{text}</p>}
+            {props.Icon}
+            {props.text != null && <p>{props.text}</p>}
         </button>
     );
 };

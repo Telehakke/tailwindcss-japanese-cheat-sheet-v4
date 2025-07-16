@@ -1,9 +1,9 @@
 // Icons by Google Fonts (https://fonts.google.com/icons)
 
-export const KeyboardArrowUp = ({ className }: { className?: string }) => {
+export const KeyboardArrowUp = (props: { class?: string }) => {
     return (
         <svg
-            className={className}
+            class={props.class}
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -14,10 +14,10 @@ export const KeyboardArrowUp = ({ className }: { className?: string }) => {
     );
 };
 
-export const KeyboardArrowDown = ({ className }: { className?: string }) => {
+export const KeyboardArrowDown = (props: { class?: string }) => {
     return (
         <svg
-            className={className}
+            class={props.class}
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -28,10 +28,10 @@ export const KeyboardArrowDown = ({ className }: { className?: string }) => {
     );
 };
 
-export const UnfoldMore = ({ className }: { className?: string }) => {
+export const UnfoldMore = (props: { class?: string }) => {
     return (
         <svg
-            className={className}
+            class={props.class}
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -42,10 +42,10 @@ export const UnfoldMore = ({ className }: { className?: string }) => {
     );
 };
 
-export const UnfoldLess = ({ className }: { className?: string }) => {
+export const UnfoldLess = (props: { class?: string }) => {
     return (
         <svg
-            className={className}
+            class={props.class}
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -56,10 +56,10 @@ export const UnfoldLess = ({ className }: { className?: string }) => {
     );
 };
 
-export const Link = ({ className }: { className?: string }) => {
+export const Link = (props: { class?: string }) => {
     return (
         <svg
-            className={className}
+            class={props.class}
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -70,10 +70,10 @@ export const Link = ({ className }: { className?: string }) => {
     );
 };
 
-export const Search = ({ className }: { className?: string }) => {
+export const Search = (props: { class?: string }) => {
     return (
         <svg
-            className={className}
+            class={props.class}
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -84,10 +84,10 @@ export const Search = ({ className }: { className?: string }) => {
     );
 };
 
-export const Close = ({ className }: { className?: string }) => {
+export const Close = (props: { class?: string }) => {
     return (
         <svg
-            className={className}
+            class={props.class}
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -98,10 +98,10 @@ export const Close = ({ className }: { className?: string }) => {
     );
 };
 
-export const Menu = ({ className }: { className?: string }) => {
+export const Menu = (props: { class?: string }) => {
     return (
         <svg
-            className={className}
+            class={props.class}
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"

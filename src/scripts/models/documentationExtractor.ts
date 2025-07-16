@@ -49,7 +49,6 @@ export default class DocumentationExtractor {
 
     /**
      * クラス名とそれに対応するCSSスタイルを全て取得
-     * @throws HTML要素が見つからなければエラーが発生
      */
     getParameters = (): string[][] => {
         return Array.from(

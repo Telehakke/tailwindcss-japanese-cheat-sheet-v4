@@ -1,5 +1,8 @@
-import { BreakpointPrefix, BreakpointPrefixEnum } from "./breakpointPrefix";
-import { CheatSheetData } from "./types";
+import {
+    BreakpointPrefixEnum,
+    type BreakpointPrefix,
+} from "./breakpointPrefix";
+import type { CheatSheetData } from "./types";
 
 export default class CheatSheetDataSlicerFactory {
     static createInstance = (

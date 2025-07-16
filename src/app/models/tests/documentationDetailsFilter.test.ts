@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import DocumentationDetailsFilter from "../documentationDetailsFilter";
-import { DocumentationDetails } from "../types";
+import type { DocumentationDetails } from "../types";
 
 describe("filtering", () => {
     const documentationDetailsList: DocumentationDetails[] = [
@@ -9,7 +9,7 @@ describe("filtering", () => {
             entry: "aspect-ratio",
             description:
                 "Utilities for controlling the aspect ratio of an element.",
-            detail: undefined,
+            details: [],
             parameters: [["aspect-<ratio>", "aspect-ratio: <ratio>;"]],
         },
         {
@@ -17,7 +17,7 @@ describe("filtering", () => {
             entry: "columns",
             description:
                 "Utilities for controlling the number of columns within an element.",
-            detail: undefined,
+            details: [],
             parameters: [["columns-<number>", "columns: <number>;"]],
         },
     ];
@@ -34,7 +34,7 @@ describe("filtering", () => {
                 entry: "aspect-ratio",
                 description:
                     "Utilities for controlling the aspect ratio of an element.",
-                detail: undefined,
+                details: [],
                 parameters: [["aspect-<ratio>", "aspect-ratio: <ratio>;"]],
             },
         ];
@@ -51,7 +51,7 @@ describe("filtering", () => {
                 entry: "aspect-ratio",
                 description:
                     "Utilities for controlling the aspect ratio of an element.",
-                detail: undefined,
+                details: [],
                 parameters: [["aspect-<ratio>", "aspect-ratio: <ratio>;"]],
             },
         ];
@@ -68,7 +68,7 @@ describe("filtering", () => {
                 entry: "aspect-ratio",
                 description:
                     "Utilities for controlling the aspect ratio of an element.",
-                detail: undefined,
+                details: [],
                 parameters: [["aspect-<ratio>", "aspect-ratio: <ratio>;"]],
             },
         ];
@@ -86,7 +86,7 @@ describe("filtering", () => {
                 entry: "aspect-ratio",
                 description:
                     "Utilities for controlling the aspect ratio of an element.",
-                detail: undefined,
+                details: [],
                 parameters: [["aspect-<ratio>", "aspect-ratio: <ratio>;"]],
             },
         ];

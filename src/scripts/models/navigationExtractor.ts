@@ -1,5 +1,5 @@
 import { isCategory } from "../../app/models/category";
-import { Navigation } from "../../app/models/types";
+import type { Navigation } from "../../app/models/types";
 
 /**
  * TailwindCSSのページにあるサイドメニューから値を取得するのに使用する

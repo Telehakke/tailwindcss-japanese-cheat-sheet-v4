@@ -1,18 +1,22 @@
-import { useAtom, useAtomValue, useSetAtom } from "jotai";
-import { ReactNode } from "react";
-import { cheatSheetAtom, isOpenSidebarAtom } from "../appStates";
+import { Index, Show } from "solid-js";
+import type { JSX } from "solid-js/jsx-runtime";
+import { CheatSheetState, SidebarState } from "../appStates";
 import { Bg, Border, Fill, FontSize, TextColor } from "./common/classNames";
 import { Close } from "./common/icons";
 import RoundedButton from "./common/roundedButton";
 
 const Sidebar = () => {
+    const isOpen = SidebarState.isOpen();
+
     return (
         <>
             <Backdrop />
             <Bar>
-                <SidebarCloseButton />
-                <hr className={`border ${Border.neutral400_dark700}`} />
-                <AnchorLinks />
+                <Show when={isOpen()}>
+                    <CloseButton />
+                    <hr class={`border ${Border.neutral400_dark700}`} />
+                    <AnchorLinks />
+                </Show>
             </Bar>
         </>
     );
@@ -23,60 +27,60 @@ export default Sidebar;
 /* -------------------------------------------------------------------------- */
 
 const Backdrop = () => {
-    const [isOpenSidebar, setIsOpenSidebar] = useAtom(isOpenSidebarAtom);
+    const isOpen = SidebarState.isOpen();
 
     return (
         <div
-            className={`fixed inset-0 z-20 h-screen w-screen ${isOpenSidebar ? "" : "hidden"}`}
-            onClick={() => setIsOpenSidebar(false)}
+            class={`fixed inset-0 z-20 h-screen w-screen ${isOpen() ? "" : "hidden"}`}
+            aria-hidden={true}
+            onClick={() => SidebarState.toggle("sidebar-open")}
         />
     );
 };
 
-const Bar = ({ children }: { children: ReactNode }) => {
-    const isOpenSidebar = useAtomValue(isOpenSidebarAtom);
+const Bar = (props: { children: JSX.Element }) => {
+    const isOpen = SidebarState.isOpen();
     const size = "h-screen w-64";
     const space = "p-4 space-y-2";
-    const position = `fixed top-0 left-0 z-20 ${isOpenSidebar ? "" : "-translate-x-64"}`;
     const background = `backdrop-blur ${Bg.neutral100_70_dark900_70}`;
+    const position = () =>
+        `fixed top-0 left-0 z-20 ${isOpen() ? "" : "-translate-x-full"}`;
+    const transition = () => ` ${isOpen() ? "transition" : "transition-none"}`;
 
     return (
         <div
-            className={`overflow-scroll transition ${size} ${space} ${position} ${background}`}
+            class={`overflow-scroll ${size} ${space} ${background} ${position()} ${transition()}`}
         >
-            {children}
+            {props.children}
         </div>
     );
 };
 
-const SidebarCloseButton = () => {
-    const setIsOpenSidebar = useSetAtom(isOpenSidebarAtom);
-
+const CloseButton = () => {
     return (
         <RoundedButton
-            className={`px-2 ${Bg.hoverNeutral200_dark800}`}
-            Icon={<Close className={Fill.neutral500} />}
-            onClick={() => setIsOpenSidebar(false)}
+            class={`px-2 ${Bg.hoverNeutral200_dark800}`}
+            id="sidebar-close"
+            Icon={<Close class={Fill.neutral500} />}
+            onClick={() => SidebarState.toggle("sidebar-open")}
         />
     );
 };
 
 const AnchorLinks = () => {
-    const cheatSheet = useAtomValue(cheatSheetAtom);
-    const setIsOpenSidebar = useSetAtom(isOpenSidebarAtom);
+    const cheatSheet = CheatSheetState.cheatSheet();
 
     return (
-        <>
-            {cheatSheet.cheatSheetData().map((v) => (
+        <Index each={cheatSheet().cheatSheetDataList()}>
+            {(v) => (
                 <a
-                    key={v.categoryEN}
-                    className={`block transition ${FontSize.xl} ${TextColor.hoverSky500}`}
-                    href={`#${v.categoryEN}`}
-                    onClick={() => setIsOpenSidebar(false)}
+                    class={`block transition ${FontSize.xl} ${TextColor.hoverSky500}`}
+                    href={`#${v().categoryEN}`}
+                    onClick={() => SidebarState.toggle()}
                 >
-                    {v.categoryEN}
+                    {v().categoryEN}
                 </a>
-            ))}
-        </>
+            )}
+        </Index>
     );
 };

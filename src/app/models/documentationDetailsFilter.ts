@@ -1,4 +1,4 @@
-import { DocumentationDetails } from "./types";
+import type { DocumentationDetails } from "./types";
 
 export default class DocumentationDetailsFilter {
     filtering = (

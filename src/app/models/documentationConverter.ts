@@ -1,5 +1,5 @@
-import { Category } from "./category";
-import {
+import type { Category } from "./category";
+import type {
     CheatSheetData,
     Documentation,
     DocumentationDetails,
@@ -7,7 +7,7 @@ import {
 } from "./types";
 
 export default class DocumentationConverter {
-    convertToCheatSheetData = (
+    convertToCheatSheetDataList = (
         documentations: [Category, Documentation[], Map<string, Translation>][],
     ): readonly CheatSheetData[] => {
         const result = documentations.map(
@@ -57,7 +57,7 @@ export default class DocumentationConverter {
                 url: doc.url,
                 entry: entry,
                 description: description,
-                detail: translation?.detail,
+                details: translation?.details ?? [],
                 parameters: doc.parameters,
             };
             return obj;
