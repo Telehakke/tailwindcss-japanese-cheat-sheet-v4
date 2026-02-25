@@ -42,24 +42,18 @@ const bordersJA = new Map<string, Translation>([
             entry: "境界の太さ",
             description: "境界線の太さを指定する",
             details: [
-                ["border", "1pxの太さの枠で囲む"],
+                ["border", "1pxの枠で囲む"],
                 ["border-（数値）", "任意の太さの枠で囲む"],
-                ["border-x", "左右の側面に1pxの太さの線を引く"],
-                ["border-x-（数値）", "左右の側面に任意の太さの線を引く"],
-                ["border-y", "上下の側面に1pxの太さの線を引く"],
-                ["border-y-（数値）", "上下の側面に任意の太さの線を引く"],
-                ["border-s", "テキストの開始側に1pxの太さの線を引く"],
-                ["border-s-（数値）", "テキストの開始側に任意の太さの線を引く"],
-                ["border-e", "テキストの終端側に1pxの太さの線を引く"],
-                ["border-e-（数値）", "テキストの終端側に任意の太さの線を引く"],
-                ["border-t", "上側面に1pxの太さの線を引く"],
-                ["border-t-（数値）", "上側面に任意の太さの線を引く"],
-                ["border-r", "右側面に1pxの太さの線を引く"],
-                ["border-r-（数値）", "右側面に任意の太さの線を引く"],
-                ["border-b", "下側面に1pxの太さの線を引く"],
-                ["border-b-（数値）", "下側面に任意の太さの線を引く"],
-                ["border-l", "左側面に1pxの太さの線を引く"],
-                ["border-l-（数値）", "左側面に任意の太さの線を引く"],
+                ["border-x-*", "左右の側面に線を引く"],
+                ["border-y-*", "上下の側面に線を引く"],
+                ["border-s-*", "日本語・横書き = l、縦書き = t"],
+                ["border-e-*", "日本語・横書き = r、縦書き = b"],
+                ["border-bs-*", "日本語・横書き = t、縦書き = r"],
+                ["border-be-*", "日本語・横書き = b、縦書き = l"],
+                ["border-t-*", "上側面に線を引く"],
+                ["border-r-*", "右側面に線を引く"],
+                ["border-b-*", "下側面に線を引く"],
+                ["border-l-*", "左側面に線を引く"],
                 ["divide-x", "要素が水平方向に並ぶ場合に、1pxの分割線を引く"],
                 [
                     "divide-x-（数値）",
@@ -207,6 +201,26 @@ const bordersJA = new Map<string, Translation>([
                     <td class="w-10 border border-stone-500" />,
                 ],
                 [
+                    "border-mauve-500",
+                    "モーブ",
+                    <td class="w-10 border border-mauve-500" />,
+                ],
+                [
+                    "border-olive-500",
+                    "オリーブ",
+                    <td class="w-10 border border-olive-500" />,
+                ],
+                [
+                    "border-mist-500",
+                    "ミスト",
+                    <td class="w-10 border border-mist-500" />,
+                ],
+                [
+                    "border-taupe-500",
+                    "灰褐色",
+                    <td class="w-10 border border-taupe-500" />,
+                ],
+                [
                     "border-red-500/25",
                     "不透明度25％で指定する例",
                     <td class="w-10 border border-red-500/25" />,
@@ -223,13 +237,23 @@ const bordersJA = new Map<string, Translation>([
                 ],
                 [
                     "border-s-（色）",
-                    "テキストの開始側に引かれる色",
+                    "日本語・横書き = l、縦書き = t",
                     <td class="w-10 border border-transparent border-s-black dark:border-s-white" />,
                 ],
                 [
                     "border-e-（色）",
-                    "テキストの終端側に引かれる色",
+                    "日本語・横書き = r、縦書き = b",
                     <td class="w-10 border border-transparent border-e-black dark:border-e-white" />,
+                ],
+                [
+                    "border-bs-（色）",
+                    "日本語・横書き = t、縦書き = r",
+                    <td class="w-10 border border-transparent border-bs-black dark:border-bs-white" />,
+                ],
+                [
+                    "border-be-（色）",
+                    "日本語・横書き = b、縦書き = l",
+                    <td class="w-10 border border-transparent border-be-black dark:border-be-white" />,
                 ],
                 [
                     "border-t-（色）",
@@ -446,6 +470,38 @@ const bordersJA = new Map<string, Translation>([
                     "divide-stone-500",
                     "石",
                     <td class="w-10 divide-x divide-stone-500">
+                        <p class="inline">01</p>
+                        <p class="inline">02</p>
+                    </td>,
+                ],
+                [
+                    "divide-mauve-500",
+                    "モーブ",
+                    <td class="w-10 divide-x divide-mauve-500">
+                        <p class="inline">01</p>
+                        <p class="inline">02</p>
+                    </td>,
+                ],
+                [
+                    "divide-olive-500",
+                    "オリーブ",
+                    <td class="w-10 divide-x divide-olive-500">
+                        <p class="inline">01</p>
+                        <p class="inline">02</p>
+                    </td>,
+                ],
+                [
+                    "divide-mist-500",
+                    "ミスト",
+                    <td class="w-10 divide-x divide-mist-500">
+                        <p class="inline">01</p>
+                        <p class="inline">02</p>
+                    </td>,
+                ],
+                [
+                    "divide-taupe-500",
+                    "灰褐色",
+                    <td class="w-10 divide-x divide-taupe-500">
                         <p class="inline">01</p>
                         <p class="inline">02</p>
                     </td>,
@@ -674,6 +730,34 @@ const bordersJA = new Map<string, Translation>([
                     "石",
                     <td class="w-10">
                         <div class="h-4 w-9 outline outline-stone-500" />
+                    </td>,
+                ],
+                [
+                    "mauve-500",
+                    "モーブ",
+                    <td class="w-10">
+                        <div class="h-4 w-9 outline outline-mauve-500" />
+                    </td>,
+                ],
+                [
+                    "olive-500",
+                    "オリーブ",
+                    <td class="w-10">
+                        <div class="h-4 w-9 outline outline-olive-500" />
+                    </td>,
+                ],
+                [
+                    "mist-500",
+                    "ミスト",
+                    <td class="w-10">
+                        <div class="h-4 w-9 outline outline-mist-500" />
+                    </td>,
+                ],
+                [
+                    "taupe-500",
+                    "灰褐色",
+                    <td class="w-10">
+                        <div class="h-4 w-9 outline outline-taupe-500" />
                     </td>,
                 ],
                 [

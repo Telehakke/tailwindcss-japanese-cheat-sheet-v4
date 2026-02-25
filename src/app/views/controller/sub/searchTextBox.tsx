@@ -13,6 +13,7 @@ import { Close, Search } from "../../common/icons";
 const SearchTextBox = () => {
     const [isTextFieldFocused, setIsTextFieldFocused] = createSignal(false);
     const [inputString, setInputString] = createSignal("");
+    const [inputEl, setInputEl] = createSignal<HTMLInputElement | undefined>();
 
     return (
         <div class="flex justify-center">
@@ -22,10 +23,12 @@ const SearchTextBox = () => {
                         setIsTextFieldFocused={setIsTextFieldFocused}
                         inputString={inputString}
                         setInputString={setInputString}
+                        setInputEl={setInputEl}
                     />
                     <ClearButton
                         inputString={inputString}
                         setInputString={setInputString}
+                        inputEl={inputEl}
                     />
                 </div>
                 <TextFieldDecoration />
@@ -46,9 +49,12 @@ const TextField = (props: {
     setIsTextFieldFocused: Setter<boolean>;
     inputString: Accessor<string>;
     setInputString: Setter<string>;
+    setInputEl: Setter<HTMLInputElement | undefined>;
 }) => {
     let inputElement: HTMLInputElement | undefined;
     const delayAction = new DelayAction();
+
+    inputElement?.focus();
 
     // 虫眼鏡アイコンの表示・非表示のためにフォーカスの状態を監視する
     createEffect(() => {
@@ -58,6 +64,7 @@ const TextField = (props: {
         inputElement?.addEventListener("focusout", () => {
             props.setIsTextFieldFocused(false);
         });
+        props.setInputEl(inputElement);
     });
 
     const handleChange = (element: HTMLInputElement) => {
@@ -89,10 +96,12 @@ const TextField = (props: {
 const ClearButton = (props: {
     inputString: Accessor<string>;
     setInputString: Setter<string>;
+    inputEl: Accessor<HTMLInputElement | undefined>;
 }) => {
     const handleClick = () => {
         props.setInputString("");
         SearchStringState.setSearchString("");
+        props.inputEl()?.focus();
     };
 
     return (

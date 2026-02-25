@@ -314,6 +314,42 @@ const filtersJA = new Map<string, Translation>([
                     </td>,
                 ],
                 [
+                    "mauve-500",
+                    "モーブ",
+                    <td class="bg-white">
+                        <p class="text-2xl text-white drop-shadow-md drop-shadow-mauve-500">
+                            Aa
+                        </p>
+                    </td>,
+                ],
+                [
+                    "olive-500",
+                    "オリーブ",
+                    <td class="bg-white">
+                        <p class="text-2xl text-white drop-shadow-md drop-shadow-olive-500">
+                            Aa
+                        </p>
+                    </td>,
+                ],
+                [
+                    "mist-500",
+                    "ミスト",
+                    <td class="bg-white">
+                        <p class="text-2xl text-white drop-shadow-md drop-shadow-mist-500">
+                            Aa
+                        </p>
+                    </td>,
+                ],
+                [
+                    "taupe-500",
+                    "灰褐色",
+                    <td class="bg-white">
+                        <p class="text-2xl text-white drop-shadow-md drop-shadow-taupe-500">
+                            Aa
+                        </p>
+                    </td>,
+                ],
+                [
                     "red-500/25",
                     "不透明度25％で指定する例",
                     <td class="bg-white">

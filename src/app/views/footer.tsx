@@ -20,7 +20,7 @@ const Footer = () => {
                     />
                 </picture>
             </a>
-            <small>© 2025 Telehakke</small>
+            <small>© 2025-2026 Telehakke</small>
         </div>
     );
 };

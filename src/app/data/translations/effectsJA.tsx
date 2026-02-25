@@ -242,6 +242,34 @@ const effectsJA = new Map<string, Translation>([
                     </td>,
                 ],
                 [
+                    "shadow-mauve-500",
+                    "モーブ",
+                    <td class="h-8 w-10 bg-white">
+                        <div class="mx-auto h-4 w-6 shadow-sm shadow-mauve-500" />
+                    </td>,
+                ],
+                [
+                    "shadow-olive-500",
+                    "オリーブ",
+                    <td class="h-8 w-10 bg-white">
+                        <div class="mx-auto h-4 w-6 shadow-sm shadow-olive-500" />
+                    </td>,
+                ],
+                [
+                    "shadow-mist-500",
+                    "ミスト",
+                    <td class="h-8 w-10 bg-white">
+                        <div class="mx-auto h-4 w-6 shadow-sm shadow-mist-500" />
+                    </td>,
+                ],
+                [
+                    "shadow-taupe-500",
+                    "灰褐色",
+                    <td class="h-8 w-10 bg-white">
+                        <div class="mx-auto h-4 w-6 shadow-sm shadow-taupe-500" />
+                    </td>,
+                ],
+                [
                     "shadow-red-500/25",
                     "不透明度25％で指定する例",
                     <td class="h-8 w-10 bg-white">
@@ -450,6 +478,34 @@ const effectsJA = new Map<string, Translation>([
                     </td>,
                 ],
                 [
+                    "inset-shadow-mauve-500",
+                    "モーブ",
+                    <td class="h-8 w-10 bg-white">
+                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-mauve-500" />
+                    </td>,
+                ],
+                [
+                    "inset-shadow-olive-500",
+                    "オリーブ",
+                    <td class="h-8 w-10 bg-white">
+                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-olive-500" />
+                    </td>,
+                ],
+                [
+                    "inset-shadow-mist-500",
+                    "ミスト",
+                    <td class="h-8 w-10 bg-white">
+                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-mist-500" />
+                    </td>,
+                ],
+                [
+                    "inset-shadow-taupe-500",
+                    "灰褐色",
+                    <td class="h-8 w-10 bg-white">
+                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-taupe-500" />
+                    </td>,
+                ],
+                [
                     "inset-shadow-red-500/25",
                     "不透明度25％で指定する例",
                     <td class="h-8 w-10 bg-white">
@@ -635,6 +691,34 @@ const effectsJA = new Map<string, Translation>([
                     "石",
                     <td class="w-10">
                         <div class="h-4 w-9 ring-1 ring-stone-500" />
+                    </td>,
+                ],
+                [
+                    "ring-mauve-500",
+                    "モーブ",
+                    <td class="w-10">
+                        <div class="h-4 w-9 ring-1 ring-mauve-500" />
+                    </td>,
+                ],
+                [
+                    "ring-olive-500",
+                    "オリーブ",
+                    <td class="w-10">
+                        <div class="h-4 w-9 ring-1 ring-olive-500" />
+                    </td>,
+                ],
+                [
+                    "ring-mist-500",
+                    "ミスト",
+                    <td class="w-10">
+                        <div class="h-4 w-9 ring-1 ring-mist-500" />
+                    </td>,
+                ],
+                [
+                    "ring-taupe-500",
+                    "灰褐色",
+                    <td class="w-10">
+                        <div class="h-4 w-9 ring-1 ring-taupe-500" />
                     </td>,
                 ],
                 [
@@ -827,6 +911,34 @@ const effectsJA = new Map<string, Translation>([
                     "石",
                     <td class="w-10">
                         <div class="h-4 w-9 inset-ring inset-ring-stone-500" />
+                    </td>,
+                ],
+                [
+                    "inset-ring-mauve-500",
+                    "モーブ",
+                    <td class="w-10">
+                        <div class="h-4 w-9 inset-ring inset-ring-mauve-500" />
+                    </td>,
+                ],
+                [
+                    "inset-ring-olive-500",
+                    "オリーブ",
+                    <td class="w-10">
+                        <div class="h-4 w-9 inset-ring inset-ring-olive-500" />
+                    </td>,
+                ],
+                [
+                    "inset-ring-mist-500",
+                    "ミスト",
+                    <td class="w-10">
+                        <div class="h-4 w-9 inset-ring inset-ring-mist-500" />
+                    </td>,
+                ],
+                [
+                    "inset-ring-taupe-500",
+                    "灰褐色",
+                    <td class="w-10">
+                        <div class="h-4 w-9 inset-ring inset-ring-taupe-500" />
                     </td>,
                 ],
                 [
@@ -1096,6 +1208,42 @@ const effectsJA = new Map<string, Translation>([
                     "石",
                     <td class="bg-white">
                         <p class="text-2xl text-white text-shadow-md text-shadow-stone-500">
+                            Aa
+                        </p>
+                    </td>,
+                ],
+                [
+                    "mauve-500",
+                    "モーブ",
+                    <td class="bg-white">
+                        <p class="text-2xl text-white text-shadow-mauve-500 text-shadow-md">
+                            Aa
+                        </p>
+                    </td>,
+                ],
+                [
+                    "olive-500",
+                    "オリーブ",
+                    <td class="bg-white">
+                        <p class="text-2xl text-white text-shadow-md text-shadow-olive-500">
+                            Aa
+                        </p>
+                    </td>,
+                ],
+                [
+                    "mist-500",
+                    "ミスト",
+                    <td class="bg-white">
+                        <p class="text-2xl text-white text-shadow-md text-shadow-mist-500">
+                            Aa
+                        </p>
+                    </td>,
+                ],
+                [
+                    "taupe-500",
+                    "灰褐色",
+                    <td class="bg-white">
+                        <p class="text-2xl text-white text-shadow-md text-shadow-taupe-500">
                             Aa
                         </p>
                     </td>,

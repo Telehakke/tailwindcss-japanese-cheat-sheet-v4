@@ -1,6 +1,6 @@
 import { createSignal, type Accessor, type Setter } from "solid-js";
 import { CheatSheetState, UILabelState } from "../appStates";
-import { version } from "../data/Layout_v4.1";
+import { version } from "../data/Layout_v4.2";
 import { LanguageEnum, type Language } from "../models/language";
 import { Bg, Border, FontSize } from "./common/classNames";
 

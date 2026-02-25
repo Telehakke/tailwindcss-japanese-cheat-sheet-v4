@@ -56,6 +56,10 @@ const svgJA = new Map<string, Translation>([
                     <td class="w-10 bg-neutral-500" />,
                 ],
                 ["stone-500", "石", <td class="w-10 bg-stone-500" />],
+                ["mauve-500", "モーブ", <td class="w-10 bg-mauve-500" />],
+                ["olive-500", "オリーブ", <td class="w-10 bg-olive-500" />],
+                ["mist-500", "ミスト", <td class="w-10 bg-mist-500" />],
+                ["taupe-500", "灰褐色", <td class="w-10 bg-taupe-500" />],
                 [
                     "red-500/25",
                     "不透明度25％で指定する例",
@@ -110,6 +114,10 @@ const svgJA = new Map<string, Translation>([
                     <td class="w-10 bg-neutral-500" />,
                 ],
                 ["stone-500", "石", <td class="w-10 bg-stone-500" />],
+                ["mauve-500", "モーブ", <td class="w-10 bg-mauve-500" />],
+                ["olive-500", "オリーブ", <td class="w-10 bg-olive-500" />],
+                ["mist-500", "ミスト", <td class="w-10 bg-mist-500" />],
+                ["taupe-500", "灰褐色", <td class="w-10 bg-taupe-500" />],
                 [
                     "red-500/25",
                     "不透明度25％で指定する例",

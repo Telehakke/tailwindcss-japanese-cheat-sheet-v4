@@ -1,4 +1,4 @@
-import { Index, Show } from "solid-js";
+import { For, Index, Show } from "solid-js";
 import {
     BreakpointPrefixState,
     CheatSheetState,
@@ -57,11 +57,9 @@ const CheatSheet = (props: { cheatSheetData: CheatSheetData }) => {
     return (
         <FloatingCard>
             <CategoryBar cheatSheetData={props.cheatSheetData} />
-            <Index each={props.cheatSheetData.documentationDetailsList}>
-                {(doc) => (
-                    <DocumentationGroupBox documentationDetails={doc()} />
-                )}
-            </Index>
+            <For each={props.cheatSheetData.documentationDetailsList}>
+                {(doc) => <DocumentationGroupBox documentationDetails={doc} />}
+            </For>
         </FloatingCard>
     );
 };

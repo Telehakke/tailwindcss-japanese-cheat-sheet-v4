@@ -65,8 +65,8 @@ class CheatSheetDataSlicerLG implements CheatSheetDataSlicer {
 class CheatSheetDataSlicerXL implements CheatSheetDataSlicer {
     slice = (dataList: readonly CheatSheetData[]): CheatSheetGridRow => {
         return {
-            firstColumn: dataList.slice(0, 2),
-            secondColumn: dataList.slice(2, 6),
+            firstColumn: dataList.slice(0, 3),
+            secondColumn: dataList.slice(3, 6),
             thirdColumn: dataList.slice(6, 10),
             fourthColumn: dataList.slice(10),
         };

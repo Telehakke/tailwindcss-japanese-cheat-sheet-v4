@@ -101,6 +101,14 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
+        "font-feature-settings",
+        {
+            entry: "フォント機能設定",
+            description: "フォントが持つOpenType機能を制御する",
+            details: [],
+        },
+    ],
+    [
         "letter-spacing",
         {
             entry: "文字間隔",
@@ -210,7 +218,6 @@ const typographyJA = new Map<string, Translation>([
                     "white",
                     "白",
                     <td class="w-10 text-white">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -218,7 +225,6 @@ const typographyJA = new Map<string, Translation>([
                     "red-500",
                     "赤",
                     <td class="w-10 text-red-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -226,7 +232,6 @@ const typographyJA = new Map<string, Translation>([
                     "orange-500",
                     "オレンジ",
                     <td class="w-10 text-orange-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -234,7 +239,6 @@ const typographyJA = new Map<string, Translation>([
                     "amber-500",
                     "琥珀",
                     <td class="w-10 text-amber-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -242,7 +246,6 @@ const typographyJA = new Map<string, Translation>([
                     "yellow-500",
                     "黄色",
                     <td class="w-10 text-yellow-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -250,7 +253,6 @@ const typographyJA = new Map<string, Translation>([
                     "lime-500",
                     "ライム",
                     <td class="w-10 text-lime-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -258,7 +260,6 @@ const typographyJA = new Map<string, Translation>([
                     "green-500",
                     "緑",
                     <td class="w-10 text-green-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -266,7 +267,6 @@ const typographyJA = new Map<string, Translation>([
                     "emerald-500",
                     "エメラルド",
                     <td class="w-10 text-emerald-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -274,7 +274,6 @@ const typographyJA = new Map<string, Translation>([
                     "teal-500",
                     "コガモ",
                     <td class="w-10 text-teal-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -282,7 +281,6 @@ const typographyJA = new Map<string, Translation>([
                     "cyan-500",
                     "シアン",
                     <td class="w-10 text-cyan-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -290,7 +288,6 @@ const typographyJA = new Map<string, Translation>([
                     "sky-500",
                     "スカイ",
                     <td class="w-10 text-sky-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -298,7 +295,6 @@ const typographyJA = new Map<string, Translation>([
                     "blue-500",
                     "青",
                     <td class="w-10 text-blue-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -306,7 +302,6 @@ const typographyJA = new Map<string, Translation>([
                     "indigo-500",
                     "藍色",
                     <td class="w-10 text-indigo-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -314,7 +309,6 @@ const typographyJA = new Map<string, Translation>([
                     "violet-500",
                     "スミレ",
                     <td class="w-10 text-violet-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -322,7 +316,6 @@ const typographyJA = new Map<string, Translation>([
                     "purple-500",
                     "紫",
                     <td class="w-10 text-purple-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -330,7 +323,6 @@ const typographyJA = new Map<string, Translation>([
                     "fuchsia-500",
                     "フクシア",
                     <td class="w-10 text-fuchsia-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -338,7 +330,6 @@ const typographyJA = new Map<string, Translation>([
                     "pink-500",
                     "ピンク",
                     <td class="w-10 text-pink-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -346,7 +337,6 @@ const typographyJA = new Map<string, Translation>([
                     "rose-500",
                     "バラ",
                     <td class="w-10 text-rose-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -354,7 +344,6 @@ const typographyJA = new Map<string, Translation>([
                     "slate-500",
                     "粘板岩",
                     <td class="w-10 text-slate-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -362,7 +351,6 @@ const typographyJA = new Map<string, Translation>([
                     "gray-500",
                     "グレー",
                     <td class="w-10 text-gray-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -370,7 +358,6 @@ const typographyJA = new Map<string, Translation>([
                     "zinc-500",
                     "亜鉛",
                     <td class="w-10 text-zinc-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -378,7 +365,6 @@ const typographyJA = new Map<string, Translation>([
                     "neutral-500",
                     "ニュートラル",
                     <td class="w-10 text-neutral-500">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -386,7 +372,34 @@ const typographyJA = new Map<string, Translation>([
                     "stone-500",
                     "石",
                     <td class="w-10 text-stone-500">
-                        {" "}
+                        <p>Aa</p>
+                    </td>,
+                ],
+                [
+                    "mauve-500",
+                    "モーブ",
+                    <td class="w-10 text-mauve-500">
+                        <p>Aa</p>
+                    </td>,
+                ],
+                [
+                    "olive-500",
+                    "オリーブ",
+                    <td class="w-10 text-olive-500">
+                        <p>Aa</p>
+                    </td>,
+                ],
+                [
+                    "mist-500",
+                    "ミスト",
+                    <td class="w-10 text-mist-500">
+                        <p>Aa</p>
+                    </td>,
+                ],
+                [
+                    "taupe-500",
+                    "灰褐色",
+                    <td class="w-10 text-taupe-500">
                         <p>Aa</p>
                     </td>,
                 ],
@@ -394,7 +407,6 @@ const typographyJA = new Map<string, Translation>([
                     "red-500/25",
                     "不透明度25％で指定する例",
                     <td class="w-10 text-red-500/25">
-                        {" "}
                         <p>Aa</p>
                     </td>,
                 ],
@@ -613,6 +625,34 @@ const typographyJA = new Map<string, Translation>([
                     "石",
                     <td>
                         <p class="pr-1 underline decoration-stone-500">Aa</p>
+                    </td>,
+                ],
+                [
+                    "mauve-500",
+                    "モーブ",
+                    <td>
+                        <p class="pr-1 underline decoration-mauve-500">Aa</p>
+                    </td>,
+                ],
+                [
+                    "olive-500",
+                    "オリーブ",
+                    <td>
+                        <p class="pr-1 underline decoration-olive-500">Aa</p>
+                    </td>,
+                ],
+                [
+                    "mist-500",
+                    "ミスト",
+                    <td>
+                        <p class="pr-1 underline decoration-mist-500">Aa</p>
+                    </td>,
+                ],
+                [
+                    "taupe-500",
+                    "灰褐色",
+                    <td>
+                        <p class="pr-1 underline decoration-taupe-500">Aa</p>
                     </td>,
                 ],
                 [
