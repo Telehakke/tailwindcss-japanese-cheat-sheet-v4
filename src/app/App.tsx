@@ -1,21 +1,35 @@
-import Contents from "./views/contents/contents";
-import Controller from "./views/controller/controller";
-import CopiedMessageBox from "./views/copiedMessageBox";
-import Footer from "./views/footer";
-import Header from "./views/header";
-import Sidebar from "./views/sidebar";
+import { useSetAtom } from "jotai";
+import { useEffect, type JSX } from "react";
+import { breakpointAtom, toaster } from "./atoms";
+import { BreakpointFactory } from "./models/breakpoint";
+import { Toast } from "./views/common/Toast";
+import { Contents } from "./views/contents/contents";
+import { Controller } from "./views/controller/controller";
+import { Header } from "./views/header/Header";
+import { SideMenu } from "./views/SideMenu";
 
-const App = () => {
+const App = (): JSX.Element => {
+    const setBreakpoint = useSetAtom(breakpointAtom);
+
+    useEffect(() => {
+        const handleResize = (): void => {
+            setBreakpoint(BreakpointFactory.create(window.innerWidth));
+        };
+        window.addEventListener("resize", handleResize);
+        return (): void => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [setBreakpoint]);
+
     return (
         <>
-            <div class="space-y-4 p-4">
+            <div className="p-4">
                 <Header />
                 <Controller />
                 <Contents />
-                <Footer />
             </div>
-            <Sidebar />
-            <CopiedMessageBox />
+            <SideMenu />
+            <Toast toaster={toaster} />
         </>
     );
 };

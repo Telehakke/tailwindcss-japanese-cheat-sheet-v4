@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { TransitionsAndAnimationEnum } from "../../models/entry";
 
-const transitionsAndAnimationJA = new Map<string, Translation>([
+export const transitionsAndAnimationJA = new Map<string, Translation>([
     [
         CategoryEnum.TransitionsAndAnimation,
         {
@@ -11,7 +12,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
         },
     ],
     [
-        "transition-property",
+        TransitionsAndAnimationEnum.transitionProperty,
         {
             entry: "遷移プロパティー",
             description:
@@ -31,11 +32,11 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
         },
     ],
     [
-        "transition-behavior",
+        TransitionsAndAnimationEnum.transitionBehavior,
         {
             entry: "遷移の振る舞い",
             description:
-                "従来、transition-durationの効果を受け付けなかった離散プロパティ（displayやvisibilityなど）に対し、効果を受け付けさせる新しいCSSプロパティ",
+                "従来、transition-durationの効果を受け付けなかった離散プロパティ（displayやvisibilityなど）に対し、効果を受け付けさせる",
             details: [
                 ["normal", "瞬時に遷移する"],
                 ["discrete", "transition-durationの期間待機してから遷移する"],
@@ -43,7 +44,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
         },
     ],
     [
-        "transition-duration",
+        TransitionsAndAnimationEnum.transitionDuration,
         {
             entry: "遷移の期間",
             description: "遷移が完了するまでの時間を指定する",
@@ -54,7 +55,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
         },
     ],
     [
-        "transition-timing-function",
+        TransitionsAndAnimationEnum.transitionTimingFunction,
         {
             entry: "遷移タイミング関数",
             description: "値が変化する速度を指定する",
@@ -68,7 +69,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
         },
     ],
     [
-        "transition-delay",
+        TransitionsAndAnimationEnum.transitionDelay,
         {
             entry: "遷移の遅延",
             description:
@@ -77,7 +78,7 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
         },
     ],
     [
-        "animation",
+        TransitionsAndAnimationEnum.animation,
         {
             entry: "アニメーション",
             description: "要素に動きを与える",
@@ -85,41 +86,39 @@ const transitionsAndAnimationJA = new Map<string, Translation>([
                 [
                     "spin",
                     "時計回りに回転",
-                    <td class="w-10">
-                        <p class="animate-spin text-center">Aa</p>
+                    <td className="w-10">
+                        <p className="animate-spin text-center">Aa</p>
                     </td>,
                 ],
                 [
                     "ping",
                     "波紋のように広がるアニメーション",
-                    <td class="w-10">
-                        <p class="animate-ping text-center">Aa</p>
+                    <td className="w-10">
+                        <p className="animate-ping text-center">Aa</p>
                     </td>,
                 ],
                 [
                     "pulse",
                     "フェードイン／アウトを繰り返す",
-                    <td class="w-10">
-                        <p class="animate-pulse text-center">Aa</p>
+                    <td className="w-10">
+                        <p className="animate-pulse text-center">Aa</p>
                     </td>,
                 ],
                 [
                     "bounce",
                     "上下に弾む",
-                    <td class="w-10">
-                        <p class="animate-bounce text-center">Aa</p>
+                    <td className="w-10">
+                        <p className="animate-bounce text-center">Aa</p>
                     </td>,
                 ],
                 [
                     "none",
                     "アニメーションしない",
-                    <td class="w-10">
-                        <p class="animate-none text-center">Aa</p>
+                    <td className="w-10">
+                        <p className="animate-none text-center">Aa</p>
                     </td>,
                 ],
             ],
         },
     ],
 ]);
-
-export default transitionsAndAnimationJA;

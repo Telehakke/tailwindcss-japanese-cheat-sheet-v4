@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { SpacingEnum } from "../../models/entry";
 
-const spacingJA = new Map<string, Translation>([
+export const spacingJA = new Map<string, Translation>([
     [
         CategoryEnum.Spacing,
         {
@@ -11,7 +12,7 @@ const spacingJA = new Map<string, Translation>([
         },
     ],
     [
-        "padding",
+        SpacingEnum.padding,
         {
             entry: "パディング",
             description: "要素の内側に指定した長さの余白を与える",
@@ -32,7 +33,7 @@ const spacingJA = new Map<string, Translation>([
         },
     ],
     [
-        "margin",
+        SpacingEnum.margin,
         {
             entry: "マージン",
             description: "要素の外側に指定した長さの余白を与える",
@@ -72,5 +73,3 @@ const spacingJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default spacingJA;

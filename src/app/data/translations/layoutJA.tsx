@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { LayoutEnum } from "../../models/entry";
 
-const layoutJA = new Map<string, Translation>([
+export const layoutJA = new Map<string, Translation>([
     [
         CategoryEnum.Layout,
         {
@@ -11,7 +12,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "aspect-ratio",
+        LayoutEnum.aspectRatio,
         {
             entry: "アスペクト比",
             description: "要素のアスペクト比を指定する",
@@ -24,19 +25,19 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "columns",
+        LayoutEnum.columns,
         {
-            entry: "列",
+            entry: "縦列",
             description: "要素のコンテンツ領域を縦に分割する",
             details: [
-                ["（数値）", "任意の分割数を指定"],
-                ["（3xs–7xl）", "プリセット値を使用"],
+                ["（数値）", "任意の数で分割"],
+                ["（3xs–7xl）", "プリセット値の幅で分割"],
                 ["auto", "自動"],
             ],
         },
     ],
     [
-        "break-after",
+        LayoutEnum.breakAfter,
         {
             entry: "後の区切り",
             description:
@@ -54,7 +55,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "break-before",
+        LayoutEnum.breakBefore,
         {
             entry: "前の区切り",
             description:
@@ -72,7 +73,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "break-inside",
+        LayoutEnum.breakInside,
         {
             entry: "中の区切り",
             description:
@@ -86,7 +87,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "box-decoration-break",
+        LayoutEnum.boxDecorationBreak,
         {
             entry: "区切られたボックスの装飾",
             description:
@@ -101,7 +102,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "box-sizing",
+        LayoutEnum.boxSizing,
         {
             entry: "ボックス寸法",
             description: "要素の幅と高さを求めるための領域を指定する",
@@ -112,7 +113,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "display",
+        LayoutEnum.display,
         {
             entry: "ディスプレイ",
             description: "要素の表示方法を指定する",
@@ -138,17 +139,17 @@ const layoutJA = new Map<string, Translation>([
                     "contents",
                     "ボックスを生成せずに、コンテンツ領域だけを表示する",
                 ],
-                ["table", "<table>要素と同じく動作する"],
+                ["table", "<table>要素と同じ効果"],
                 ["inline-table", "inline + tableの効果"],
-                ["table-caption", "<caption>要素と同じく動作する"],
-                ["table-cell", "<td>要素と同じく動作する"],
-                ["table-column", "<col>要素と同じく動作する"],
-                ["table-column-group", "<colgroup>要素と同じく動作する"],
-                ["table-footer-group", "<tfoot>要素と同じく動作する"],
-                ["table-header-group", "<thead>要素と同じく動作する"],
-                ["table-row-group", "<tbody>要素と同じく動作する"],
-                ["table-row", "<tr>要素と同じく動作する"],
-                ["list-item", "<li>要素と同じく動作する"],
+                ["table-caption", "<caption>要素と同じ効果"],
+                ["table-cell", "<td>要素と同じ効果"],
+                ["table-column", "<col>要素と同じく効果"],
+                ["table-column-group", "<colgroup>要素と同じ効果"],
+                ["table-footer-group", "<tfoot>要素と同じ効果"],
+                ["table-header-group", "<thead>要素と同じ効果"],
+                ["table-row-group", "<tbody>要素と同じ効果"],
+                ["table-row", "<tr>要素と同じ効果"],
+                ["list-item", "<li>要素と同じ効果"],
                 ["hidden", "要素を非表示にする"],
                 [
                     "sr-only",
@@ -159,7 +160,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "float",
+        LayoutEnum.float,
         {
             entry: "フロート",
             description:
@@ -174,7 +175,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "clear",
+        LayoutEnum.clear,
         {
             entry: "クリアー",
             description:
@@ -190,7 +191,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "isolation",
+        LayoutEnum.isolation,
         {
             entry: "隔離",
             description:
@@ -202,7 +203,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "object-fit",
+        LayoutEnum.objectFit,
         {
             entry: "オブジェクトフィット",
             description: "コンテンツの表示方法を指定する",
@@ -222,7 +223,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "object-position",
+        LayoutEnum.objectPosition,
         {
             entry: "オブジェクト位置",
             description:
@@ -241,7 +242,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "overflow",
+        LayoutEnum.overflow,
         {
             entry: "オーバーフロー",
             description: "コンテンツが要素からはみ出す場合の動作を指定する",
@@ -260,7 +261,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "overscroll-behavior",
+        LayoutEnum.overscrollBehavior,
         {
             entry: "オーバースクロール動作",
             description: "スクロール領域の限界に達したときの動作を指定する",
@@ -277,7 +278,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "position",
+        LayoutEnum.position,
         {
             entry: "位置",
             description: "要素の配置方法を指定する",
@@ -306,7 +307,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "top / right / bottom / left",
+        LayoutEnum.topRightBottomLeft,
         {
             entry: "トップ、ライト、ボトム、レフト",
             description: "指定した位置に要素を配置する",
@@ -331,7 +332,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "visibility",
+        LayoutEnum.visibility,
         {
             entry: "可視性",
             description: "要素の可視状態を指定する",
@@ -346,7 +347,7 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
     [
-        "z-index",
+        LayoutEnum.zIndex,
         {
             entry: "Zインデックス",
             description: "要素の重なり順を指定する",
@@ -357,5 +358,3 @@ const layoutJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default layoutJA;

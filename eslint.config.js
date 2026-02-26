@@ -1,28 +1,29 @@
 import js from "@eslint/js";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import solid from "eslint-plugin-solid/configs/typescript";
-import { defineConfig } from "eslint/config";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default defineConfig([
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
-        plugins: { js },
-        extends: ["js/recommended"],
-    },
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
-        languageOptions: { globals: globals.browser },
-    },
-    tseslint.configs.recommended,
-    { ignores: ["docs"] },
+    globalIgnores(["dist"]),
     {
         files: ["**/*.{ts,tsx}"],
-        ...solid,
-    },
-    {
-        files: ["**/*.{ts,tsx}"],
-        ...jsxA11y.flatConfigs.recommended,
+        extends: [
+            js.configs.recommended,
+            tseslint.configs.recommended,
+            reactHooks.configs.flat.recommended,
+            reactRefresh.configs.vite,
+            jsxA11y.flatConfigs.recommended,
+        ],
+        languageOptions: {
+            ecmaVersion: 2020,
+            globals: globals.browser,
+        },
+        rules: {
+            // 全ての関数で戻り値の型を必須にする
+            "@typescript-eslint/explicit-function-return-type": "error",
+        },
     },
 ]);

@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { BackgroundsEnum } from "../../models/entry";
 
-const backgroundsJA = new Map<string, Translation>([
+export const backgroundsJA = new Map<string, Translation>([
     [
         CategoryEnum.Backgrounds,
         {
@@ -11,7 +12,7 @@ const backgroundsJA = new Map<string, Translation>([
         },
     ],
     [
-        "background-attachment",
+        BackgroundsEnum.backgroundAttachment,
         {
             entry: "背景の取り付け",
             description:
@@ -27,7 +28,8 @@ const backgroundsJA = new Map<string, Translation>([
         },
     ],
     [
-        "background-clip",
+        BackgroundsEnum.backgroundClip,
+
         {
             entry: "背景の切り抜き",
             description:
@@ -44,7 +46,7 @@ const backgroundsJA = new Map<string, Translation>([
         },
     ],
     [
-        "background-color",
+        BackgroundsEnum.backgroundColor,
         {
             entry: "背景色",
             description: "要素の背景色を指定する",
@@ -52,56 +54,64 @@ const backgroundsJA = new Map<string, Translation>([
                 [
                     "inherit",
                     "親要素からスタイルを引き継ぐ",
-                    <td class="w-10" />,
+                    <td className="w-10" />,
                 ],
-                ["current", "テキスト色", <td class="w-10" />],
-                ["transparent", "透明", <td class="w-10" />],
-                ["black", "黒", <td class="w-10 bg-black" />],
-                ["white", "白", <td class="w-10 bg-white" />],
-                ["red-500", "赤", <td class="w-10 bg-red-500" />],
-                ["orange-500", "オレンジ", <td class="w-10 bg-orange-500" />],
-                ["amber-500", "琥珀", <td class="w-10 bg-amber-500" />],
-                ["yellow-500", "黄色", <td class="w-10 bg-yellow-500" />],
-                ["lime-500", "ライム", <td class="w-10 bg-lime-500" />],
-                ["green-500", "緑", <td class="w-10 bg-green-500" />],
+                ["current", "テキスト色", <td className="w-10" />],
+                ["transparent", "透明", <td className="w-10" />],
+                ["black", "黒", <td className="w-10 bg-black" />],
+                ["white", "白", <td className="w-10 bg-white" />],
+                ["red-500", "赤", <td className="w-10 bg-red-500" />],
+                [
+                    "orange-500",
+                    "オレンジ",
+                    <td className="w-10 bg-orange-500" />,
+                ],
+                ["amber-500", "琥珀", <td className="w-10 bg-amber-500" />],
+                ["yellow-500", "黄色", <td className="w-10 bg-yellow-500" />],
+                ["lime-500", "ライム", <td className="w-10 bg-lime-500" />],
+                ["green-500", "緑", <td className="w-10 bg-green-500" />],
                 [
                     "emerald-500",
                     "エメラルド",
-                    <td class="w-10 bg-emerald-500" />,
+                    <td className="w-10 bg-emerald-500" />,
                 ],
-                ["teal-500", "コガモ", <td class="w-10 bg-teal-500" />],
-                ["cyan-500", "シアン", <td class="w-10 bg-cyan-500" />],
-                ["sky-500", "スカイ", <td class="w-10 bg-sky-500" />],
-                ["blue-500", "青", <td class="w-10 bg-blue-500" />],
-                ["indigo-500", "藍色", <td class="w-10 bg-indigo-500" />],
-                ["violet-500", "スミレ", <td class="w-10 bg-violet-500" />],
-                ["purple-500", "紫", <td class="w-10 bg-purple-500" />],
-                ["fuchsia-500", "フクシア", <td class="w-10 bg-fuchsia-500" />],
-                ["pink-500", "ピンク", <td class="w-10 bg-pink-500" />],
-                ["rose-500", "バラ", <td class="w-10 bg-rose-500" />],
-                ["slate-500", "粘板岩", <td class="w-10 bg-slate-500" />],
-                ["gray-500", "グレー", <td class="w-10 bg-gray-500" />],
-                ["zinc-500", "亜鉛", <td class="w-10 bg-zinc-500" />],
+                ["teal-500", "コガモ", <td className="w-10 bg-teal-500" />],
+                ["cyan-500", "シアン", <td className="w-10 bg-cyan-500" />],
+                ["sky-500", "スカイ", <td className="w-10 bg-sky-500" />],
+                ["blue-500", "青", <td className="w-10 bg-blue-500" />],
+                ["indigo-500", "藍色", <td className="w-10 bg-indigo-500" />],
+                ["violet-500", "スミレ", <td className="w-10 bg-violet-500" />],
+                ["purple-500", "紫", <td className="w-10 bg-purple-500" />],
+                [
+                    "fuchsia-500",
+                    "フクシア",
+                    <td className="w-10 bg-fuchsia-500" />,
+                ],
+                ["pink-500", "ピンク", <td className="w-10 bg-pink-500" />],
+                ["rose-500", "バラ", <td className="w-10 bg-rose-500" />],
+                ["slate-500", "粘板岩", <td className="w-10 bg-slate-500" />],
+                ["gray-500", "グレー", <td className="w-10 bg-gray-500" />],
+                ["zinc-500", "亜鉛", <td className="w-10 bg-zinc-500" />],
                 [
                     "neutral-500",
                     "ニュートラル",
-                    <td class="w-10 bg-neutral-500" />,
+                    <td className="w-10 bg-neutral-500" />,
                 ],
-                ["stone-500", "石", <td class="w-10 bg-stone-500" />],
-                ["mauve-500", "モーブ", <td class="w-10 bg-mauve-500" />],
-                ["olive-500", "オリーブ", <td class="w-10 bg-olive-500" />],
-                ["mist-500", "ミスト", <td class="w-10 bg-mist-500" />],
-                ["taupe-500", "灰褐色", <td class="w-10 bg-taupe-500" />],
+                ["stone-500", "石", <td className="w-10 bg-stone-500" />],
+                ["mauve-500", "モーブ", <td className="w-10 bg-mauve-500" />],
+                ["olive-500", "オリーブ", <td className="w-10 bg-olive-500" />],
+                ["mist-500", "ミスト", <td className="w-10 bg-mist-500" />],
+                ["taupe-500", "灰褐色", <td className="w-10 bg-taupe-500" />],
                 [
                     "red-500/25",
                     "不透明度25％で指定する例",
-                    <td class="w-10 bg-red-500/25" />,
+                    <td className="w-10 bg-red-500/25" />,
                 ],
             ],
         },
     ],
     [
-        "background-image",
+        BackgroundsEnum.backgroundImage,
         {
             entry: "背景画像",
             description: "背景画像やグラデーションを指定する",
@@ -128,7 +138,7 @@ const backgroundsJA = new Map<string, Translation>([
                 [
                     "bg-linear-to-r\nfrom-white\nto-blue-500",
                     "線形グラデーションの例",
-                    <td class="w-10 bg-linear-to-r from-white to-blue-500" />,
+                    <td className="w-10 bg-linear-to-r from-white to-blue-500" />,
                 ],
                 ["bg-radial", "円形グラデーション", <td />],
                 [
@@ -139,7 +149,7 @@ const backgroundsJA = new Map<string, Translation>([
                 [
                     "bg-radial\nfrom-white\nto-blue-500",
                     "円形グラデーションの例",
-                    <td class="w-10 bg-radial from-white to-blue-500" />,
+                    <td className="w-10 bg-radial from-white to-blue-500" />,
                 ],
                 ["bg-conic", "扇形グラデーション", <td />],
                 [
@@ -150,7 +160,7 @@ const backgroundsJA = new Map<string, Translation>([
                 [
                     "bg-conic\nfrom-white\nto-blue-500",
                     "扇形グラデーションの例",
-                    <td class="w-10 bg-conic from-white to-blue-500" />,
+                    <td className="w-10 bg-conic from-white to-blue-500" />,
                 ],
                 ["from-（色）", "開始色", <td />],
                 ["from-（数値）%", "開始位置", <td />],
@@ -162,7 +172,7 @@ const backgroundsJA = new Map<string, Translation>([
         },
     ],
     [
-        "background-origin",
+        BackgroundsEnum.backgroundOrigin,
         {
             entry: "背景の原点",
             description:
@@ -175,7 +185,7 @@ const backgroundsJA = new Map<string, Translation>([
         },
     ],
     [
-        "background-position",
+        BackgroundsEnum.backgroundPosition,
         {
             entry: "背景の位置",
             description:
@@ -194,7 +204,7 @@ const backgroundsJA = new Map<string, Translation>([
         },
     ],
     [
-        "background-repeat",
+        BackgroundsEnum.backgroundRepeat,
         {
             entry: "背景の繰り返し",
             description: "Background Imageに指定した背景画像の並べ方を指定する",
@@ -215,7 +225,7 @@ const backgroundsJA = new Map<string, Translation>([
         },
     ],
     [
-        "background-size",
+        BackgroundsEnum.backgroundSize,
         {
             entry: "背景サイズ",
             description: "Background Imageに指定した背景画像のサイズを指定する",
@@ -227,5 +237,3 @@ const backgroundsJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default backgroundsJA;

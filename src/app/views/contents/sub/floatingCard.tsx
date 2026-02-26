@@ -1,12 +1,9 @@
-import type { JSX } from "solid-js/jsx-runtime";
-import { Bg } from "../../common/classNames";
+import type { JSX, ReactNode } from "react";
 
-const FloatingCard = (props: { children?: JSX.Element }) => {
+export const FloatingCard = (props: { children?: ReactNode }): JSX.Element => {
     return (
-        <div class={`rounded-xl shadow-md ${Bg.neutral50_dark800}`}>
+        <div className="overflow-hidden rounded-xl bg-white p-4 shadow-md dark:bg-neutral-800">
             {props.children}
         </div>
     );
 };
-
-export default FloatingCard;

@@ -1,4 +1,4 @@
-export default class DelayAction {
+export class DelayAction {
     private id: number | undefined = undefined;
 
     /**

@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { TypographyEnum } from "../../models/entry";
 
-const typographyJA = new Map<string, Translation>([
+export const typographyJA = new Map<string, Translation>([
     [
         CategoryEnum.Typography,
         {
@@ -11,7 +12,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "font-family",
+        TypographyEnum.fontFamily,
         {
             entry: "フォントファミリー",
             description: "フォントファミリーを指定する",
@@ -23,7 +24,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "font-size",
+        TypographyEnum.fontSize,
         {
             entry: "フォントサイズ",
             description: "フォントサイズを指定する",
@@ -31,7 +32,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "font-smoothing",
+        TypographyEnum.fontSmoothing,
         {
             entry: "フォントのなめらかさ",
             description: "アンチエイリアスの方式を指定する（macOSで有効）",
@@ -45,7 +46,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "font-style",
+        TypographyEnum.fontStyle,
         {
             entry: "フォントスタイル",
             description: "斜体で表示するかどうかを指定する",
@@ -53,7 +54,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "font-weight",
+        TypographyEnum.fontWeight,
         {
             entry: "フォントウェイト",
             description: "フォントの太さを指定する",
@@ -61,7 +62,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "font-stretch",
+        TypographyEnum.fontStretch,
         {
             entry: "フォントの引き延ばし",
             description:
@@ -73,7 +74,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "font-variant-numeric",
+        TypographyEnum.fontVariantNumeric,
         {
             entry: "数字の異形",
             description:
@@ -101,7 +102,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "font-feature-settings",
+        TypographyEnum.fontFeatureSettings,
         {
             entry: "フォント機能設定",
             description: "フォントが持つOpenType機能を制御する",
@@ -109,7 +110,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "letter-spacing",
+        TypographyEnum.letterSpacing,
         {
             entry: "文字間隔",
             description: "文字間隔を指定する",
@@ -117,7 +118,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "line-clamp",
+        TypographyEnum.lineClamp,
         {
             entry: "行の固定",
             description: "固定する行数を指定する",
@@ -128,7 +129,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "line-height",
+        TypographyEnum.lineHeight,
         {
             entry: "行の高さ",
             description: "行の高さを指定する",
@@ -143,7 +144,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "list-style-image",
+        TypographyEnum.listStyleImage,
         {
             entry: "リストスタイルの画像",
             description: "リスト項目のマーカーとして使用する画像を指定する",
@@ -157,7 +158,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "list-style-position",
+        TypographyEnum.listStylePosition,
         {
             entry: "リストスタイルの位置",
             description: "リスト項目のマーカー位置を指定する",
@@ -168,7 +169,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "list-style-type",
+        TypographyEnum.listStyleType,
         {
             entry: "リストスタイルの種類",
             description: "リスト項目のマーカー種類を指定する",
@@ -180,10 +181,10 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "text-align",
+        TypographyEnum.textAlign,
         {
             entry: "テキストの整列",
-            description: "テキストの行揃えを指定する",
+            description: "テキストの水平方向の揃えを指定する",
             details: [
                 ["left", "左揃え"],
                 ["center", "中央揃え"],
@@ -195,7 +196,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "color",
+        TypographyEnum.color,
         {
             entry: "色",
             description: "テキストの色を指定する",
@@ -203,218 +204,218 @@ const typographyJA = new Map<string, Translation>([
                 [
                     "inherit",
                     "親要素からスタイルを引き継ぐ",
-                    <td class="w-10 bg-transparent" />,
+                    <td className="bg-transparent" />,
                 ],
-                ["current", "テキスト色", <td class="w-10 bg-transparent" />],
-                ["transparent", "透明", <td class="w-10 bg-transparent" />],
+                ["current", "テキスト色", <td className="bg-transparent" />],
+                ["transparent", "透明", <td className="bg-transparent" />],
                 [
                     "black",
                     "黒",
-                    <td class="w-10 text-black">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-black">Aa</p>
                     </td>,
                 ],
                 [
                     "white",
                     "白",
-                    <td class="w-10 text-white">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-white">Aa</p>
                     </td>,
                 ],
                 [
                     "red-500",
                     "赤",
-                    <td class="w-10 text-red-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-red-500">Aa</p>
                     </td>,
                 ],
                 [
                     "orange-500",
                     "オレンジ",
-                    <td class="w-10 text-orange-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-orange-500">Aa</p>
                     </td>,
                 ],
                 [
                     "amber-500",
                     "琥珀",
-                    <td class="w-10 text-amber-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-amber-500">Aa</p>
                     </td>,
                 ],
                 [
                     "yellow-500",
                     "黄色",
-                    <td class="w-10 text-yellow-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-yellow-500">Aa</p>
                     </td>,
                 ],
                 [
                     "lime-500",
                     "ライム",
-                    <td class="w-10 text-lime-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-lime-500">Aa</p>
                     </td>,
                 ],
                 [
                     "green-500",
                     "緑",
-                    <td class="w-10 text-green-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-green-500">Aa</p>
                     </td>,
                 ],
                 [
                     "emerald-500",
                     "エメラルド",
-                    <td class="w-10 text-emerald-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-emerald-500">Aa</p>
                     </td>,
                 ],
                 [
                     "teal-500",
                     "コガモ",
-                    <td class="w-10 text-teal-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-teal-500">Aa</p>
                     </td>,
                 ],
                 [
                     "cyan-500",
                     "シアン",
-                    <td class="w-10 text-cyan-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-cyan-500">Aa</p>
                     </td>,
                 ],
                 [
                     "sky-500",
                     "スカイ",
-                    <td class="w-10 text-sky-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-sky-500">Aa</p>
                     </td>,
                 ],
                 [
                     "blue-500",
                     "青",
-                    <td class="w-10 text-blue-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-blue-500">Aa</p>
                     </td>,
                 ],
                 [
                     "indigo-500",
                     "藍色",
-                    <td class="w-10 text-indigo-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-indigo-500">Aa</p>
                     </td>,
                 ],
                 [
                     "violet-500",
                     "スミレ",
-                    <td class="w-10 text-violet-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-violet-500">Aa</p>
                     </td>,
                 ],
                 [
                     "purple-500",
                     "紫",
-                    <td class="w-10 text-purple-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-purple-500">Aa</p>
                     </td>,
                 ],
                 [
                     "fuchsia-500",
                     "フクシア",
-                    <td class="w-10 text-fuchsia-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-fuchsia-500">Aa</p>
                     </td>,
                 ],
                 [
                     "pink-500",
                     "ピンク",
-                    <td class="w-10 text-pink-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-pink-500">Aa</p>
                     </td>,
                 ],
                 [
                     "rose-500",
                     "バラ",
-                    <td class="w-10 text-rose-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-rose-500">Aa</p>
                     </td>,
                 ],
                 [
                     "slate-500",
                     "粘板岩",
-                    <td class="w-10 text-slate-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-slate-500">Aa</p>
                     </td>,
                 ],
                 [
                     "gray-500",
                     "グレー",
-                    <td class="w-10 text-gray-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-gray-500">Aa</p>
                     </td>,
                 ],
                 [
                     "zinc-500",
                     "亜鉛",
-                    <td class="w-10 text-zinc-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-zinc-500">Aa</p>
                     </td>,
                 ],
                 [
                     "neutral-500",
                     "ニュートラル",
-                    <td class="w-10 text-neutral-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-neutral-500">Aa</p>
                     </td>,
                 ],
                 [
                     "stone-500",
                     "石",
-                    <td class="w-10 text-stone-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-stone-500">Aa</p>
                     </td>,
                 ],
                 [
                     "mauve-500",
                     "モーブ",
-                    <td class="w-10 text-mauve-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-mauve-500">Aa</p>
                     </td>,
                 ],
                 [
                     "olive-500",
                     "オリーブ",
-                    <td class="w-10 text-olive-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-olive-500">Aa</p>
                     </td>,
                 ],
                 [
                     "mist-500",
                     "ミスト",
-                    <td class="w-10 text-mist-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-mist-500">Aa</p>
                     </td>,
                 ],
                 [
                     "taupe-500",
                     "灰褐色",
-                    <td class="w-10 text-taupe-500">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-taupe-500">Aa</p>
                     </td>,
                 ],
                 [
                     "red-500/25",
                     "不透明度25％で指定する例",
-                    <td class="w-10 text-red-500/25">
-                        <p>Aa</p>
+                    <td>
+                        <p className="text-red-500/25">Aa</p>
                     </td>,
                 ],
             ],
         },
     ],
     [
-        "text-decoration-line",
+        TypographyEnum.textDecorationLine,
         {
             entry: "テキスト装飾線",
             description: "テキストの装飾を指定する",
@@ -423,35 +424,35 @@ const typographyJA = new Map<string, Translation>([
                     "underline",
                     "下線を引く",
                     <td>
-                        <p class="pr-1 underline">Aa</p>
+                        <p className="underline">Aa</p>
                     </td>,
                 ],
                 [
                     "overline",
                     "上線を引く",
                     <td>
-                        <p class="pr-1 overline">Aa</p>
+                        <p className="overline">Aa</p>
                     </td>,
                 ],
                 [
                     "line-through",
                     "取り消し線を引く",
                     <td>
-                        <p class="pr-1 line-through">Aa</p>
+                        <p className="line-through">Aa</p>
                     </td>,
                 ],
                 [
                     "no-underline",
                     "装飾しない",
                     <td>
-                        <p class="pr-1 no-underline">Aa</p>
+                        <p className="no-underline">Aa</p>
                     </td>,
                 ],
             ],
         },
     ],
     [
-        "text-decoration-color",
+        TypographyEnum.textDecorationColor,
         {
             entry: "テキスト装飾の色",
             description: "テキスト装飾の色を指定する",
@@ -463,210 +464,210 @@ const typographyJA = new Map<string, Translation>([
                     "black",
                     "黒",
                     <td>
-                        <p class="pr-1 underline decoration-black">Aa</p>
+                        <p className="underline decoration-black">Aa</p>
                     </td>,
                 ],
                 [
                     "white",
                     "白",
                     <td>
-                        <p class="pr-1 underline decoration-white">Aa</p>
+                        <p className="underline decoration-white">Aa</p>
                     </td>,
                 ],
                 [
                     "red-500",
                     "赤",
                     <td>
-                        <p class="pr-1 underline decoration-red-500">Aa</p>
+                        <p className="underline decoration-red-500">Aa</p>
                     </td>,
                 ],
                 [
                     "orange-500",
                     "オレンジ",
                     <td>
-                        <p class="pr-1 underline decoration-orange-500">Aa</p>
+                        <p className="underline decoration-orange-500">Aa</p>
                     </td>,
                 ],
                 [
                     "amber-500",
                     "琥珀",
                     <td>
-                        <p class="pr-1 underline decoration-amber-500">Aa</p>
+                        <p className="underline decoration-amber-500">Aa</p>
                     </td>,
                 ],
                 [
                     "yellow-500",
                     "黄色",
                     <td>
-                        <p class="pr-1 underline decoration-yellow-500">Aa</p>
+                        <p className="underline decoration-yellow-500">Aa</p>
                     </td>,
                 ],
                 [
                     "lime-500",
                     "ライム",
                     <td>
-                        <p class="pr-1 underline decoration-lime-500">Aa</p>
+                        <p className="underline decoration-lime-500">Aa</p>
                     </td>,
                 ],
                 [
                     "green-500",
                     "緑",
                     <td>
-                        <p class="pr-1 underline decoration-green-500">Aa</p>
+                        <p className="underline decoration-green-500">Aa</p>
                     </td>,
                 ],
                 [
                     "emerald-500",
                     "エメラルド",
                     <td>
-                        <p class="pr-1 underline decoration-emerald-500">Aa</p>
+                        <p className="underline decoration-emerald-500">Aa</p>
                     </td>,
                 ],
                 [
                     "teal-500",
                     "コガモ",
                     <td>
-                        <p class="pr-1 underline decoration-teal-500">Aa</p>
+                        <p className="underline decoration-teal-500">Aa</p>
                     </td>,
                 ],
                 [
                     "cyan-500",
                     "シアン",
                     <td>
-                        <p class="pr-1 underline decoration-cyan-500">Aa</p>
+                        <p className="underline decoration-cyan-500">Aa</p>
                     </td>,
                 ],
                 [
                     "sky-500",
                     "スカイ",
                     <td>
-                        <p class="pr-1 underline decoration-sky-500">Aa</p>
+                        <p className="underline decoration-sky-500">Aa</p>
                     </td>,
                 ],
                 [
                     "blue-500",
                     "青",
                     <td>
-                        <p class="pr-1 underline decoration-blue-500">Aa</p>
+                        <p className="underline decoration-blue-500">Aa</p>
                     </td>,
                 ],
                 [
                     "indigo-500",
                     "藍色",
                     <td>
-                        <p class="pr-1 underline decoration-indigo-500">Aa</p>
+                        <p className="underline decoration-indigo-500">Aa</p>
                     </td>,
                 ],
                 [
                     "violet-500",
                     "スミレ",
                     <td>
-                        <p class="pr-1 underline decoration-violet-500">Aa</p>
+                        <p className="underline decoration-violet-500">Aa</p>
                     </td>,
                 ],
                 [
                     "purple-500",
                     "紫",
                     <td>
-                        <p class="pr-1 underline decoration-purple-500">Aa</p>
+                        <p className="underline decoration-purple-500">Aa</p>
                     </td>,
                 ],
                 [
                     "fuchsia-500",
                     "フクシア",
                     <td>
-                        <p class="pr-1 underline decoration-fuchsia-500">Aa</p>
+                        <p className="underline decoration-fuchsia-500">Aa</p>
                     </td>,
                 ],
                 [
                     "pink-500",
                     "ピンク",
                     <td>
-                        <p class="pr-1 underline decoration-pink-500">Aa</p>
+                        <p className="underline decoration-pink-500">Aa</p>
                     </td>,
                 ],
                 [
                     "rose-500",
                     "バラ",
                     <td>
-                        <p class="pr-1 underline decoration-rose-500">Aa</p>
+                        <p className="underline decoration-rose-500">Aa</p>
                     </td>,
                 ],
                 [
                     "slate-500",
                     "粘板岩",
                     <td>
-                        <p class="pr-1 underline decoration-slate-500">Aa</p>
+                        <p className="underline decoration-slate-500">Aa</p>
                     </td>,
                 ],
                 [
                     "gray-500",
                     "グレー",
                     <td>
-                        <p class="pr-1 underline decoration-gray-500">Aa</p>
+                        <p className="underline decoration-gray-500">Aa</p>
                     </td>,
                 ],
                 [
                     "zinc-500",
                     "亜鉛",
                     <td>
-                        <p class="pr-1 underline decoration-zinc-500">Aa</p>
+                        <p className="underline decoration-zinc-500">Aa</p>
                     </td>,
                 ],
                 [
                     "neutral-500",
                     "ニュートラル",
                     <td>
-                        <p class="pr-1 underline decoration-neutral-500">Aa</p>
+                        <p className="underline decoration-neutral-500">Aa</p>
                     </td>,
                 ],
                 [
                     "stone-500",
                     "石",
                     <td>
-                        <p class="pr-1 underline decoration-stone-500">Aa</p>
+                        <p className="underline decoration-stone-500">Aa</p>
                     </td>,
                 ],
                 [
                     "mauve-500",
                     "モーブ",
                     <td>
-                        <p class="pr-1 underline decoration-mauve-500">Aa</p>
+                        <p className="underline decoration-mauve-500">Aa</p>
                     </td>,
                 ],
                 [
                     "olive-500",
                     "オリーブ",
                     <td>
-                        <p class="pr-1 underline decoration-olive-500">Aa</p>
+                        <p className="underline decoration-olive-500">Aa</p>
                     </td>,
                 ],
                 [
                     "mist-500",
                     "ミスト",
                     <td>
-                        <p class="pr-1 underline decoration-mist-500">Aa</p>
+                        <p className="underline decoration-mist-500">Aa</p>
                     </td>,
                 ],
                 [
                     "taupe-500",
                     "灰褐色",
                     <td>
-                        <p class="pr-1 underline decoration-taupe-500">Aa</p>
+                        <p className="underline decoration-taupe-500">Aa</p>
                     </td>,
                 ],
                 [
                     "red-500/25",
                     "不透明度25％で指定する例",
                     <td>
-                        <p class="pr-1 underline decoration-red-500/25">Aa</p>
+                        <p className="underline decoration-red-500/25">Aa</p>
                     </td>,
                 ],
             ],
         },
     ],
     [
-        "text-decoration-style",
+        TypographyEnum.textDecorationStyle,
         {
             entry: "テキスト装飾のスタイル",
             description: "テキスト装飾のスタイルを指定する",
@@ -675,52 +676,42 @@ const typographyJA = new Map<string, Translation>([
                     "solid",
                     "一本のつながった線",
                     <td>
-                        <p class="pr-1 text-center underline decoration-solid">
-                            Aa
-                        </p>
+                        <p className="underline decoration-solid">Aa</p>
                     </td>,
                 ],
                 [
                     "double",
                     "二重線",
                     <td>
-                        <p class="pr-1 text-center underline decoration-double">
-                            Aa
-                        </p>
+                        <p className="underline decoration-double">Aa</p>
                     </td>,
                 ],
                 [
                     "dotted",
                     "点線",
                     <td>
-                        <p class="pr-1 text-center underline decoration-dotted">
-                            Aa
-                        </p>
+                        <p className="underline decoration-dotted">Aa</p>
                     </td>,
                 ],
                 [
                     "dashed",
                     "破線",
                     <td>
-                        <p class="pr-1 text-center underline decoration-dashed">
-                            Aa
-                        </p>
+                        <p className="underline decoration-dashed">Aa</p>
                     </td>,
                 ],
                 [
                     "wavy",
                     "波線",
                     <td>
-                        <p class="pr-1 text-center underline decoration-wavy">
-                            Aa
-                        </p>
+                        <p className="underline decoration-wavy">Aa</p>
                     </td>,
                 ],
             ],
         },
     ],
     [
-        "text-decoration-thickness",
+        TypographyEnum.textDecorationThickness,
         {
             entry: "テキスト装飾の太さ",
             description: "テキスト装飾の太さを指定する",
@@ -735,7 +726,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "text-underline-offset",
+        TypographyEnum.textUnderlineOffset,
         {
             entry: "テキストアンダーラインのオフセット",
             description: "指定した距離だけアンダーラインを下にずらす",
@@ -746,7 +737,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "text-transform",
+        TypographyEnum.textTransform,
         {
             entry: "テキストの変換",
             description: "アルファベットを変換するルールを指定する",
@@ -762,7 +753,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "text-overflow",
+        TypographyEnum.textOverflow,
         {
             entry: "テキストのオーバーフロー",
             description: "テキストが要素からはみ出す場合の動作を指定する",
@@ -780,7 +771,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "text-wrap",
+        TypographyEnum.textWrap,
         {
             entry: "テキストの折り返し",
             description: "テキストを折り返す動作を指定する",
@@ -793,7 +784,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "text-indent",
+        TypographyEnum.textIndent,
         {
             entry: "テキストのインデント",
             description: "テキストの先頭に挿入する空白の長さを指定する",
@@ -804,10 +795,10 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "vertical-align",
+        TypographyEnum.verticalAlign,
         {
             entry: "垂直方向の整列",
-            description: "垂直方向にテキストを揃える際の基準を指定する",
+            description: "テキストの垂直方向の揃えを指定する",
             details: [
                 ["baseline", "親要素のベースラインに揃える"],
                 ["top", "行の上端に揃える"],
@@ -824,7 +815,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "white-space",
+        TypographyEnum.whiteSpace,
         {
             entry: "ホワイトスペース",
             description:
@@ -852,7 +843,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "word-break",
+        TypographyEnum.wordBreak,
         {
             entry: "単語の区切り",
             description: "単語の折り返す動作を指定する",
@@ -867,7 +858,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "overflow-wrap",
+        TypographyEnum.overflowWrap,
         {
             entry: "オーバーフローの折り返し",
             description:
@@ -883,7 +874,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "hyphens",
+        TypographyEnum.hyphens,
         {
             entry: "ハイフン",
             description: "「&shy;」（ソフトハイフン）の扱い方を指定する",
@@ -898,7 +889,7 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
     [
-        "content",
+        TypographyEnum.content,
         {
             entry: "コンテンツ",
             description: "before、またはafter修飾子を用いた疑似要素を指定する",
@@ -917,5 +908,3 @@ const typographyJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default typographyJA;

@@ -1,16 +1,22 @@
 import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import solid from "vite-plugin-solid";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [solid(), tailwindcss()],
+    plugins: [
+        react({
+            babel: {
+                plugins: [["babel-plugin-react-compiler"]],
+            },
+        }),
+        tailwindcss(),
+    ],
     server: {
         host: true,
     },
     build: {
         outDir: "docs",
-        chunkSizeWarningLimit: 1000,
     },
     base: "/tailwindcss-japanese-cheat-sheet-v4/",
 });

@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { TransformsEnum } from "../../models/entry";
 
-const transformsJA = new Map<string, Translation>([
+export const transformsJA = new Map<string, Translation>([
     [
         CategoryEnum.Transforms,
         {
@@ -11,7 +12,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "backface-visibility",
+        TransformsEnum.backfaceVisibility,
         {
             entry: "背面の可視性",
             description:
@@ -23,7 +24,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "perspective",
+        TransformsEnum.perspective,
         {
             entry: "遠近法",
             description: "三次元で座標変換した際の、パースの強弱を指定する",
@@ -38,7 +39,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "perspective-origin",
+        TransformsEnum.perspectiveOrigin,
         {
             entry: "遠近法の原点",
             description: "遠近法の消失点の位置を指定する",
@@ -56,7 +57,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "rotate",
+        TransformsEnum.rotate,
         {
             entry: "回転",
             description: "指定した角度で回転する",
@@ -70,7 +71,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "scale",
+        TransformsEnum.scale,
         {
             entry: "拡大縮小",
             description: "指定したパーセンテージで拡大縮小する",
@@ -85,7 +86,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "skew",
+        TransformsEnum.skew,
         {
             entry: "歪める",
             description: "斜め方向に歪める",
@@ -97,7 +98,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "transform",
+        TransformsEnum.transform,
         {
             entry: "変形",
             description: "変形の描画方法を指定する",
@@ -109,7 +110,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "transform-origin",
+        TransformsEnum.transformOrigin,
         {
             entry: "変形の原点",
             description: "変形の基準となる原点を指定する",
@@ -127,7 +128,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "transform-style",
+        TransformsEnum.transformStyle,
         {
             entry: "変形スタイル",
             description: "変形を立体的に描画するかどうかを指定する",
@@ -138,7 +139,7 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
     [
-        "translate",
+        TransformsEnum.translate,
         {
             entry: "移動",
             description: "指定した距離だけ移動する",
@@ -162,5 +163,3 @@ const transformsJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default transformsJA;

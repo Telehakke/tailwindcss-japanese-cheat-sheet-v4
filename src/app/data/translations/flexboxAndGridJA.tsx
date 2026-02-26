@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { FlexboxAndGridEnum } from "../../models/entry";
 
-const flexboxAndGridJA = new Map<string, Translation>([
+export const flexboxAndGridJA = new Map<string, Translation>([
     [
         CategoryEnum.FlexboxAndGrid,
         {
@@ -11,7 +12,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "flex-basis",
+        FlexboxAndGridEnum.flexBasis,
         {
             entry: "フレックスベーシス",
             description:
@@ -26,7 +27,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "flex-direction",
+        FlexboxAndGridEnum.flexDirection,
         {
             entry: "フレックスの方向",
             description: "flexの子要素の並べ方を指定する",
@@ -39,7 +40,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "flex-wrap",
+        FlexboxAndGridEnum.flexWrap,
         {
             entry: "フレックスラップ",
             description:
@@ -55,7 +56,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "flex",
+        FlexboxAndGridEnum.flex,
         {
             entry: "フレックス",
             description:
@@ -78,7 +79,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "flex-grow",
+        FlexboxAndGridEnum.flexGrow,
         {
             entry: "フレックスの伸び",
             description:
@@ -90,7 +91,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "flex-shrink",
+        FlexboxAndGridEnum.flexShrink,
         {
             entry: "フレックスの縮み",
             description:
@@ -102,7 +103,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "order",
+        FlexboxAndGridEnum.order,
         {
             entry: "オーダー",
             description:
@@ -116,12 +117,12 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "grid-template-columns",
+        FlexboxAndGridEnum.gridTemplateColumns,
         {
-            entry: "グリッドテンプレートの列",
-            description: "gridの列を指定する",
+            entry: "グリッドテンプレートの縦列",
+            description: "gridの縦列を指定する",
             details: [
-                ["（数値）", "任意の数だけ等間隔の列を作成する"],
+                ["（数値）", "任意の数だけ等間隔の縦列を作成する"],
                 ["none", "グリッドレイアウトを解除する"],
                 [
                     "subgrid",
@@ -131,9 +132,9 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "grid-column",
+        FlexboxAndGridEnum.gridColumn,
         {
-            entry: "グリッド列",
+            entry: "グリッド縦列",
             description: "gridの複数のセルを水平方向に連結する",
             details: [
                 ["span-（数値）", "指定した数だけセルを連結"],
@@ -144,12 +145,12 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "grid-template-rows",
+        FlexboxAndGridEnum.gridTemplateRows,
         {
-            entry: "グリッドテンプレートの行",
-            description: "gridの行を指定する",
+            entry: "グリッドテンプレートの横列",
+            description: "gridの横列を指定する",
             details: [
-                ["（数値）", "任意の数だけ等間隔の行を作成する"],
+                ["（数値）", "任意の数だけ等間隔の横列を作成する"],
                 ["none", "グリッドレイアウトを解除する"],
                 [
                     "subgrid",
@@ -159,9 +160,9 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "grid-row",
+        FlexboxAndGridEnum.gridRow,
         {
-            entry: "グリッド行",
+            entry: "グリッド横行",
             description: "gridの複数のセルを垂直方向に連結する",
             details: [
                 ["span-（数値）", "指定した数だけセルを連結"],
@@ -172,7 +173,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "grid-auto-flow",
+        FlexboxAndGridEnum.gridAutoFlow,
         {
             entry: "グリッドオートフロー",
             description: "gridの子要素の並べ方を指定する",
@@ -186,11 +187,11 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "grid-auto-columns",
+        FlexboxAndGridEnum.gridAutoColumns,
         {
-            entry: "グリッドオート列",
+            entry: "グリッドオート縦列",
             description:
-                "セルの連結具合を元に、gridの列数を自動的に決定。その際の列の幅の計算方法を指定する",
+                "セルの連結具合を元に、gridの縦列数を自動的に決定。その際の列の幅の計算方法を指定する",
             details: [
                 ["auto", "自動"],
                 [
@@ -206,27 +207,27 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "grid-auto-rows",
+        FlexboxAndGridEnum.gridAutoRows,
         {
-            entry: "グリッドオート行",
+            entry: "グリッドオート横列",
             description:
-                "セルの連結具合を元に、gridの行数を自動的に決定。その際の行の高さの計算方法を指定する",
+                "セルの連結具合を元に、gridの横列数を自動的に決定。その際の行の高さの計算方法を指定する",
             details: [
                 ["auto", "自動"],
                 [
                     "min",
-                    "子要素のコンテンツの最小高さを元に、行の高さを決定する（縦書きで有効）",
+                    "子要素のコンテンツの最小高さを元に、列の高さを決定する（縦書きで有効）",
                 ],
                 [
                     "max",
-                    "子要素のコンテンツの最大高さを元に、行の高さを決定する（縦書きで有効）",
+                    "子要素のコンテンツの最大高さを元に、列の高さを決定する（縦書きで有効）",
                 ],
-                ["fr", "等間隔の行を作る"],
+                ["fr", "等間隔の列を作る"],
             ],
         },
     ],
     [
-        "gap",
+        FlexboxAndGridEnum.gap,
         {
             entry: "隙間",
             description: "flexやgridの子要素同士の隙間の長さを指定する",
@@ -238,10 +239,10 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "justify-content",
+        FlexboxAndGridEnum.justifyContent,
         {
             entry: "コンテンツの行揃え",
-            description: "flexやgridの行揃えを指定する",
+            description: "flexやgridの水平方向の揃えを指定する",
             details: [
                 ["start", "水平方向の開始側に子要素を寄せる"],
                 ["end", "水平方向の終端側に子要素を寄せる"],
@@ -273,7 +274,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "justify-items",
+        FlexboxAndGridEnum.justifyItems,
         {
             entry: "アイテムの行揃え",
             description:
@@ -296,7 +297,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "justify-self",
+        FlexboxAndGridEnum.justifySelf,
         {
             entry: "自身の行揃え",
             description:
@@ -319,7 +320,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "align-content",
+        FlexboxAndGridEnum.alignContent,
         {
             entry: "コンテンツの整列",
             description: "flexやgridの垂直方向の揃えを指定する",
@@ -346,7 +347,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "align-items",
+        FlexboxAndGridEnum.alignItems,
         {
             entry: "アイテムの整列",
             description:
@@ -373,7 +374,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "align-self",
+        FlexboxAndGridEnum.alignSelf,
         {
             entry: "自身の整列",
             description:
@@ -398,7 +399,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "place-content",
+        FlexboxAndGridEnum.placeContent,
         {
             entry: "コンテンツの場所",
             description: "justify-contentとalign-contentを一度に指定する",
@@ -432,7 +433,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "place-items",
+        FlexboxAndGridEnum.placeItems,
         {
             entry: "アイテムの場所",
             description: "justify-itemsとalign-itemsを一度に指定する",
@@ -460,7 +461,7 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
     [
-        "place-self",
+        FlexboxAndGridEnum.placeSelf,
         {
             entry: "自身の場所",
             description: "justify-selfとalign-selfを一度に指定する",
@@ -485,5 +486,3 @@ const flexboxAndGridJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default flexboxAndGridJA;

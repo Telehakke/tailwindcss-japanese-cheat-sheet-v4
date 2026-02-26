@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { EffectsEnum } from "../../models/entry";
 
-const effectsJA = new Map<string, Translation>([
+export const effectsJA = new Map<string, Translation>([
     [
         CategoryEnum.Effects,
         {
@@ -11,7 +12,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "box-shadow",
+        EffectsEnum.boxShadow,
         {
             entry: "ボックスシャドー",
             description: "要素の影、または輪郭線を描画する",
@@ -19,940 +20,940 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "shadow-2xs",
                     "要素の背後に影を描画する",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-2xs" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-2xs" />
                     </td>,
                 ],
                 [
                     "shadow-xs",
                     "",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-xs" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-xs" />
                     </td>,
                 ],
                 [
                     "shadow-sm",
                     "",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm" />
                     </td>,
                 ],
                 [
                     "shadow-md",
                     "",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-md" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-md" />
                     </td>,
                 ],
                 [
                     "shadow-lg",
                     "",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-lg" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-lg" />
                     </td>,
                 ],
                 [
                     "shadow-xl",
                     "",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-xl" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-xl" />
                     </td>,
                 ],
                 [
                     "shadow-2xl",
                     "",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-2xl" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-2xl" />
                     </td>,
                 ],
-                ["shadow-none", "影を描画しない", <td class="w-10" />],
+                ["shadow-none", "影を描画しない", <td className="w-10" />],
                 [
                     "inherit",
                     "親要素からスタイルを引き継ぐ",
-                    <td class="w-10" />,
+                    <td className="w-10" />,
                 ],
-                ["shadow-current", "テキスト色", <td class="w-10" />],
-                ["shadow-transparent", "透明", <td class="w-10" />],
+                ["shadow-current", "テキスト色", <td className="w-10" />],
+                ["shadow-transparent", "透明", <td className="w-10" />],
                 [
                     "shadow-black",
                     "黒",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-black" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-black" />
                     </td>,
                 ],
                 [
                     "shadow-white",
                     "白",
-                    <td class="h-8 w-10 bg-black">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-white" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-white" />
                     </td>,
                 ],
                 [
                     "shadow-red-500",
                     "赤",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-red-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-red-500" />
                     </td>,
                 ],
                 [
                     "shadow-orange-500",
                     "オレンジ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-orange-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-orange-500" />
                     </td>,
                 ],
                 [
                     "shadow-amber-500",
                     "琥珀",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-amber-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-amber-500" />
                     </td>,
                 ],
                 [
                     "shadow-yellow-500",
                     "黄色",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-yellow-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-yellow-500" />
                     </td>,
                 ],
                 [
                     "shadow-lime-500",
                     "ライム",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-lime-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-lime-500" />
                     </td>,
                 ],
                 [
                     "shadow-green-500",
                     "緑",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-green-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-green-500" />
                     </td>,
                 ],
                 [
                     "shadow-emerald-500",
                     "エメラルド",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-emerald-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-emerald-500" />
                     </td>,
                 ],
                 [
                     "shadow-teal-500",
                     "コガモ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-teal-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-teal-500" />
                     </td>,
                 ],
                 [
                     "shadow-cyan-500",
                     "シアン",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-cyan-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-cyan-500" />
                     </td>,
                 ],
                 [
                     "shadow-sky-500",
                     "スカイ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-sky-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-sky-500" />
                     </td>,
                 ],
                 [
                     "shadow-blue-500",
                     "青",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-blue-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-blue-500" />
                     </td>,
                 ],
                 [
                     "shadow-indigo-500",
                     "藍色",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-indigo-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-indigo-500" />
                     </td>,
                 ],
                 [
                     "shadow-violet-500",
                     "スミレ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-violet-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-violet-500" />
                     </td>,
                 ],
                 [
                     "shadow-purple-500",
                     "紫",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-purple-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-purple-500" />
                     </td>,
                 ],
                 [
                     "shadow-fuchsia-500",
                     "フクシア",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-fuchsia-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-fuchsia-500" />
                     </td>,
                 ],
                 [
                     "shadow-pink-500",
                     "ピンク",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-pink-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-pink-500" />
                     </td>,
                 ],
                 [
                     "shadow-rose-500",
                     "バラ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-rose-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-rose-500" />
                     </td>,
                 ],
                 [
                     "shadow-slate-500",
                     "粘板岩",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-slate-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-slate-500" />
                     </td>,
                 ],
                 [
                     "shadow-gray-500",
                     "グレー",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-gray-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-gray-500" />
                     </td>,
                 ],
                 [
                     "shadow-zinc-500",
                     "亜鉛",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-zinc-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-zinc-500" />
                     </td>,
                 ],
                 [
                     "shadow-neutral-500",
                     "ニュートラル",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-neutral-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-neutral-500" />
                     </td>,
                 ],
                 [
                     "shadow-stone-500",
                     "石",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-stone-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-stone-500" />
                     </td>,
                 ],
                 [
                     "shadow-mauve-500",
                     "モーブ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-mauve-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-mauve-500" />
                     </td>,
                 ],
                 [
                     "shadow-olive-500",
                     "オリーブ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-olive-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-olive-500" />
                     </td>,
                 ],
                 [
                     "shadow-mist-500",
                     "ミスト",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-mist-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-mist-500" />
                     </td>,
                 ],
                 [
                     "shadow-taupe-500",
                     "灰褐色",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-taupe-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-taupe-500" />
                     </td>,
                 ],
                 [
                     "shadow-red-500/25",
                     "不透明度25％で指定する例",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 shadow-sm shadow-red-500/25" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 shadow-sm shadow-red-500/25" />
                     </td>,
                 ],
                 [
                     "inset-shadow-2xs",
                     "要素の内側に影を描画する",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-2xs" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-2xs" />
                     </td>,
                 ],
                 [
                     "inset-shadow-xs",
                     "",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-xs" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-xs" />
                     </td>,
                 ],
                 [
                     "inset-shadow-sm",
                     "",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm" />
                     </td>,
                 ],
                 [
                     "inset-shadow-none",
                     "内側に影を描画しない",
-                    <td class="w-10" />,
+                    <td className="w-10" />,
                 ],
                 [
                     "inset-shadow-inherit",
                     "親要素からスタイルを引き継ぐ",
-                    <td class="w-10" />,
+                    <td className="w-10" />,
                 ],
-                ["inset-shadow-current", "テキスト色", <td class="w-10" />],
-                ["inset-shadow-transparent", "透明", <td class="w-10" />],
+                ["inset-shadow-current", "テキスト色", <td className="w-10" />],
+                ["inset-shadow-transparent", "透明", <td className="w-10" />],
                 [
                     "inset-shadow-black",
                     "黒",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-black" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-black" />
                     </td>,
                 ],
                 [
                     "inset-shadow-white",
                     "白",
-                    <td class="h-8 w-10 bg-black">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-white" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-white" />
                     </td>,
                 ],
                 [
                     "inset-shadow-red-500",
                     "赤",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-red-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-red-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-orange-500",
                     "オレンジ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-orange-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-orange-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-amber-500",
                     "琥珀",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-amber-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-amber-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-yellow-500",
                     "黄色",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-yellow-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-yellow-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-lime-500",
                     "ライム",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-lime-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-lime-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-green-500",
                     "緑",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-green-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-green-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-emerald-500",
                     "エメラルド",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-emerald-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-emerald-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-teal-500",
                     "コガモ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-teal-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-teal-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-cyan-500",
                     "シアン",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-cyan-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-cyan-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-sky-500",
                     "スカイ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-sky-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-sky-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-blue-500",
                     "青",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-blue-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-blue-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-indigo-500",
                     "藍色",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-indigo-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-indigo-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-violet-500",
                     "スミレ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-violet-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-violet-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-purple-500",
                     "紫",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-purple-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-purple-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-fuchsia-500",
                     "フクシア",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-fuchsia-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-fuchsia-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-pink-500",
                     "ピンク",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-pink-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-pink-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-rose-500",
                     "バラ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-rose-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-rose-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-slate-500",
                     "粘板岩",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-slate-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-slate-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-gray-500",
                     "グレー",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-gray-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-gray-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-zinc-500",
                     "亜鉛",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-zinc-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-zinc-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-neutral-500",
                     "ニュートラル",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-neutral-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-neutral-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-stone-500",
                     "石",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-stone-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-stone-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-mauve-500",
                     "モーブ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-mauve-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-mauve-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-olive-500",
                     "オリーブ",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-olive-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-olive-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-mist-500",
                     "ミスト",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-mist-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-mist-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-taupe-500",
                     "灰褐色",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-taupe-500" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-taupe-500" />
                     </td>,
                 ],
                 [
                     "inset-shadow-red-500/25",
                     "不透明度25％で指定する例",
-                    <td class="h-8 w-10 bg-white">
-                        <div class="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-red-500/25" />
+                    <td className="h-8 w-10">
+                        <div className="mx-auto h-4 w-6 inset-shadow-sm inset-shadow-red-500/25" />
                     </td>,
                 ],
-                ["ring", "1pxの太さの輪郭線を描く", <td class="w-10" />],
+                ["ring", "1pxの太さの輪郭線を描く", <td className="w-10" />],
                 [
                     "ring-（数値）",
                     "任意の太さの輪郭線を描く",
-                    <td class="w-10" />,
+                    <td className="w-10" />,
                 ],
                 [
                     "ring-inherit",
                     "親要素からスタイルを引き継ぐ",
-                    <td class="w-10" />,
+                    <td className="w-10" />,
                 ],
-                ["ring-current", "テキスト色", <td class="w-10" />],
-                ["ring-transparent", "透明", <td class="w-10" />],
+                ["ring-current", "テキスト色", <td className="w-10" />],
+                ["ring-transparent", "透明", <td className="w-10" />],
                 [
                     "ring-black",
                     "黒",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-black" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-black" />
                     </td>,
                 ],
                 [
                     "ring-white",
                     "白",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-white" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-white" />
                     </td>,
                 ],
                 [
                     "ring-red-500",
                     "赤",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-red-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-red-500" />
                     </td>,
                 ],
                 [
                     "ring-orange-500",
                     "オレンジ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-orange-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-orange-500" />
                     </td>,
                 ],
                 [
                     "ring-amber-500",
                     "琥珀",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-amber-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-amber-500" />
                     </td>,
                 ],
                 [
                     "ring-yellow-500",
                     "黄色",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-yellow-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-yellow-500" />
                     </td>,
                 ],
                 [
                     "ring-lime-500",
                     "ライム",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-lime-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-lime-500" />
                     </td>,
                 ],
                 [
                     "ring-green-500",
                     "緑",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-green-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-green-500" />
                     </td>,
                 ],
                 [
                     "ring-emerald-500",
                     "エメラルド",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-emerald-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-emerald-500" />
                     </td>,
                 ],
                 [
                     "ring-teal-500",
                     "コガモ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-teal-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-teal-500" />
                     </td>,
                 ],
                 [
                     "ring-cyan-500",
                     "シアン",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-cyan-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-cyan-500" />
                     </td>,
                 ],
                 [
                     "ring-sky-500",
                     "スカイ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-sky-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-sky-500" />
                     </td>,
                 ],
                 [
                     "ring-blue-500",
                     "青",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-blue-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-blue-500" />
                     </td>,
                 ],
                 [
                     "ring-indigo-500",
                     "藍色",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-indigo-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-indigo-500" />
                     </td>,
                 ],
                 [
                     "ring-violet-500",
                     "スミレ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-violet-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-violet-500" />
                     </td>,
                 ],
                 [
                     "ring-purple-500",
                     "紫",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-purple-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-purple-500" />
                     </td>,
                 ],
                 [
                     "ring-fuchsia-500",
                     "フクシア",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-fuchsia-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-fuchsia-500" />
                     </td>,
                 ],
                 [
                     "ring-pink-500",
                     "ピンク",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-pink-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-pink-500" />
                     </td>,
                 ],
                 [
                     "ring-rose-500",
                     "バラ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-rose-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-rose-500" />
                     </td>,
                 ],
                 [
                     "ring-slate-500",
                     "粘板岩",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-slate-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-slate-500" />
                     </td>,
                 ],
                 [
                     "ring-gray-500",
                     "グレー",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-gray-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-gray-500" />
                     </td>,
                 ],
                 [
                     "ring-zinc-500",
                     "亜鉛",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-zinc-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-zinc-500" />
                     </td>,
                 ],
                 [
                     "ring-neutral-500",
                     "ニュートラル",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-neutral-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-neutral-500" />
                     </td>,
                 ],
                 [
                     "ring-stone-500",
                     "石",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-stone-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-stone-500" />
                     </td>,
                 ],
                 [
                     "ring-mauve-500",
                     "モーブ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-mauve-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-mauve-500" />
                     </td>,
                 ],
                 [
                     "ring-olive-500",
                     "オリーブ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-olive-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-olive-500" />
                     </td>,
                 ],
                 [
                     "ring-mist-500",
                     "ミスト",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-mist-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-mist-500" />
                     </td>,
                 ],
                 [
                     "ring-taupe-500",
                     "灰褐色",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-taupe-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-taupe-500" />
                     </td>,
                 ],
                 [
                     "ring-red-500/25",
                     "不透明度25％で指定する例",
-                    <td class="w-10">
-                        <div class="h-4 w-9 ring-1 ring-red-500/25" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 ring-1 ring-red-500/25" />
                     </td>,
                 ],
                 [
                     "inset-ring",
                     "1pxの太さの輪郭線を要素の内側に描く",
-                    <td class="w-10" />,
+                    <td className="w-10" />,
                 ],
                 [
                     "inset-ring-（数値）",
                     "任意の太さの輪郭線を要素の内側に描く",
-                    <td class="w-10" />,
+                    <td className="w-10" />,
                 ],
                 [
                     "inset-ring-inherit",
                     "親要素からスタイルを引き継ぐ",
-                    <td class="w-10" />,
+                    <td className="w-10" />,
                 ],
-                ["inset-ring-current", "テキスト色", <td class="w-10" />],
-                ["inset-ring-transparent", "透明", <td class="w-10" />],
+                ["inset-ring-current", "テキスト色", <td className="w-10" />],
+                ["inset-ring-transparent", "透明", <td className="w-10" />],
                 [
                     "inset-ring-black",
                     "黒",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-black" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-black" />
                     </td>,
                 ],
                 [
                     "inset-ring-white",
                     "白",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-white" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-white" />
                     </td>,
                 ],
                 [
                     "inset-ring-red-500",
                     "赤",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-red-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-red-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-orange-500",
                     "オレンジ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-orange-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-orange-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-amber-500",
                     "琥珀",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-amber-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-amber-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-yellow-500",
                     "黄色",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-yellow-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-yellow-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-lime-500",
                     "ライム",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-lime-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-lime-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-green-500",
                     "緑",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-green-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-green-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-emerald-500",
                     "エメラルド",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-emerald-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-emerald-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-teal-500",
                     "コガモ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-teal-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-teal-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-cyan-500",
                     "シアン",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-cyan-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-cyan-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-sky-500",
                     "スカイ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-sky-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-sky-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-blue-500",
                     "青",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-blue-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-blue-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-indigo-500",
                     "藍色",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-indigo-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-indigo-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-violet-500",
                     "スミレ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-violet-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-violet-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-purple-500",
                     "紫",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-purple-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-purple-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-fuchsia-500",
                     "フクシア",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-fuchsia-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-fuchsia-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-pink-500",
                     "ピンク",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-pink-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-pink-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-rose-500",
                     "バラ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-rose-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-rose-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-slate-500",
                     "粘板岩",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-slate-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-slate-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-gray-500",
                     "グレー",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-gray-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-gray-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-zinc-500",
                     "亜鉛",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-zinc-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-zinc-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-neutral-500",
                     "ニュートラル",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-neutral-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-neutral-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-stone-500",
                     "石",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-stone-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-stone-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-mauve-500",
                     "モーブ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-mauve-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-mauve-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-olive-500",
                     "オリーブ",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-olive-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-olive-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-mist-500",
                     "ミスト",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-mist-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-mist-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-taupe-500",
                     "灰褐色",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-taupe-500" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-taupe-500" />
                     </td>,
                 ],
                 [
                     "inset-ring-red-500/25",
                     "不透明度25％で指定する例",
-                    <td class="w-10">
-                        <div class="h-4 w-9 inset-ring inset-ring-red-500/25" />
+                    <td className="grid w-10 place-items-center">
+                        <div className="h-4 w-9 inset-ring inset-ring-red-500/25" />
                     </td>,
                 ],
             ],
         },
     ],
     [
-        "text-shadow",
+        EffectsEnum.textShadow,
         {
             entry: "テキストの影",
             description: "テキストに対して影を描画する",
@@ -960,36 +961,38 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "2xs",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-2xs">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-2xs">
+                            Aa
+                        </p>
                     </td>,
                 ],
                 [
                     "xs",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-xs">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-xs">Aa</p>
                     </td>,
                 ],
                 [
                     "sm",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-sm">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-sm">Aa</p>
                     </td>,
                 ],
                 [
                     "md",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md">Aa</p>
                     </td>,
                 ],
                 [
                     "lg",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-lg">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-lg">Aa</p>
                     </td>,
                 ],
                 ["none", "影を描画しない", <td />],
@@ -999,8 +1002,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "black",
                     "黒",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-black text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-black text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1008,8 +1011,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "white",
                     "白",
-                    <td class="bg-black">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-white">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-white">
                             Aa
                         </p>
                     </td>,
@@ -1017,8 +1020,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "red-500",
                     "赤",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-red-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-red-500">
                             Aa
                         </p>
                     </td>,
@@ -1026,8 +1029,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "orange-500",
                     "オレンジ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-orange-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-orange-500">
                             Aa
                         </p>
                     </td>,
@@ -1035,8 +1038,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "amber-500",
                     "琥珀",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-amber-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-amber-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1044,8 +1047,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "yellow-500",
                     "黄色",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-yellow-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-yellow-500">
                             Aa
                         </p>
                     </td>,
@@ -1053,8 +1056,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "lime-500",
                     "ライム",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-lime-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-lime-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1062,8 +1065,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "green-500",
                     "緑",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-green-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-green-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1071,8 +1074,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "emerald-500",
                     "エメラルド",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-emerald-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-emerald-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1080,8 +1083,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "teal-500",
                     "コガモ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-teal-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-teal-500">
                             Aa
                         </p>
                     </td>,
@@ -1089,8 +1092,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "cyan-500",
                     "シアン",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-cyan-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-cyan-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1098,8 +1101,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "sky-500",
                     "スカイ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-sky-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-sky-500">
                             Aa
                         </p>
                     </td>,
@@ -1107,8 +1110,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "blue-500",
                     "青",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-blue-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-blue-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1116,8 +1119,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "indigo-500",
                     "藍色",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-indigo-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-indigo-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1125,8 +1128,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "violet-500",
                     "スミレ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-violet-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-violet-500">
                             Aa
                         </p>
                     </td>,
@@ -1134,8 +1137,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "purple-500",
                     "紫",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-purple-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-purple-500">
                             Aa
                         </p>
                     </td>,
@@ -1143,8 +1146,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "fuchsia-500",
                     "フクシア",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-fuchsia-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-fuchsia-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1152,8 +1155,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "pink-500",
                     "ピンク",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-pink-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-pink-500">
                             Aa
                         </p>
                     </td>,
@@ -1161,8 +1164,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "rose-500",
                     "バラ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-rose-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-rose-500">
                             Aa
                         </p>
                     </td>,
@@ -1170,8 +1173,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "slate-500",
                     "粘板岩",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-slate-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-slate-500">
                             Aa
                         </p>
                     </td>,
@@ -1179,8 +1182,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "gray-500",
                     "グレー",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-gray-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-gray-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1188,8 +1191,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "zinc-500",
                     "亜鉛",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-zinc-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-zinc-500">
                             Aa
                         </p>
                     </td>,
@@ -1197,8 +1200,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "neutral-500",
                     "ニュートラル",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-neutral-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-neutral-500">
                             Aa
                         </p>
                     </td>,
@@ -1206,8 +1209,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "stone-500",
                     "石",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-stone-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-stone-500">
                             Aa
                         </p>
                     </td>,
@@ -1215,8 +1218,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "mauve-500",
                     "モーブ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-mauve-500 text-shadow-md">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-mauve-500 text-shadow-md">
                             Aa
                         </p>
                     </td>,
@@ -1224,8 +1227,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "olive-500",
                     "オリーブ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-olive-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-olive-500">
                             Aa
                         </p>
                     </td>,
@@ -1233,8 +1236,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "mist-500",
                     "ミスト",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-mist-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-mist-500">
                             Aa
                         </p>
                     </td>,
@@ -1242,8 +1245,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "taupe-500",
                     "灰褐色",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-taupe-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-taupe-500">
                             Aa
                         </p>
                     </td>,
@@ -1251,8 +1254,8 @@ const effectsJA = new Map<string, Translation>([
                 [
                     "red-500/25",
                     "不透明度25％で指定する例",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white text-shadow-md text-shadow-red-500/25">
+                    <td className="px-1">
+                        <p className="text-2xl text-white text-shadow-md text-shadow-red-500/25">
                             Aa
                         </p>
                     </td>,
@@ -1261,7 +1264,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "opacity",
+        EffectsEnum.opacity,
         {
             entry: "不透明度",
             description: "不透明度をパーセンテージで指定する",
@@ -1269,7 +1272,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mix-blend-mode",
+        EffectsEnum.mixBlendMode,
         {
             entry: "合成モード",
             description: "自身の要素と背後にある要素との合成方法を指定する",
@@ -1296,7 +1299,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "background-blend-mode",
+        EffectsEnum.backgroundBlendMode,
         {
             entry: "背景合成モード",
             description:
@@ -1322,7 +1325,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mask-clip",
+        EffectsEnum.maskClip,
         {
             entry: "マスクの切り抜き",
             description: "マスクが影響する領域を指定する",
@@ -1338,7 +1341,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mask-composite",
+        EffectsEnum.maskComposite,
         {
             entry: "マスク合成",
             description: "複数のマスクの合成方法を指定する",
@@ -1357,7 +1360,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mask-image",
+        EffectsEnum.maskImage,
         {
             entry: "マスク画像",
             description: "マスクとして使用する画像を指定する",
@@ -1475,7 +1478,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mask-mode",
+        EffectsEnum.maskMode,
         {
             entry: "マスクモード",
             description: "mask-imageのマスクモードを指定する",
@@ -1490,7 +1493,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mask-origin",
+        EffectsEnum.maskOrigin,
         {
             entry: "マスクの原点",
             description: "mask-imageを貼り付ける原点を指定する",
@@ -1505,7 +1508,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mask-position",
+        EffectsEnum.maskPosition,
         {
             entry: "マスク位置",
             description: "mask-imageの貼り付け位置を指定する",
@@ -1523,7 +1526,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mask-repeat",
+        EffectsEnum.maskRepeat,
         {
             entry: "マスクの繰り返し",
             description: "mask-imageの並べ方を指定する",
@@ -1544,7 +1547,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mask-size",
+        EffectsEnum.maskSize,
         {
             entry: "マスクサイズ",
             description: "mask-imageを表示するサイズを指定する",
@@ -1556,7 +1559,7 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
     [
-        "mask-type",
+        EffectsEnum.maskType,
         {
             entry: "マスクタイプ",
             description: "SVGの<mask>要素のマスクモードを指定する",
@@ -1567,5 +1570,3 @@ const effectsJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default effectsJA;

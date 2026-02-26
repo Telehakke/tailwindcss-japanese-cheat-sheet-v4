@@ -1,0 +1,72 @@
+@import "tailwindcss" source(none);
+@source "../../index.html";
+@source "../../src/**/*.tsx";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --animate-slide-up: slideUp 150ms ease-in-out;
+    --animate-slide-down: slideDown 150ms ease-in-out;
+    @keyframes slideUp {
+        from {
+            height: var(--height);
+        }
+        to {
+            height: var(--collapsed-height);
+        }
+    }
+    @keyframes slideDown {
+        from {
+            height: var(--collapsed-height);
+        }
+        to {
+            height: var(--height);
+        }
+    }
+
+    --animate-fade-in: fadeIn 150ms ease-in-out;
+    --animate-fade-out: fadeOut 150ms ease-in-out;
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+    }
+
+    --animate-fade-in-left: fadeInLeft 150ms ease-in-out;
+    --animate-fade-out-left: fadeOutLeft 150ms ease-in-out;
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes fadeOutLeft {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    }
+}

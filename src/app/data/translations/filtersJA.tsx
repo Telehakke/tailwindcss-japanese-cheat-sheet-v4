@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { FiltersEnum } from "../../models/entry";
 
-const filtersJA = new Map<string, Translation>([
+export const filtersJA = new Map<string, Translation>([
     [
         CategoryEnum.Filters,
         {
@@ -11,7 +12,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter",
+        FiltersEnum.filter,
         {
             entry: "フィルター",
             description: "フィルターを操作する",
@@ -19,7 +20,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter: blur()",
+        FiltersEnum.filterBlur,
         {
             entry: "ぼかし",
             description: "ぼかしの強度を指定する",
@@ -30,7 +31,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter: brightness()",
+        FiltersEnum.filterBrightness,
         {
             entry: "明るさ",
             description: "明るさの強度をパーセンテージで指定する",
@@ -38,7 +39,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter: contrast()",
+        FiltersEnum.filterContrast,
         {
             entry: "コントラスト",
             description: "明暗差の強度をパーセンテージで指定する",
@@ -46,7 +47,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter: drop-shadow()",
+        FiltersEnum.filterDropShadow,
         {
             entry: "ドロップシャドー",
             description: "コンテンツに対する影を描画する",
@@ -54,43 +55,45 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "xs",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-xs">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-xs">Aa</p>
                     </td>,
                 ],
                 [
                     "sm",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-sm">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-sm">Aa</p>
                     </td>,
                 ],
                 [
                     "md",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md">Aa</p>
                     </td>,
                 ],
                 [
                     "lg",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-lg">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-lg">Aa</p>
                     </td>,
                 ],
                 [
                     "xl",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-xl">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-xl">Aa</p>
                     </td>,
                 ],
                 [
                     "2xl",
                     "",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-2xl">Aa</p>
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-2xl">
+                            Aa
+                        </p>
                     </td>,
                 ],
                 ["none", "影を描画しない", <td />],
@@ -100,8 +103,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "black",
                     "黒",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-black">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-black">
                             Aa
                         </p>
                     </td>,
@@ -109,8 +112,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "white",
                     "白",
-                    <td class="bg-black">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-white">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-white">
                             Aa
                         </p>
                     </td>,
@@ -118,8 +121,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "red-500",
                     "赤",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-red-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-red-500">
                             Aa
                         </p>
                     </td>,
@@ -127,8 +130,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "orange-500",
                     "オレンジ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-orange-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-orange-500">
                             Aa
                         </p>
                     </td>,
@@ -136,8 +139,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "amber-500",
                     "琥珀",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-amber-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-amber-500">
                             Aa
                         </p>
                     </td>,
@@ -145,8 +148,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "yellow-500",
                     "黄色",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-yellow-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-yellow-500">
                             Aa
                         </p>
                     </td>,
@@ -154,8 +157,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "lime-500",
                     "ライム",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-lime-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-lime-500">
                             Aa
                         </p>
                     </td>,
@@ -163,8 +166,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "green-500",
                     "緑",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-green-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-green-500">
                             Aa
                         </p>
                     </td>,
@@ -172,8 +175,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "emerald-500",
                     "エメラルド",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-emerald-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-emerald-500">
                             Aa
                         </p>
                     </td>,
@@ -181,8 +184,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "teal-500",
                     "コガモ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-teal-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-teal-500">
                             Aa
                         </p>
                     </td>,
@@ -190,8 +193,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "cyan-500",
                     "シアン",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-cyan-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-cyan-500">
                             Aa
                         </p>
                     </td>,
@@ -199,8 +202,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "sky-500",
                     "スカイ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-sky-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-sky-500">
                             Aa
                         </p>
                     </td>,
@@ -208,8 +211,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "blue-500",
                     "青",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-blue-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-blue-500">
                             Aa
                         </p>
                     </td>,
@@ -217,8 +220,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "indigo-500",
                     "藍色",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-indigo-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-indigo-500">
                             Aa
                         </p>
                     </td>,
@@ -226,8 +229,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "violet-500",
                     "スミレ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-violet-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-violet-500">
                             Aa
                         </p>
                     </td>,
@@ -235,8 +238,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "purple-500",
                     "紫",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-purple-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-purple-500">
                             Aa
                         </p>
                     </td>,
@@ -244,8 +247,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "fuchsia-500",
                     "フクシア",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-fuchsia-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-fuchsia-500">
                             Aa
                         </p>
                     </td>,
@@ -253,8 +256,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "pink-500",
                     "ピンク",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-pink-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-pink-500">
                             Aa
                         </p>
                     </td>,
@@ -262,8 +265,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "rose-500",
                     "バラ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-rose-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-rose-500">
                             Aa
                         </p>
                     </td>,
@@ -271,8 +274,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "slate-500",
                     "粘板岩",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-slate-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-slate-500">
                             Aa
                         </p>
                     </td>,
@@ -280,8 +283,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "gray-500",
                     "グレー",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-gray-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-gray-500">
                             Aa
                         </p>
                     </td>,
@@ -289,8 +292,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "zinc-500",
                     "亜鉛",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-zinc-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-zinc-500">
                             Aa
                         </p>
                     </td>,
@@ -298,8 +301,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "neutral-500",
                     "ニュートラル",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-neutral-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-neutral-500">
                             Aa
                         </p>
                     </td>,
@@ -307,8 +310,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "stone-500",
                     "石",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-stone-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-stone-500">
                             Aa
                         </p>
                     </td>,
@@ -316,8 +319,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "mauve-500",
                     "モーブ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-mauve-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-mauve-500">
                             Aa
                         </p>
                     </td>,
@@ -325,8 +328,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "olive-500",
                     "オリーブ",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-olive-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-olive-500">
                             Aa
                         </p>
                     </td>,
@@ -334,8 +337,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "mist-500",
                     "ミスト",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-mist-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-mist-500">
                             Aa
                         </p>
                     </td>,
@@ -343,8 +346,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "taupe-500",
                     "灰褐色",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-taupe-500">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-taupe-500">
                             Aa
                         </p>
                     </td>,
@@ -352,8 +355,8 @@ const filtersJA = new Map<string, Translation>([
                 [
                     "red-500/25",
                     "不透明度25％で指定する例",
-                    <td class="bg-white">
-                        <p class="text-2xl text-white drop-shadow-md drop-shadow-red-500/25">
+                    <td className="px-1">
+                        <p className="text-2xl text-white drop-shadow-md drop-shadow-red-500/25">
                             Aa
                         </p>
                     </td>,
@@ -362,7 +365,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter: grayscale()",
+        FiltersEnum.filterGrayscale,
         {
             entry: "グレースケール",
             description: "グレーの濃淡で描画する",
@@ -373,7 +376,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter: hue-rotate()",
+        FiltersEnum.filterHueRotate,
         {
             entry: "色相",
             description: "指定した角度で色相を回転し色味を変える",
@@ -381,7 +384,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter: invert()",
+        FiltersEnum.filterInvert,
         {
             entry: "反転",
             description: "色を反転する",
@@ -392,7 +395,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter: saturate()",
+        FiltersEnum.filterSaturate,
         {
             entry: "彩度",
             description: "鮮やかさの強度をパーセンテージで指定する",
@@ -400,7 +403,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "filter: sepia()",
+        FiltersEnum.filterSepia,
         {
             entry: "セピア",
             description: "黒茶色の濃淡で描画する",
@@ -411,7 +414,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter",
+        FiltersEnum.backdropFilter,
         {
             entry: "背景フィルター",
             description: "背後の要素に対して作用するフィルターを操作する",
@@ -419,7 +422,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter: blur()",
+        FiltersEnum.backdropFilterBlur,
         {
             entry: "背景ぼかし",
             description: "背後の要素に対する、ぼかしの強度を指定する",
@@ -430,7 +433,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter: brightness()",
+        FiltersEnum.backdropFilterBrightness,
         {
             entry: "背景の明るさ",
             description:
@@ -439,7 +442,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter: contrast()",
+        FiltersEnum.backdropFilterContrast,
         {
             entry: "背景コントラスト",
             description:
@@ -448,7 +451,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter: grayscale()",
+        FiltersEnum.backdropFilterGrayscale,
         {
             entry: "背景グレースケール",
             description: "背後の要素に対し、グレーの濃淡で描画する",
@@ -462,7 +465,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter: hue-rotate()",
+        FiltersEnum.backdropFilterHueRotate,
         {
             entry: "背景の色相",
             description:
@@ -471,7 +474,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter: invert()",
+        FiltersEnum.backdropFilterInvert,
         {
             entry: "背景の反転",
             description: "背後の要素に対し、色を反転する",
@@ -485,7 +488,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter: opacity()",
+        FiltersEnum.backdropFilterOpacity,
         {
             entry: "背景の不透明度",
             description:
@@ -494,7 +497,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter: saturate()",
+        FiltersEnum.backdropFilterSaturate,
         {
             entry: "背景の彩度",
             description:
@@ -503,7 +506,7 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
     [
-        "backdrop-filter: sepia()",
+        FiltersEnum.backdropFilterSepia,
         {
             entry: "背景セピア",
             description: "背後の要素に対し、黒茶色の濃淡で描画する",
@@ -517,5 +520,3 @@ const filtersJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default filtersJA;

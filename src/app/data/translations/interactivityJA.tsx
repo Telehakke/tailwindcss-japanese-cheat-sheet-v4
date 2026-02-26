@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { InteractivityEnum } from "../../models/entry";
 
-const interactivityJA = new Map<string, Translation>([
+export const interactivityJA = new Map<string, Translation>([
     [
         CategoryEnum.Interactivity,
         {
@@ -11,7 +12,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "accent-color",
+        InteractivityEnum.accentColor,
         {
             entry: "アクセントカラー",
             description: "ブラウザーが用意するデフォルトカラーを変更する",
@@ -19,51 +20,63 @@ const interactivityJA = new Map<string, Translation>([
                 [
                     "inherit",
                     "親要素からスタイルを引き継ぐ",
-                    <td class="w-10 bg-transparent" />,
+                    <td className="w-10 bg-transparent" />,
                 ],
-                ["current", "テキスト色", <td class="w-10 bg-transparent" />],
-                ["transparent", "透明", <td class="w-10 bg-transparent" />],
-                ["black", "黒", <td class="w-10 bg-black" />],
-                ["white", "白", <td class="w-10 bg-white" />],
-                ["red-500", "赤", <td class="w-10 bg-red-500" />],
-                ["orange-500", "オレンジ", <td class="w-10 bg-orange-500" />],
-                ["amber-500", "琥珀", <td class="w-10 bg-amber-500" />],
-                ["yellow-500", "黄色", <td class="w-10 bg-yellow-500" />],
-                ["lime-500", "ライム", <td class="w-10 bg-lime-500" />],
-                ["green-500", "緑", <td class="w-10 bg-green-500" />],
+                [
+                    "current",
+                    "テキスト色",
+                    <td className="w-10 bg-transparent" />,
+                ],
+                ["transparent", "透明", <td className="w-10 bg-transparent" />],
+                ["black", "黒", <td className="w-10 bg-black" />],
+                ["white", "白", <td className="w-10 bg-white" />],
+                ["red-500", "赤", <td className="w-10 bg-red-500" />],
+                [
+                    "orange-500",
+                    "オレンジ",
+                    <td className="w-10 bg-orange-500" />,
+                ],
+                ["amber-500", "琥珀", <td className="w-10 bg-amber-500" />],
+                ["yellow-500", "黄色", <td className="w-10 bg-yellow-500" />],
+                ["lime-500", "ライム", <td className="w-10 bg-lime-500" />],
+                ["green-500", "緑", <td className="w-10 bg-green-500" />],
                 [
                     "emerald-500",
                     "エメラルド",
-                    <td class="w-10 bg-emerald-500" />,
+                    <td className="w-10 bg-emerald-500" />,
                 ],
-                ["teal-500", "コガモ", <td class="w-10 bg-teal-500" />],
-                ["cyan-500", "シアン", <td class="w-10 bg-cyan-500" />],
-                ["sky-500", "スカイ", <td class="w-10 bg-sky-500" />],
-                ["blue-500", "青", <td class="w-10 bg-blue-500" />],
-                ["indigo-500", "藍色", <td class="w-10 bg-indigo-500" />],
-                ["violet-500", "スミレ", <td class="w-10 bg-violet-500" />],
-                ["purple-500", "紫", <td class="w-10 bg-purple-500" />],
-                ["fuchsia-500", "フクシア", <td class="w-10 bg-fuchsia-500" />],
-                ["pink-500", "ピンク", <td class="w-10 bg-pink-500" />],
-                ["rose-500", "バラ", <td class="w-10 bg-rose-500" />],
-                ["slate-500", "粘板岩", <td class="w-10 bg-slate-500" />],
-                ["gray-500", "グレー", <td class="w-10 bg-gray-500" />],
-                ["zinc-500", "亜鉛", <td class="w-10 bg-zinc-500" />],
+                ["teal-500", "コガモ", <td className="w-10 bg-teal-500" />],
+                ["cyan-500", "シアン", <td className="w-10 bg-cyan-500" />],
+                ["sky-500", "スカイ", <td className="w-10 bg-sky-500" />],
+                ["blue-500", "青", <td className="w-10 bg-blue-500" />],
+                ["indigo-500", "藍色", <td className="w-10 bg-indigo-500" />],
+                ["violet-500", "スミレ", <td className="w-10 bg-violet-500" />],
+                ["purple-500", "紫", <td className="w-10 bg-purple-500" />],
+                [
+                    "fuchsia-500",
+                    "フクシア",
+                    <td className="w-10 bg-fuchsia-500" />,
+                ],
+                ["pink-500", "ピンク", <td className="w-10 bg-pink-500" />],
+                ["rose-500", "バラ", <td className="w-10 bg-rose-500" />],
+                ["slate-500", "粘板岩", <td className="w-10 bg-slate-500" />],
+                ["gray-500", "グレー", <td className="w-10 bg-gray-500" />],
+                ["zinc-500", "亜鉛", <td className="w-10 bg-zinc-500" />],
                 [
                     "neutral-500",
                     "ニュートラル",
-                    <td class="w-10 bg-neutral-500" />,
+                    <td className="w-10 bg-neutral-500" />,
                 ],
-                ["stone-500", "石", <td class="w-10 bg-stone-500" />],
-                ["mauve-500", "モーブ", <td class="w-10 bg-mauve-500" />],
-                ["olive-500", "オリーブ", <td class="w-10 bg-olive-500" />],
-                ["mist-500", "ミスト", <td class="w-10 bg-mist-500" />],
-                ["taupe-500", "灰褐色", <td class="w-10 bg-taupe-500" />],
+                ["stone-500", "石", <td className="w-10 bg-stone-500" />],
+                ["mauve-500", "モーブ", <td className="w-10 bg-mauve-500" />],
+                ["olive-500", "オリーブ", <td className="w-10 bg-olive-500" />],
+                ["mist-500", "ミスト", <td className="w-10 bg-mist-500" />],
+                ["taupe-500", "灰褐色", <td className="w-10 bg-taupe-500" />],
             ],
         },
     ],
     [
-        "appearance",
+        InteractivityEnum.appearance,
         {
             entry: "外観",
             description:
@@ -76,7 +89,7 @@ const interactivityJA = new Map<string, Translation>([
     ],
 
     [
-        "caret-color",
+        InteractivityEnum.caretColor,
         {
             entry: "キャレットの色",
             description: "テキストボックス入力時のカーソルの色を指定する",
@@ -84,56 +97,68 @@ const interactivityJA = new Map<string, Translation>([
                 [
                     "inherit",
                     "親要素からスタイルを引き継ぐ",
-                    <td class="w-10 bg-transparent" />,
+                    <td className="w-10 bg-transparent" />,
                 ],
-                ["current", "テキスト色", <td class="w-10 bg-transparent" />],
-                ["transparent", "透明", <td class="w-10 bg-transparent" />],
-                ["black", "黒", <td class="w-10 bg-black" />],
-                ["white", "白", <td class="w-10 bg-white" />],
-                ["red-500", "赤", <td class="w-10 bg-red-500" />],
-                ["orange-500", "オレンジ", <td class="w-10 bg-orange-500" />],
-                ["amber-500", "琥珀", <td class="w-10 bg-amber-500" />],
-                ["yellow-500", "黄色", <td class="w-10 bg-yellow-500" />],
-                ["lime-500", "ライム", <td class="w-10 bg-lime-500" />],
-                ["green-500", "緑", <td class="w-10 bg-green-500" />],
+                [
+                    "current",
+                    "テキスト色",
+                    <td className="w-10 bg-transparent" />,
+                ],
+                ["transparent", "透明", <td className="w-10 bg-transparent" />],
+                ["black", "黒", <td className="w-10 bg-black" />],
+                ["white", "白", <td className="w-10 bg-white" />],
+                ["red-500", "赤", <td className="w-10 bg-red-500" />],
+                [
+                    "orange-500",
+                    "オレンジ",
+                    <td className="w-10 bg-orange-500" />,
+                ],
+                ["amber-500", "琥珀", <td className="w-10 bg-amber-500" />],
+                ["yellow-500", "黄色", <td className="w-10 bg-yellow-500" />],
+                ["lime-500", "ライム", <td className="w-10 bg-lime-500" />],
+                ["green-500", "緑", <td className="w-10 bg-green-500" />],
                 [
                     "emerald-500",
                     "エメラルド",
-                    <td class="w-10 bg-emerald-500" />,
+                    <td className="w-10 bg-emerald-500" />,
                 ],
-                ["teal-500", "コガモ", <td class="w-10 bg-teal-500" />],
-                ["cyan-500", "シアン", <td class="w-10 bg-cyan-500" />],
-                ["sky-500", "スカイ", <td class="w-10 bg-sky-500" />],
-                ["blue-500", "青", <td class="w-10 bg-blue-500" />],
-                ["indigo-500", "藍色", <td class="w-10 bg-indigo-500" />],
-                ["violet-500", "スミレ", <td class="w-10 bg-violet-500" />],
-                ["purple-500", "紫", <td class="w-10 bg-purple-500" />],
-                ["fuchsia-500", "フクシア", <td class="w-10 bg-fuchsia-500" />],
-                ["pink-500", "ピンク", <td class="w-10 bg-pink-500" />],
-                ["rose-500", "バラ", <td class="w-10 bg-rose-500" />],
-                ["slate-500", "粘板岩", <td class="w-10 bg-slate-500" />],
-                ["gray-500", "グレー", <td class="w-10 bg-gray-500" />],
-                ["zinc-500", "亜鉛", <td class="w-10 bg-zinc-500" />],
+                ["teal-500", "コガモ", <td className="w-10 bg-teal-500" />],
+                ["cyan-500", "シアン", <td className="w-10 bg-cyan-500" />],
+                ["sky-500", "スカイ", <td className="w-10 bg-sky-500" />],
+                ["blue-500", "青", <td className="w-10 bg-blue-500" />],
+                ["indigo-500", "藍色", <td className="w-10 bg-indigo-500" />],
+                ["violet-500", "スミレ", <td className="w-10 bg-violet-500" />],
+                ["purple-500", "紫", <td className="w-10 bg-purple-500" />],
+                [
+                    "fuchsia-500",
+                    "フクシア",
+                    <td className="w-10 bg-fuchsia-500" />,
+                ],
+                ["pink-500", "ピンク", <td className="w-10 bg-pink-500" />],
+                ["rose-500", "バラ", <td className="w-10 bg-rose-500" />],
+                ["slate-500", "粘板岩", <td className="w-10 bg-slate-500" />],
+                ["gray-500", "グレー", <td className="w-10 bg-gray-500" />],
+                ["zinc-500", "亜鉛", <td className="w-10 bg-zinc-500" />],
                 [
                     "neutral-500",
                     "ニュートラル",
-                    <td class="w-10 bg-neutral-500" />,
+                    <td className="w-10 bg-neutral-500" />,
                 ],
-                ["stone-500", "石", <td class="w-10 bg-stone-500" />],
-                ["mauve-500", "モーブ", <td class="w-10 bg-mauve-500" />],
-                ["olive-500", "オリーブ", <td class="w-10 bg-olive-500" />],
-                ["mist-500", "ミスト", <td class="w-10 bg-mist-500" />],
-                ["taupe-500", "灰褐色", <td class="w-10 bg-taupe-500" />],
+                ["stone-500", "石", <td className="w-10 bg-stone-500" />],
+                ["mauve-500", "モーブ", <td className="w-10 bg-mauve-500" />],
+                ["olive-500", "オリーブ", <td className="w-10 bg-olive-500" />],
+                ["mist-500", "ミスト", <td className="w-10 bg-mist-500" />],
+                ["taupe-500", "灰褐色", <td className="w-10 bg-taupe-500" />],
                 [
                     "red-500/25",
                     "不透明度25％で指定",
-                    <td class="w-10 bg-red-500/25" />,
+                    <td className="w-10 bg-red-500/25" />,
                 ],
             ],
         },
     ],
     [
-        "color-scheme",
+        InteractivityEnum.colorScheme,
         {
             entry: "配色",
             description:
@@ -149,7 +174,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "cursor",
+        InteractivityEnum.cursor,
         {
             entry: "カーソル",
             description:
@@ -158,188 +183,188 @@ const interactivityJA = new Map<string, Translation>([
                 [
                     "auto",
                     "自動",
-                    <td class="w-10 cursor-auto border border-black" />,
+                    <td className="w-10 cursor-auto border border-black" />,
                 ],
                 [
                     "default",
                     "デフォルト",
-                    <td class="w-10 cursor-default border border-black" />,
+                    <td className="w-10 cursor-default border border-black" />,
                 ],
                 [
                     "pointer",
                     "ポインター",
-                    <td class="w-10 cursor-pointer border border-black" />,
+                    <td className="w-10 cursor-pointer border border-black" />,
                 ],
                 [
                     "wait",
                     "ビジー状態",
-                    <td class="w-10 cursor-wait border border-black" />,
+                    <td className="w-10 cursor-wait border border-black" />,
                 ],
                 [
                     "text",
                     "テキスト選択",
-                    <td class="w-10 cursor-text border border-black" />,
+                    <td className="w-10 cursor-text border border-black" />,
                 ],
                 [
                     "move",
                     "移動",
-                    <td class="w-10 cursor-move border border-black" />,
+                    <td className="w-10 cursor-move border border-black" />,
                 ],
                 [
                     "help",
                     "ヘルプ",
-                    <td class="w-10 cursor-help border border-black" />,
+                    <td className="w-10 cursor-help border border-black" />,
                 ],
                 [
                     "not-allowed",
                     "禁止",
-                    <td class="w-10 cursor-not-allowed border border-black" />,
+                    <td className="w-10 cursor-not-allowed border border-black" />,
                 ],
                 [
                     "none",
                     "非表示",
-                    <td class="w-10 cursor-none border border-black" />,
+                    <td className="w-10 cursor-none border border-black" />,
                 ],
                 [
                     "context-menu",
                     "コンテキストメニュー",
-                    <td class="w-10 cursor-context-menu border border-black" />,
+                    <td className="w-10 cursor-context-menu border border-black" />,
                 ],
                 [
                     "progress",
                     "バックグラウンドでビジー状態",
-                    <td class="w-10 cursor-progress border border-black" />,
+                    <td className="w-10 cursor-progress border border-black" />,
                 ],
                 [
                     "cell",
                     "セルの選択",
-                    <td class="w-10 cursor-cell border border-black" />,
+                    <td className="w-10 cursor-cell border border-black" />,
                 ],
                 [
                     "crosshair",
                     "十字カーソル",
-                    <td class="w-10 cursor-crosshair border border-black" />,
+                    <td className="w-10 cursor-crosshair border border-black" />,
                 ],
                 [
                     "vertical-text",
                     "縦書きのテキスト選択",
-                    <td class="w-10 cursor-vertical-text border border-black" />,
+                    <td className="w-10 cursor-vertical-text border border-black" />,
                 ],
                 [
                     "alias",
                     "ショートカットの作成",
-                    <td class="w-10 cursor-alias border border-black" />,
+                    <td className="w-10 cursor-alias border border-black" />,
                 ],
                 [
                     "copy",
                     "コピー",
-                    <td class="w-10 cursor-copy border border-black" />,
+                    <td className="w-10 cursor-copy border border-black" />,
                 ],
                 [
                     "no-drop",
                     "ドロップ不可",
-                    <td class="w-10 cursor-no-drop border border-black" />,
+                    <td className="w-10 cursor-no-drop border border-black" />,
                 ],
                 [
                     "grab",
                     "グラブ（ドラッグ）可能",
-                    <td class="w-10 cursor-grab border border-black" />,
+                    <td className="w-10 cursor-grab border border-black" />,
                 ],
                 [
                     "grabbing",
                     "グラブ中",
-                    <td class="w-10 cursor-grabbing border border-black" />,
+                    <td className="w-10 cursor-grabbing border border-black" />,
                 ],
                 [
                     "all-scroll",
                     "全方向にスクロール",
-                    <td class="w-10 cursor-all-scroll border border-black" />,
+                    <td className="w-10 cursor-all-scroll border border-black" />,
                 ],
                 [
                     "col-resize",
                     "列の幅をリサイズ",
-                    <td class="w-10 cursor-col-resize border border-black" />,
+                    <td className="w-10 cursor-col-resize border border-black" />,
                 ],
                 [
                     "row-resize",
                     "行の高さをリサイズ",
-                    <td class="w-10 cursor-row-resize border border-black" />,
+                    <td className="w-10 cursor-row-resize border border-black" />,
                 ],
                 [
                     "n-resize",
                     "上方向にリサイズ",
-                    <td class="w-10 cursor-n-resize border border-black" />,
+                    <td className="w-10 cursor-n-resize border border-black" />,
                 ],
                 [
                     "e-resize",
                     "右方向にリサイズ",
-                    <td class="w-10 cursor-e-resize border border-black" />,
+                    <td className="w-10 cursor-e-resize border border-black" />,
                 ],
                 [
                     "s-resize",
                     "下方向にリサイズ",
-                    <td class="w-10 cursor-s-resize border border-black" />,
+                    <td className="w-10 cursor-s-resize border border-black" />,
                 ],
                 [
                     "w-resize",
                     "左方向にリサイズ",
-                    <td class="w-10 cursor-w-resize border border-black" />,
+                    <td className="w-10 cursor-w-resize border border-black" />,
                 ],
                 [
                     "ne-resize",
                     "右上方向にリサイズ",
-                    <td class="w-10 cursor-ne-resize border border-black" />,
+                    <td className="w-10 cursor-ne-resize border border-black" />,
                 ],
                 [
                     "nw-resize",
                     "左上方向にリサイズ",
-                    <td class="w-10 cursor-nw-resize border border-black" />,
+                    <td className="w-10 cursor-nw-resize border border-black" />,
                 ],
                 [
                     "se-resize",
                     "右下方向にリサイズ",
-                    <td class="w-10 cursor-se-resize border border-black" />,
+                    <td className="w-10 cursor-se-resize border border-black" />,
                 ],
                 [
                     "sw-resize",
                     "左下方向にリサイズ",
-                    <td class="w-10 cursor-sw-resize border border-black" />,
+                    <td className="w-10 cursor-sw-resize border border-black" />,
                 ],
                 [
                     "ew-resize",
                     "水平方向にリサイズ",
-                    <td class="w-10 cursor-ew-resize border border-black" />,
+                    <td className="w-10 cursor-ew-resize border border-black" />,
                 ],
                 [
                     "ns-resize",
                     "垂直方向にリサイズ",
-                    <td class="w-10 cursor-ns-resize border border-black" />,
+                    <td className="w-10 cursor-ns-resize border border-black" />,
                 ],
                 [
                     "nesw-resize",
                     "右上と左下方向にリサイズ",
-                    <td class="w-10 cursor-nesw-resize border border-black" />,
+                    <td className="w-10 cursor-nesw-resize border border-black" />,
                 ],
                 [
                     "nwse-resize",
                     "左上と右下方向にリサイズ",
-                    <td class="w-10 cursor-nwse-resize border border-black" />,
+                    <td className="w-10 cursor-nwse-resize border border-black" />,
                 ],
                 [
                     "zoom-in",
                     "拡大",
-                    <td class="w-10 cursor-zoom-in border border-black" />,
+                    <td className="w-10 cursor-zoom-in border border-black" />,
                 ],
                 [
                     "zoom-out",
                     "縮小",
-                    <td class="w-10 cursor-zoom-out border border-black" />,
+                    <td className="w-10 cursor-zoom-out border border-black" />,
                 ],
             ],
         },
     ],
     [
-        "field-sizing",
+        InteractivityEnum.fieldSizing,
         {
             entry: "フィールド寸法",
             description:
@@ -351,7 +376,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "pointer-events",
+        InteractivityEnum.pointerEvents,
         {
             entry: "ポインターイベント",
             description:
@@ -363,7 +388,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "resize",
+        InteractivityEnum.resize,
         {
             entry: "リサイズ",
             description:
@@ -377,7 +402,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "scroll-behavior",
+        InteractivityEnum.scrollBehavior,
         {
             entry: "スクロール動作",
             description: "<a>要素を用いたページ内リンクの動作を指定する",
@@ -388,7 +413,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "scroll-margin",
+        InteractivityEnum.scrollMargin,
         {
             entry: "スクロールマージン",
             description:
@@ -409,7 +434,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "scroll-padding",
+        InteractivityEnum.scrollPadding,
         {
             entry: "スクロールパディング",
             description:
@@ -430,7 +455,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "scroll-snap-align",
+        InteractivityEnum.scrollSnapAlign,
         {
             entry: "スクロールスナップの整列",
             description:
@@ -444,7 +469,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "scroll-snap-stop",
+        InteractivityEnum.scrollSnapStop,
         {
             entry: "スクロールスナップの停止",
             description:
@@ -459,7 +484,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "scroll-snap-type",
+        InteractivityEnum.scrollSnapType,
         {
             entry: "スクロールスナップタイプ",
             description:
@@ -475,7 +500,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "touch-action",
+        InteractivityEnum.touchAction,
         {
             entry: "タッチアクション",
             description: "要素が受け入れるタッチ操作のジェスチャーを指定する",
@@ -494,7 +519,7 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "user-select",
+        InteractivityEnum.userSelect,
         {
             entry: "ユーザー選択",
             description: "テキスト選択の動作を指定する",
@@ -507,11 +532,11 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
     [
-        "will-change",
+        InteractivityEnum.willChange,
         {
             entry: "未来の変更",
             description:
-                "ページに何かしらの変化が発生する可能性を事前にブラウザーへ伝えることで、アニメーションなどの最適化を図る\n使用法を間違えると逆にパフォーマンス悪化につながるので、基本的にはブラウザーに任せたほうが良い",
+                "ページに何かしらの変化が発生する可能性を事前にブラウザーへ伝えることで、アニメーションの滑らかさなどの最適化を図る",
             details: [
                 ["auto", "ブラウザーに最適化を任せる"],
                 ["scroll", "スクロール位置が変化する可能性を伝える"],
@@ -521,5 +546,3 @@ const interactivityJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default interactivityJA;

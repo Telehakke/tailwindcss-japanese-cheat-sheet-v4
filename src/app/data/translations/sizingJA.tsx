@@ -1,7 +1,8 @@
 import { CategoryEnum } from "../../models/category";
-import type { Translation } from "../../models/types";
+import type { Translation } from "../../models/cheatSheetData";
+import { SizingEnum } from "../../models/entry";
 
-const sizingJA = new Map<string, Translation>([
+export const sizingJA = new Map<string, Translation>([
     [
         CategoryEnum.Sizing,
         {
@@ -11,7 +12,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "width",
+        SizingEnum.width,
         {
             entry: "幅",
             description: "要素の幅を指定する",
@@ -59,7 +60,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "min-width",
+        SizingEnum.minWidth,
         {
             entry: "最小幅",
             description: "要素の最小幅を指定する",
@@ -93,7 +94,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "max-width",
+        SizingEnum.maxWidth,
         {
             entry: "最大幅",
             description: "要素の最大幅を指定する",
@@ -131,7 +132,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "height",
+        SizingEnum.height,
         {
             entry: "高さ",
             description: "要素の高さを指定する",
@@ -179,7 +180,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "min-height",
+        SizingEnum.minHeight,
         {
             entry: "最小高さ",
             description: "要素の最小高さを指定する",
@@ -213,7 +214,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "max-height",
+        SizingEnum.maxHeight,
         {
             entry: "最大高さ",
             description: "要素の最大高さを指定する",
@@ -247,7 +248,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "inline-size",
+        SizingEnum.inlineSize,
         {
             entry: "インラインサイズ",
             description:
@@ -282,7 +283,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "min-inline-size",
+        SizingEnum.minInlineSize,
         {
             entry: "最小インラインサイズ",
             description:
@@ -317,7 +318,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "max-inline-size",
+        SizingEnum.maxInlineSize,
         {
             entry: "最大インラインサイズ",
             description:
@@ -351,7 +352,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "block-size",
+        SizingEnum.blockSize,
         {
             entry: "ブロックサイズ",
             description:
@@ -386,7 +387,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "min-block-size",
+        SizingEnum.minBlockSize,
         {
             entry: "最小ブロックサイズ",
             description:
@@ -421,7 +422,7 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
     [
-        "max-block-size",
+        SizingEnum.maxBlockSize,
         {
             entry: "最大ブロックサイズ",
             description:
@@ -457,5 +458,3 @@ const sizingJA = new Map<string, Translation>([
         },
     ],
 ]);
-
-export default sizingJA;
