@@ -1,6 +1,6 @@
 import fs from "fs";
 import { setTimeout } from "timers/promises";
-import { navigationItems, version } from "../app/data/navigationItems_v4.2";
+import { navigationItems, version } from "../app/data/navigationItems_v4.3";
 import type { Documentation } from "../app/models/cheatSheetData";
 import { createDom } from "./createDom";
 

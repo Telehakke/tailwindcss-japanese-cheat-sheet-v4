@@ -5,55 +5,38 @@ import { languageAtom, shouldExpandAllAtom } from "../../../atoms";
 import { LanguageManagerFactory } from "../../../models/language";
 
 export const ExpandAndCollapseButtons = (): JSX.Element => {
+    const language = useAtomValue(languageAtom);
+    const setShouldExpandAll = useSetAtom(shouldExpandAllAtom);
+
+    const uiLabel = LanguageManagerFactory.create(language).uiLabel;
+
+    const expandAll = (): void => {
+        setShouldExpandAll(true);
+    };
+
+    const collapseAll = (): void => {
+        setShouldExpandAll(false);
+    };
+
     return (
         <div className="grid w-max auto-cols-fr grid-flow-col gap-4">
-            <ExpandButton />
-            <CollapseButton />
+            <RoundedButton
+                icon={<ChevronsUpDown className="size-4 stroke-inherit" />}
+                onClick={expandAll}
+            >
+                {uiLabel.expand}
+            </RoundedButton>
+            <RoundedButton
+                icon={<ChevronsDownUp className="size-4 stroke-inherit" />}
+                onClick={collapseAll}
+            >
+                {uiLabel.collapse}
+            </RoundedButton>
         </div>
     );
 };
 
 /* -------------------------------------------------------------------------- */
-
-const ExpandButton = (): JSX.Element => {
-    const language = useAtomValue(languageAtom);
-    const setShouldExpandAll = useSetAtom(shouldExpandAllAtom);
-
-    const { expand } = LanguageManagerFactory.create(language).uiLabel;
-
-    const handleClick = (): void => {
-        setShouldExpandAll(true);
-    };
-
-    return (
-        <RoundedButton
-            icon={<ChevronsUpDown className="size-4 stroke-inherit" />}
-            onClick={handleClick}
-        >
-            {expand}
-        </RoundedButton>
-    );
-};
-
-const CollapseButton = (): JSX.Element => {
-    const language = useAtomValue(languageAtom);
-    const setShouldExpandAll = useSetAtom(shouldExpandAllAtom);
-
-    const { collapse } = LanguageManagerFactory.create(language).uiLabel;
-
-    const handleClick = (): void => {
-        setShouldExpandAll(false);
-    };
-
-    return (
-        <RoundedButton
-            icon={<ChevronsDownUp className="size-4 stroke-inherit" />}
-            onClick={handleClick}
-        >
-            {collapse}
-        </RoundedButton>
-    );
-};
 
 const RoundedButton = (props: {
     icon?: ReactNode;

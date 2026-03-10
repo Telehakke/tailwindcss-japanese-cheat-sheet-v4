@@ -21,6 +21,7 @@ export const VersionEnum = {
     v4_0: "v4.0",
     v4_1: "v4.1",
     v4_2: "v4.2",
+    v4_3: "v4.3",
     _: undefined,
 } as const;
 
@@ -121,6 +122,7 @@ export const TypographyVersionEnum: Record<Typography, Version> = {
     "text-overflow": "<= v3",
     "text-wrap": "<= v3",
     "text-indent": "<= v3",
+    "tab-size": "v4.3",
     "vertical-align": "<= v3",
     "white-space": "<= v3",
     "word-break": "<= v3",
@@ -221,6 +223,7 @@ export const TransformsVersionEnum: Record<Transforms, Version> = {
     "transform-origin": "<= v3",
     "transform-style": "v4.0",
     translate: "<= v3",
+    zoom: "v4.3",
 } as const;
 
 export const InteractivityVersionEnum: Record<Interactivity, Version> = {
@@ -233,6 +236,9 @@ export const InteractivityVersionEnum: Record<Interactivity, Version> = {
     "pointer-events": "<= v3",
     resize: "<= v3",
     "scroll-behavior": "<= v3",
+    "scrollbar-color": "v4.3",
+    "scrollbar-width": "v4.3",
+    "scrollbar-gutter": "v4.3",
     "scroll-margin": "<= v3",
     "scroll-padding": "<= v3",
     "scroll-snap-align": "<= v3",

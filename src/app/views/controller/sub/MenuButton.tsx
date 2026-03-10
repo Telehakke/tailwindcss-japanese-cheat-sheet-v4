@@ -17,14 +17,14 @@ export const MenuButton = (): JSX.Element => {
 
     const setOpen = useSetAtom(openMenuAtom);
 
-    const handleClick = (): void => {
+    const openMenu = (): void => {
         setOpen(true);
     };
 
     return (
         <button
             className={Object.values(className).join(" ")}
-            onClick={handleClick}
+            onClick={openMenu}
         >
             <Menu className="stroke-inherit" />
         </button>

@@ -795,6 +795,14 @@ export const typographyJA = new Map<string, Translation>([
         },
     ],
     [
+        TypographyEnum.tabSize,
+        {
+            entry: "タブサイズ",
+            description: "タブ文字の幅を指定する",
+            details: [["（数値）", "半角スペース何文字分かを指定"]],
+        },
+    ],
+    [
         TypographyEnum.verticalAlign,
         {
             entry: "垂直方向の整列",

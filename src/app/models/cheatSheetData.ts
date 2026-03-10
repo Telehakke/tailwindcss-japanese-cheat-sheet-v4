@@ -3,21 +3,21 @@ import { CategoryEnum, type Category } from "./category";
 
 // prettier-ignore
 const Importer: Record<Category, Promise<readonly Documentation[]>> = {
-    [CategoryEnum.Layout] :  import("../data/Layout_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.FlexboxAndGrid]:  import("../data/Flexbox & Grid_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Spacing]:  import("../data/Spacing_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Sizing]:  import("../data/Sizing_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Typography]:  import("../data/Typography_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Backgrounds]:  import("../data/Backgrounds_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Borders]:  import("../data/Borders_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Effects]:  import("../data/Effects_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Filters]:  import("../data/Filters_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Tables]:  import("../data/Tables_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.TransitionsAndAnimation]:  import("../data/Transitions & Animation_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Transforms]:  import("../data/Transforms_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Interactivity]: import("../data/Interactivity_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.SVG]: import("../data/SVG_v4.2.ts").then((v) => v.documentations),
-    [CategoryEnum.Accessibility]: import("../data/Accessibility_v4.2.ts").then((v) => v.documentations),
+    [CategoryEnum.Layout] :  import("../data/Layout_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.FlexboxAndGrid]:  import("../data/Flexbox & Grid_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Spacing]:  import("../data/Spacing_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Sizing]:  import("../data/Sizing_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Typography]:  import("../data/Typography_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Backgrounds]:  import("../data/Backgrounds_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Borders]:  import("../data/Borders_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Effects]:  import("../data/Effects_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Filters]:  import("../data/Filters_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Tables]:  import("../data/Tables_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.TransitionsAndAnimation]:  import("../data/Transitions & Animation_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Transforms]:  import("../data/Transforms_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Interactivity]: import("../data/Interactivity_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.SVG]: import("../data/SVG_v4.3.ts").then((v) => v.documentations),
+    [CategoryEnum.Accessibility]: import("../data/Accessibility_v4.3.ts").then((v) => v.documentations),
 } as const
 
 // prettier-ignore

@@ -102,6 +102,7 @@ export const TypographyEnum = {
     textOverflow: "text-overflow",
     textWrap: "text-wrap",
     textIndent: "text-indent",
+    tabSize: "tab-size",
     verticalAlign: "vertical-align",
     whiteSpace: "white-space",
     wordBreak: "word-break",
@@ -215,6 +216,7 @@ export const TransformsEnum = {
     transformOrigin: "transform-origin",
     transformStyle: "transform-style",
     translate: "translate",
+    zoom: "zoom",
 } as const;
 
 export type Transforms = (typeof TransformsEnum)[keyof typeof TransformsEnum];
@@ -229,6 +231,9 @@ export const InteractivityEnum = {
     pointerEvents: "pointer-events",
     resize: "resize",
     scrollBehavior: "scroll-behavior",
+    scrollbarColor: "scrollbar-color",
+    scrollbarWidth: "scrollbar-width",
+    scrollbarGutter: "scrollbar-gutter",
     scrollMargin: "scroll-margin",
     scrollPadding: "scroll-padding",
     scrollSnapAlign: "scroll-snap-align",

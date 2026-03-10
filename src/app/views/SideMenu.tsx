@@ -8,7 +8,7 @@ export const SideMenu = (): JSX.Element => {
     const [open, setOpen] = useAtom(openMenuAtom);
 
     return (
-        <SideMenuDialog open={open} onOpenChange={(o) => setOpen(o)}>
+        <SideMenuDialog open={open} onOpenChange={setOpen}>
             {Object.values(CategoryEnum).map((v) => (
                 <a
                     className="text-xl outline-0 transition hover:text-blue-500 focus-visible:text-blue-500"

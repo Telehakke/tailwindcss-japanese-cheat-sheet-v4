@@ -162,4 +162,12 @@ export const transformsJA = new Map<string, Translation>([
             ],
         },
     ],
+    [
+        TransformsEnum.zoom,
+        {
+            entry: "ズーム",
+            description: "再レイアウトを伴う拡大縮小する",
+            details: [["（数値）", "任意のパーセンテージで拡大縮小"]],
+        },
+    ],
 ]);

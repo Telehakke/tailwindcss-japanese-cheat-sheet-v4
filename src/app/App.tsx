@@ -2,13 +2,13 @@ import { useSetAtom } from "jotai";
 import { useEffect, type JSX } from "react";
 import { breakpointAtom, toaster } from "./atoms";
 import { BreakpointFactory } from "./models/breakpoint";
+import { Body } from "./views/body/Body";
 import { Toast } from "./views/common/Toast";
-import { Contents } from "./views/contents/contents";
-import { Controller } from "./views/controller/controller";
+import { Controller } from "./views/controller/Controller";
 import { Header } from "./views/header/Header";
 import { SideMenu } from "./views/SideMenu";
 
-const App = (): JSX.Element => {
+export const App = (): JSX.Element => {
     const setBreakpoint = useSetAtom(breakpointAtom);
 
     useEffect(() => {
@@ -16,9 +16,7 @@ const App = (): JSX.Element => {
             setBreakpoint(BreakpointFactory.create(window.innerWidth));
         };
         window.addEventListener("resize", handleResize);
-        return (): void => {
-            window.removeEventListener("resize", handleResize);
-        };
+        return (): void => window.removeEventListener("resize", handleResize);
     }, [setBreakpoint]);
 
     return (
@@ -26,12 +24,10 @@ const App = (): JSX.Element => {
             <div className="p-4">
                 <Header />
                 <Controller />
-                <Contents />
+                <Body />
             </div>
             <SideMenu />
             <Toast toaster={toaster} />
         </>
     );
 };
-
-export default App;

@@ -1,1 +1,0 @@
-import{C as i}from"./index-BLCe1WEd.js";import{A as t}from"./entry-Bpb8Utxt.js";const s=new Map([[i.Accessibility,{entry:"アクセシビリティー",description:"",details:[]}],[t.forcedColorAdjust,{entry:"強制カラー調整",description:"ユーザーが設定している、視覚サポート系アクセシビリティー（ハイコントラストモードなど）の効果の受け方を指定する",details:[["auto","効果を受け入れる"],["none","効果を受け入れない"]]}]]);export{s as accessibilityJA};

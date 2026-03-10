@@ -12,7 +12,7 @@ const items: SegmentGroupItem[] = [
 export const LanguageSegmentGroup = (): JSX.Element => {
     const [language, setLanguage] = useAtom(languageAtom);
 
-    const handleValueChange = (value: string | null): void => {
+    const setLanguageState = (value: string | null): void => {
         setLanguage(isLanguage(value) ? value : "en");
     };
 
@@ -20,7 +20,7 @@ export const LanguageSegmentGroup = (): JSX.Element => {
         <SegmentGroup
             items={items}
             value={language}
-            onValueChange={handleValueChange}
+            onValueChange={setLanguageState}
         />
     );
 };

@@ -3,7 +3,7 @@ import { useEffect, useState, type JSX } from "react";
 import { SegmentGroup, type SegmentGroupItem } from "../../common/SegmentGroup";
 
 export const ThemeSegmentGroup = (): JSX.Element => {
-    const [value, setValue] = useState<string>(() => {
+    const [theme, setTheme] = useState<string>(() => {
         const value = ThemeStorage.get();
         ThemeFactory.create(value).apply();
         return value ?? ThemeEnum.system;
@@ -11,24 +11,18 @@ export const ThemeSegmentGroup = (): JSX.Element => {
 
     useEffect(() => {
         DarkModeManager.watch();
-        return (): void => {
-            DarkModeManager.unwatch();
-        };
+        return (): void => DarkModeManager.unwatch();
     }, []);
 
-    const handleValueChange = (value: string | null): void => {
-        setValue(value ?? ThemeEnum.system);
+    const applyTheme = (value: string | null): void => {
+        setTheme(value ?? ThemeEnum.system);
         const theme = ThemeFactory.create(value);
         theme.apply();
         theme.save();
     };
 
     return (
-        <SegmentGroup
-            items={items}
-            value={value}
-            onValueChange={handleValueChange}
-        />
+        <SegmentGroup items={items} value={theme} onValueChange={applyTheme} />
     );
 };
 

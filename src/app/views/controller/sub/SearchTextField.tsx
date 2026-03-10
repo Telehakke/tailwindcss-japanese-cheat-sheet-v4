@@ -1,11 +1,13 @@
 import { atom, useAtom, useSetAtom } from "jotai";
 import { Search, X } from "lucide-react";
-import { useRef, type JSX } from "react";
+import { useRef, type JSX, type RefObject } from "react";
 import { searchInputAtom } from "../../../atoms";
 import { DelayAction } from "../../../models/delayAction";
 
+type Input = HTMLInputElement | null;
+
 export const SearchTextField = (): JSX.Element => {
-    const inputElement = useRef<HTMLInputElement | null>(null);
+    const inputElement = useRef<Input>(null);
 
     return (
         <div className="relative w-full max-w-60">
@@ -18,13 +20,13 @@ export const SearchTextField = (): JSX.Element => {
 
 /* -------------------------------------------------------------------------- */
 
-const inputAtom = atom("");
 const delayAction = new DelayAction();
+const inputAtom = atom("");
 
 const TextField = ({
     inputElement,
 }: {
-    inputElement: React.RefObject<HTMLInputElement | null>;
+    inputElement: RefObject<Input>;
 }): JSX.Element => {
     const className = {
         _: "peer h-8 w-full rounded-md pl-2 pr-8 text-sm transition",
@@ -40,7 +42,7 @@ const TextField = ({
     const [input, setInput] = useAtom(inputAtom);
     const setSearchInput = useSetAtom(searchInputAtom);
 
-    const handleChange = (value: string): void => {
+    const setInputState = (value: string): void => {
         setInput(value);
         delayAction.run(() => {
             setSearchInput(value);
@@ -52,7 +54,7 @@ const TextField = ({
             className={Object.values(className).join(" ")}
             type="text"
             value={input}
-            onChange={(e) => handleChange(e.target.value)}
+            onChange={(e) => setInputState(e.target.value)}
             data-empty={input.length === 0}
             ref={inputElement}
         />
@@ -73,7 +75,7 @@ const SearchIcon = (): JSX.Element => {
 const ClearButton = ({
     inputElement,
 }: {
-    inputElement: React.RefObject<HTMLInputElement | null>;
+    inputElement: RefObject<Input>;
 }): JSX.Element => {
     const className = {
         _: "size-6 rounded-full transition",
@@ -90,7 +92,7 @@ const ClearButton = ({
     const setInput = useSetAtom(inputAtom);
     const setSearchInput = useSetAtom(searchInputAtom);
 
-    const handleClick = (): void => {
+    const clearInputState = (): void => {
         setInput("");
         setSearchInput("");
         inputElement.current?.focus();
@@ -99,7 +101,7 @@ const ClearButton = ({
     return (
         <button
             className={Object.values(className).join(" ")}
-            onClick={handleClick}
+            onClick={clearInputState}
         >
             <X className="size-4 stroke-inherit" />
         </button>
