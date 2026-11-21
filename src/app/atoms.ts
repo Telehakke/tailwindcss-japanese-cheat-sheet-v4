@@ -14,6 +14,6 @@ export const breakpointAtom = atom(BreakpointFactory.create(window.innerWidth));
 export const shouldExpandAllAtom = atom<boolean | undefined>(undefined);
 
 export const toaster = createToaster({
-    placement: "bottom-end",
-    overlap: true,
+  placement: "bottom-end",
+  overlap: true,
 });

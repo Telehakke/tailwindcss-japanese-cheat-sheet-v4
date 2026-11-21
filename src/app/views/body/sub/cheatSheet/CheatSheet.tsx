@@ -10,43 +10,35 @@ import { EntryAndLink } from "./sub/EntryAndLink";
 import { ParameterList } from "./sub/ParameterList";
 
 export const CheatSheet = (props: {
-    category: Category;
-    fullDocumentation: FullDocumentation;
+  category: Category;
+  fullDocumentation: FullDocumentation;
 }): JSX.Element => {
-    const shouldExpandAll = useAtomValue(shouldExpandAllAtom);
-    const [prevState, setPrevState] = useState<boolean | undefined>(
-        shouldExpandAll,
-    );
-    const [shouldExpand, setShouldExpand] = useState<boolean>(
-        shouldExpandAll ?? false,
-    );
+  const shouldExpandAll = useAtomValue(shouldExpandAllAtom);
+  const [prevState, setPrevState] = useState<boolean | undefined>(shouldExpandAll);
+  const [shouldExpand, setShouldExpand] = useState<boolean>(shouldExpandAll ?? false);
 
-    if (prevState !== shouldExpandAll) {
-        if (shouldExpandAll) {
-            setShouldExpand(true);
-        }
-        if (shouldExpandAll === false) {
-            setShouldExpand(false);
-        }
-        setPrevState(shouldExpandAll);
+  if (prevState !== shouldExpandAll) {
+    if (shouldExpandAll === true) {
+      setShouldExpand(true);
     }
+    if (shouldExpandAll === false) {
+      setShouldExpand(false);
+    }
+    setPrevState(shouldExpandAll);
+  }
 
-    return (
-        <div className="space-y-2">
-            <EntryAndLink {...props} {...{ shouldExpand, setShouldExpand }} />
-            <div>
-                <Description {...props} />
-                <Collapsible
-                    collapsedHeight={0}
-                    unmountOnExit
-                    open={shouldExpand}
-                >
-                    <div className="space-y-2 pt-2">
-                        <DetailTable {...props} />
-                        <ParameterList {...props} />
-                    </div>
-                </Collapsible>
-            </div>
-        </div>
-    );
+  return (
+    <div className="space-y-2">
+      <EntryAndLink {...props} {...{ shouldExpand, setShouldExpand }} />
+      <div>
+        <Description {...props} />
+        <Collapsible collapsedHeight={0} unmountOnExit open={shouldExpand}>
+          <div className="space-y-2 pt-2">
+            <DetailTable {...props} />
+            <ParameterList {...props} />
+          </div>
+        </Collapsible>
+      </div>
+    </div>
+  );
 };
