@@ -1,12 +1,12 @@
 import fs from "fs";
-import { isCategory } from "../app/models/category";
+import { isCategory } from "../domain/models/category";
 import { createDom } from "./createDom";
 
 const url = "https://tailwindcss.com/docs/installation/using-vite";
 const document = await createDom(url);
 const version = getDocumentationVersion(document);
 const navigationItems = getNavigationItems(document);
-const path = createPath(version);
+const path = getDistPath(version);
 if (fs.existsSync(path)) throw new Error(`${path}がすでに存在します`);
 
 fs.writeFileSync(path, createCode(version, navigationItems));
@@ -14,9 +14,7 @@ console.log(`${path}に保存しました`);
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * TailwindCSSのドキュメントバージョンを取得
- */
+/** TailwindCSSのドキュメントバージョンを取得 */
 function getDocumentationVersion(document: Document): string {
   return document.querySelector("div > div > div > div > div > div > button")?.textContent ?? "";
 }
@@ -28,28 +26,16 @@ type Navigation = {
   readonly urls: readonly string[];
 };
 
-/**
- * TailwindCSSのページのサイドメニューからナビゲーション情報を取得
- */
+/** TailwindCSSのページのサイドメニューからナビゲーション情報を取得 */
 function getNavigationItems(document: Document): readonly Navigation[] {
   return getNavChildren(getNav(document))
-    .filter((e) => isCategory(getCategory(e)))
-    .map((e) => {
+    .filter((v) => isCategory(getCategory(v)))
+    .map((v) => {
       return {
-        category: getCategory(e)!,
-        urls: getUrls(e),
+        category: getCategory(v)!,
+        urls: getUrls(v),
       };
     });
-}
-
-function getCategory(child: HTMLDivElement): string | undefined {
-  return child.querySelector("h3")?.textContent ?? undefined;
-}
-
-function getUrls(child: HTMLElement): readonly string[] {
-  return Array.from(child.querySelectorAll<HTMLAnchorElement>("ul > li > a")).map((e) => {
-    return `https://tailwindcss.com${e.href}`;
-  });
 }
 
 function getNavChildren(nav: Element): readonly HTMLDivElement[] {
@@ -62,12 +48,24 @@ function getNav(document: Document): Element {
   return nav;
 }
 
-/* -------------------------------------------------------------------------- */
-
-function createPath(version: string): string {
-  return `./src/app/data/navigationItems_${version}.ts`;
+function getCategory(child: HTMLDivElement): string | undefined {
+  return child.querySelector("h3")?.textContent ?? undefined;
 }
 
+function getUrls(child: HTMLElement): readonly string[] {
+  return Array.from(child.querySelectorAll<HTMLAnchorElement>("ul > li > a")).map((e) => {
+    return `https://tailwindcss.com${e.href}`;
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+
+/** 出力先パスを取得 */
+function getDistPath(version: string): string {
+  return `./src/application/documentations/navigationItems_${version}.ts`;
+}
+
+/** ファイルに書き込むコードを作成 */
 function createCode(version: string, navigationItems: readonly Navigation[]): string {
   return `export const version = "${version}";
 export const navigationItems = ${JSON.stringify(navigationItems, null, 4)}`;

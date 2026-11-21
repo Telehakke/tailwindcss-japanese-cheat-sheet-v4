@@ -1,17 +1,17 @@
 import fs from "fs";
 import { setTimeout } from "timers/promises";
-import { navigationItems, version } from "../app/data/navigationItems_v4.3";
-import type { Documentation } from "../app/models/cheatSheetData";
+import { navigationItems, version } from "../application/documentations/navigationItems_v4.3";
+import type { Documentation } from "../application/getCheatSheetDataItem";
 import { createDom } from "./createDom";
 
 /* 【注意】このスクリプトを一度実行すると、完了までに約27分かかる */
 
-const total = countUrlsOfNavigationItems();
+const total = countUrlOfNavigationItems();
 let count = 0;
 
 for (const { category, urls } of navigationItems) {
   console.log(category);
-  const path = createPath(category);
+  const path = getDistPath(category);
   if (fs.existsSync(path)) throw new Error(`${path}がすでに存在します`);
 
   const documentations: Documentation[] = [];
@@ -36,34 +36,29 @@ for (const { category, urls } of navigationItems) {
 
 /* -------------------------------------------------------------------------- */
 
-function countUrlsOfNavigationItems(): number {
+/** navigationItemsに含まれるurlの総数を返す */
+function countUrlOfNavigationItems(): number {
   return navigationItems.reduce((total, value) => {
     total += value.urls.length;
     return total;
   }, 0);
 }
 
-/**
- * TailwindCSSのページから見出しを取得
- */
+/** TailwindCSSのページから見出しを取得 */
 function getEntry(document: Document): string {
   const text = document.querySelector("h1")?.textContent;
   if (text == null) throw new Error("entryが見つかりませんでした");
   return text;
 }
 
-/**
- * TailwindCSSのページから説明を取得
- */
+/** TailwindCSSのページから説明を取得 */
 function getDescription(document: Document): string {
   const text = document.querySelector("h1~p")?.textContent;
   if (text == null) throw new Error("descriptionが見つかりませんでした");
   return text;
 }
 
-/**
- * TailwindCSSのページからクラス名とそれに対応するCSSスタイルを全て取得
- */
+/** TailwindCSSのページからクラス名とそれに対応するCSSスタイルを全て取得 */
 function getParameters(document: Document): string[][] {
   const selector = "div#quick-reference > div > table > tbody";
   return Array.from(document.querySelectorAll(selector))
@@ -79,10 +74,12 @@ function getParameters(document: Document): string[][] {
 
 /* -------------------------------------------------------------------------- */
 
-function createPath(category: string): string {
-  return `./src/app/data/${category}_${version}.ts`;
+/** 出力先パスを取得 */
+function getDistPath(category: string): string {
+  return `./src/application/translations/${category}_${version}.ts`;
 }
 
+/** ファイルに書き込むコードを作成 */
 function createCode(documentations: Documentation[]): string {
   return `export const version = "${version}";
 export const documentations = ${JSON.stringify(documentations, null, 4)}`;

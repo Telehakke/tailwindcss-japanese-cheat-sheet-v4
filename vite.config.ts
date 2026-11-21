@@ -33,7 +33,7 @@ const tsEslintRecommended = {
 export default defineConfig({
   fmt: {
     sortTailwindcss: true,
-    ignorePatterns: ["docs/**", "src/app/data/*.ts"],
+    ignorePatterns: ["docs/**", "src/application/documentations/*.ts"],
   },
   lint: {
     plugins: ["react", "typescript", "oxc"],
@@ -44,10 +44,59 @@ export default defineConfig({
       ...tsEslintRecommended,
       "typescript/explicit-function-return-type": "error",
       "typescript/strict-boolean-expressions": "error",
+      complexity: ["error", { max: 7 }],
     },
     options: { typeAware: true, typeCheck: true },
     jsPlugins: [{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" }],
     ignorePatterns: ["docs/**"],
+    overrides: [
+      {
+        files: ["src/domain/**/*.ts"],
+        rules: {
+          "no-restricted-imports": [
+            "error",
+            {
+              patterns: [
+                {
+                  group: ["**/application/**"],
+                  message: "Domain層でApplication層をimportしてはいけません",
+                },
+                {
+                  group: ["**/infrastructure/**"],
+                  message: "Domain層でInfrastructure層をimportしてはいけません",
+                },
+                {
+                  group: ["**/presentation/**"],
+                  message: "Domain層でPresentation層をimportしてはいけません",
+                },
+              ],
+            },
+          ],
+        },
+      },
+      {
+        files: ["src/application/**/*.ts"],
+        rules: {
+          "no-restricted-imports": [
+            "error",
+            {
+              patterns: [
+                {
+                  group: ["**/infrastructure/**"],
+                  message: "Application層でInfrastructure層をimportしてはいけません",
+                },
+                {
+                  group: ["**/presentation/**"],
+                  message: "Application層でPresentation層をimportしてはいけません",
+                },
+              ],
+            },
+          ],
+        },
+      },
+      { files: ["src/domain/**/*.test.ts"], rules: { "no-restricted-imports": "off" } },
+      { files: ["src/application/**/*.test.ts"], rules: { "no-restricted-imports": "off" } },
+    ],
   },
   plugins: lazyPlugins(() => [react(), babel({ presets: [reactCompilerPreset()] }), tailwindcss()]),
   server: {
