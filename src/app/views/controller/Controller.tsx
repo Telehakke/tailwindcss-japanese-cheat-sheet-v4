@@ -6,6 +6,7 @@ import { LanguageSegmentGroup } from "./sub/LanguageSegmentGroup";
 import { MenuButton } from "./sub/MenuButton";
 import { SearchTextField } from "./sub/SearchTextField";
 import { ThemeSegmentGroup } from "./sub/ThemeSegmentGroup";
+import { OSSLicense } from "./sub/ossLicense";
 
 export const Controller = (): JSX.Element => {
   const className = {
@@ -23,6 +24,7 @@ export const Controller = (): JSX.Element => {
         <div className="flex flex-col items-start gap-4">
           <LanguageSegmentGroup />
           <ThemeSegmentGroup />
+          <OSSLicense />
           <Copyright />
         </div>
       </Popover>
