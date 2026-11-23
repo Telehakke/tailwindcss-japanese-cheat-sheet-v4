@@ -77,8 +77,8 @@ const Items = (props: { items?: SegmentGroupItem[] }): JSX.Element => {
 
   return (
     <div className={joinObjectValues(className)}>
-      {props.items?.map((item) => (
-        <Item item={item} key={item.value} />
+      {props.items?.map((v) => (
+        <Item item={v} key={v.value} />
       ))}
     </div>
   );

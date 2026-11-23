@@ -1,7 +1,7 @@
 import fs from "fs";
 import { setTimeout } from "timers/promises";
-import { navigationItems, version } from "../application/documentations/navigationItems_v4.3";
-import type { Documentation } from "../application/getCheatSheetDataItem";
+import type { Documentation } from "../application/createCheatSheetDataItem";
+import { navigationItems, version } from "../infrastructure/documentations/navigationItems_v4.3";
 import { createDom } from "./createDom";
 
 /* 【注意】このスクリプトを一度実行すると、完了までに約27分かかる */
@@ -76,7 +76,7 @@ function getParameters(document: Document): string[][] {
 
 /** 出力先パスを取得 */
 function getDistPath(category: string): string {
-  return `./src/application/translations/${category}_${version}.ts`;
+  return `./src/infrastructure/translations/${category}_${version}.ts`;
 }
 
 /** ファイルに書き込むコードを作成 */

@@ -1,4 +1,3 @@
-import type { JSX } from "react/jsx-runtime";
 import type { Category } from "../domain/models/category";
 
 export type CheatSheetData = Readonly<{
@@ -12,6 +11,6 @@ export type FullDocumentation = Readonly<{
   entry: string;
   translatedEntry?: string;
   description: string;
-  details?: readonly [string, string, JSX.Element?][];
+  details?: readonly [string, string][];
   parameters: readonly string[][];
 }>;

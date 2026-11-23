@@ -1,0 +1,1 @@
+import{g as e,t}from"./index-BP48E8WK.js";var n=new Map([[e.Accessibility,{entry:`アクセシビリティー`,description:``,details:[]}],[t.forcedColorAdjust,{entry:`強制カラー調整`,description:`ユーザーが設定している、視覚サポート系アクセシビリティー（ハイコントラストモードなど）の効果の受け方を指定する`,details:[[`auto`,`効果を受け入れる`],[`none`,`効果を受け入れない`]]}]]);export{n as accessibilityJA};

@@ -53,8 +53,8 @@ function getCategory(child: HTMLDivElement): string | undefined {
 }
 
 function getUrls(child: HTMLElement): readonly string[] {
-  return Array.from(child.querySelectorAll<HTMLAnchorElement>("ul > li > a")).map((e) => {
-    return `https://tailwindcss.com${e.href}`;
+  return Array.from(child.querySelectorAll<HTMLAnchorElement>("ul > li > a")).map((v) => {
+    return `https://tailwindcss.com${v.href}`;
   });
 }
 
@@ -62,7 +62,7 @@ function getUrls(child: HTMLElement): readonly string[] {
 
 /** 出力先パスを取得 */
 function getDistPath(version: string): string {
-  return `./src/application/documentations/navigationItems_${version}.ts`;
+  return `./src/infrastructure/documentations/navigationItems_${version}.ts`;
 }
 
 /** ファイルに書き込むコードを作成 */
